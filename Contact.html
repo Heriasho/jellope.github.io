@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css" />	
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<link rel='icon' href='favicon.ico' type='image/x-icon'/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!---This enables the tab nav bar to work-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<style>
+			p.ex1{padding: 15px;}
+			p.ex2{margin: 15px;}
+			p.ex3{border: 1px solid green;padding: 35px 20px 50px 20px;} 
+			p.jumbo{font-family: 'Times New Roman', Times, serif;font-size: 20;color:black;}
+			h1{text-align: center; margin: 15px; color:white;}
+			h1.executive{text-align: center; margin: 15px; color:goldenrod;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+			h2{color:black;}
+			h2.ex1{color:white;}
+			h5{color:black;}
+			h5.ex1{margin: 15px;}
+			h5.ex2{color:black;}
+			h5.inProgress{color: red;}
+			div.row{padding: 15px 20px 20px 20px;}
+			div.col-4{padding: 15px 20px 20px 20px;}
+			div.col-8{padding: 15px 20px 20px 20px;}
+			footer.ex1{padding: 15px 20px 20px 20px;}
+			p.proof{color:white;}
+			body{background-image: url("mainSite/bgPoly.png"); background-repeat:no-repeat; background-size:cover; background-color:lightpink;}
+			a.nav-link :active{background: white;}
+			ul.nav-tabs .nav-link {background: pink; border-color:white; border-style:double;color: white;}
+			td{font-weight: bold;color:white;}
+			img.savisDemo{width:300px;}
+			img.ex1{width:450px;height:450px;padding: 15px 20px 20px 20px;}
+			img.icon{width: 50px;height:50px;}
+			img.miniIcon{width: 25px;height: 25px;}
+			iframe.ex1{width:450px;height:450px;padding: 15px;}
+			.chart{width: 500px; height: 200px; border-left: 1px dotted #555; border-bottom: 1px dotted #555; padding:20px 20px 20px 0;}
+			        
+			@import url(http://fonts.googleapis.com/css?family=Oswald);
+        	.holder {width: 500px; height:500px; margin: inherit;}
+			img.logo{height: 70px;width: 225px; margin-top: -500px;margin-left: 138px}
+        	#layer-1 {-webkit-animation-name: spin;-webkit-animation-duration: 4000ms;-webkit-animation-iteration-count: infinite;-webkit-animation-timing-function: linear;-moz-animation-name: spin;-moz-animation-duration: 4000ms;-moz-animation-iteration-count: infinite;
+        	-moz-animation-timing-function: linear;-ms-animation-name: spin;-ms-animation-duration: 4000ms;-ms-animation-iteration-count: infinite;-ms-animation-timing-function: linear;
+			animation-name: spin;animation-duration: 4000ms;animation-iteration-count: infinite;animation-timing-function: linear;}
+        	@-ms-keyframes spin {
+            from { -ms-transform: rotate(0deg); }
+            to { -ms-transform: rotate(360deg); }
+        	}
+        	@-moz-keyframes spin {
+            from { -moz-transform: rotate(0deg); }
+            to { -moz-transform: rotate(360deg); }
+        	}
+        	@-webkit-keyframes spin {
+            from { -webkit-transform: rotate(0deg); }
+            to { -webkit-transform: rotate(360deg); }
+       		}
+        	@keyframes spin {
+            from {
+                transform:rotate(0deg);
+            }
+            to {
+                transform:rotate(360deg);
+            }
+        }
+        
+        .shape-4, .shape-5, .shape-6 {
+        }
+        .shape-1, .shape-4 {
+        opacity: 0.2;
+        }
+        .shape-2, .shape-5 {
+        opacity: 0.5;
+        }
+        .shape-3, .shape-6 {
+        opacity: 0.5;
+        }
+        h1 {
+        font-family: 'Oswald', sans-serif;
+        font-weight: 400;
+        font-size: 46px;
+        letter-spacing: -3.5px;
+        color: #434343;
+        position: absolute;
+        top:36%;
+        left:28%;
+        }
+        h1 span {
+        color: #532d7e;
+        }
+        /* Smartphones (portrait and landscape) ----------- */
+		@media only screen
+		and (min-device-width : 320px) 
+		and (max-device-width : 480px) {
+			img.ex1{width: 250px;height: 250px;}
+			body{background-repeat:initial;}
+			.vertical-center {min-height: 100%; 
+				min-height: 100vh; /* These two lines are counted as one :-)
+				display: flex;
+				align-items: center;}
+			}'
+		/**/
+		}
+ 
+		/* Smartphones (landscape) ----------- */
+		@media only screen
+		and (min-width : 321px) {
+            body{background-repeat:initial;}
+			.vertical-center {min-height: 100%; 
+				min-height: 100vh; /* These two lines are counted as one :-)
+				display: flex;
+				align-items: center;}
+			}
+			.chart{width: 300px; height: 200px; border-left: 1px dotted #555; border-bottom: 1px dotted #555; padding:20px 20px 20px 0;}
+		/* Styles */
+		}
+ 
+		/* Smartphones (portrait) ----------- */
+		@media only screen
+		and (max-width : 320px) {
+            body{background-repeat:initial;}
+			.holder {width: 500px; height:500px; margin: inherit; margin-left:-50px}  /* Fallback for browsers do NOT support vh unit */
+			.vertical-center {min-height: 100%; 
+				min-height: 100vh; /* These two lines are counted as one :-)
+				display: flex;
+				align-items: center;}
+			}
+			.chart{width: 300px; height: 200px; border-left: 1px dotted #555; border-bottom: 1px dotted #555; padding:20px 20px 20px 0;}
+		/* Styles */
+		}
+		 
+		/* iPads (portrait and landscape) ----------- */
+		@media only screen
+		and (min-device-width : 768px) 
+		and (max-device-width : 1024px) {
+            body{background-repeat:initial;}
+			img.ex1{width: 500px;height: 500px;}
+			img.savisDemo{width: 500px;height: 500px;}
+		/* Styles */
+		}
+		</style>
+	</head>
+	<body>
+		<br>
+		<h2 class="text-center">Contact</h2>
+		<div class="container-fluid">
+				<ul class="nav nav-tabs nav-fill" role="tablist"> <!--Toogleable tabs, uses jquery and bootstrap-->
+					<li class="nav-item">
+						<a class="nav-link" href="index.html">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="projects.html">Projects</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="Classes.html">Classes</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="Activities.html">Activities</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active"href="Contact.html">Contact</a>
+					</li>
+				</ul>
+				<br>
+                <div class="container-fluid">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <b>Email:</b> ryanbartoli707@gmail.com
+                            </li>
+                            <li class="list-group-item">
+                                <b>Phone:</b> 707-639-0159
+                            </li>
+                            <li class="list-group-item">
+                                <b>Linkedin:</b> <a href= "https://www.linkedin.com/in/ryan-bartoli/">https://www.linkedin.com/in/ryan-bartoli/</a>
+                            </li>
+                        </ul>
+                </div>
+				</div>
+				<footer class="ex1">
+					<div class="container-fluid text-center text-md-left">
+			
+					</div>
+				  </footer>
+			</div>
+		</div>
+	</body>
+	</html>
+
