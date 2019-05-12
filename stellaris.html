@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css" />	
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">		
+		<link rel='icon' href='favicon.ico' type='image/x-icon'/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!---This enables the tab nav bar to work-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			window.onload = function () {
+				var chart = new CanvasJS.Chart("chartContainer",
+				{
+					title:{
+						text: "Galactic Sales per Unit Capita"
+					},
+					legend: {
+						maxWidth: 350,
+						itemWidth: 150
+					},
+					data: [
+					{
+						type: "pie",
+						showInLegend: true,
+						legendText: "{indexLabel}",
+						dataPoints: [
+							{ y: 4303364, indexLabel: "Interns" },
+							{ y: 2175498, indexLabel: "Humans" },
+							{ y: 300012, indexLabel: "Orcs" },
+							{ y: 1440012, indexLabel: "Space Elves"},
+							{ y: 378132, indexLabel: "Riki Ticki" },
+							{ y: 240764, indexLabel: "Gnomes"},
+							{ y: 1717786, indexLabel: "Fallen Empires"}
+						]
+					}
+					]
+				});
+				chart.render();
+			}
+			</script>
+		<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+		<style>
+			p.ex3{border: 1px solid green;padding: 35px 20px 50px 20px;} 
+			h1{text-align: center; margin: 15px; color:white;}
+			h1.executive{text-align: center; margin: 15px; color:goldenrod;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+			h2{color:black;}
+			h2.ex1{color:white;}
+			h5{color:black;}
+			h5.ex1{margin: 15px;}
+			h5.ex2{color:black;}
+			h5.inProgress{color: red;}
+			p{margin: 5px;}
+			p.proof{color:white;}
+			body{background-image: url("stellaris/bgPoly.png"); background-repeat:no-repeat; background-size:cover; background-color:lightpink;}
+			a.nav-link :active{background: white;}
+			ul.nav-tabs .nav-link {background: grey; border-color:white; border-style:double;color: white;}
+			td{font-weight: bold;color:white;}
+			img.icon{width: 50px;height:50px;margin: 5px;}
+			img.miniIcon{width: 25px;height: 25px;margin: 5px;}
+			iframe.ex1{padding: 5px 5px 5px 5px;margin: 5px;}
+			.chart{width: 500px; height: 200px; border-left: 1px dotted #555; border-bottom: 1px dotted #555; padding:20px 20px 20px 0;}
+			        
+			@import url(http://fonts.googleapis.com/css?family=Oswald);
+        	.holder {width: 500px; height:500px; margin: inherit;}
+			img.logo{height: 70px;width: 225px; margin-top: -500px;margin-left: 138px}
+        	#layer-1 {-webkit-animation-name: spin;-webkit-animation-duration: 4000ms;-webkit-animation-iteration-count: infinite;-webkit-animation-timing-function: linear;-moz-animation-name: spin;-moz-animation-duration: 4000ms;-moz-animation-iteration-count: infinite;
+        	-moz-animation-timing-function: linear;-ms-animation-name: spin;-ms-animation-duration: 4000ms;-ms-animation-iteration-count: infinite;-ms-animation-timing-function: linear;
+			animation-name: spin;animation-duration: 4000ms;animation-iteration-count: infinite;animation-timing-function: linear;}
+        	@-ms-keyframes spin {
+            from { -ms-transform: rotate(0deg); }
+            to { -ms-transform: rotate(360deg); }
+        	}
+        	@-moz-keyframes spin {
+            from { -moz-transform: rotate(0deg); }
+            to { -moz-transform: rotate(360deg); }
+        	}
+        	@-webkit-keyframes spin {
+            from { -webkit-transform: rotate(0deg); }
+            to { -webkit-transform: rotate(360deg); }
+       		}
+        	@keyframes spin {
+            from {
+                transform:rotate(0deg);
+            }
+            to {
+                transform:rotate(360deg);
+            }
+        }
+        
+        .shape-4, .shape-5, .shape-6 {
+        }
+        .shape-1, .shape-4 {
+        opacity: 0.2;
+        }
+        .shape-2, .shape-5 {
+        opacity: 0.5;
+        }
+        .shape-3, .shape-6 {
+        opacity: 0.5;
+        }
+        h1 {
+        font-family: 'Oswald', sans-serif;
+        font-weight: 400;
+        font-size: 46px;
+        letter-spacing: -3.5px;
+        color: #434343;
+        position: absolute;
+        top:36%;
+        left:28%;
+        }
+        h1 span {
+        color: #532d7e;
+        }
+		
+		/* Smartphones (portrait and landscape) ----------- */
+		@media only screen
+		and (min-device-width : 320px) 
+		and (max-device-width : 480px) {
+			.holder {width: 500px; height:500px; margin: inherit; margin-left:-50px}  /* Fallback for browsers do NOT support vh unit */
+			.vertical-center {min-height: 100%; 
+				min-height: 100vh; /* These two lines are counted as one :-)
+				display: flex;
+				align-items: center;}
+			}
+			.chart{width: 300px; height: 200px; border-left: 2px dotted #555; border-bottom: 1px dotted #555; padding:20px 20px 20px 0;}
+		}
+ 
+		/* Smartphones (landscape) ----------- */
+		@media only screen
+		and (min-width : 321px) {
+					.holder {width: 500px; height:500px; margin: inherit; margin-left:-50px}  /* Fallback for browsers do NOT support vh unit */
+			.vertical-center {min-height: 100%; 
+				min-height: 100vh; /* These two lines are counted as one :-)
+				display: flex;
+				align-items: center;}
+			}
+			.chart{width: 300px; height: 200px; border-left: 1px dotted #555; border-bottom: 1px dotted #555; padding:20px 20px 20px 0;}
+		/* Styles */
+		}
+ 
+		/* Smartphones (portrait) ----------- */
+		@media only screen
+		and (max-width : 320px) {
+					.holder {width: 500px; height:500px; margin: inherit; margin-left:-50px}  /* Fallback for browsers do NOT support vh unit */
+			.vertical-center {min-height: 100%; 
+				min-height: 100vh; /* These two lines are counted as one :-)
+				display: flex;
+				align-items: center;}
+			}
+			.chart{width: 300px; height: 200px; border-left: 1px dotted #555; border-bottom: 1px dotted #555; padding:20px 20px 20px 0;}
+		/* Styles */
+		}
+		 
+		/* iPads (portrait and landscape) ----------- */
+		@media only screen
+		and (min-device-width : 768px) 
+		and (max-device-width : 1024px) {
+		/* Styles */
+		}
+}
+		
+		</style>
+		
+	</head>
+	<body>
+		<div class="container-fluid">
+		<!--NAV BAR-->
+			<div class="holder">
+							<svg version="1.1" id="layer-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">   
+							   <defs>
+								   <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+									   <stop offset="50%" stop-color="#198f93"/>
+									   <stop offset="100%" stop-color="#198f93" stop-opacity="0" />
+								   </linearGradient>
+								   <linearGradient id="grad2" x1="100%" y1="0%" x2="0%" y2="100%">
+									   <stop offset="50%" stop-color="#37c9be"/>
+									   <stop offset="100%" stop-color="#37c9be" stop-opacity="0" />
+								   </linearGradient>
+								   <linearGradient id="grad3" x1="100%" y1="100%" x2="0%" y2="0%">
+									   <stop offset="50%" stop-color="#73f2dd"/>
+									   <stop offset="100%" stop-color="#73f2dd" stop-opacity="0" />
+								   </linearGradient>
+							   </defs>
+						   
+						   <path class="shape-1" fill="url(#grad1)" d="M237.773,56.673c-98.48,0-178.314,79.834-178.314,178.315c0,98.48,79.834,178.314,178.314,178.314
+							   c98.481,0,178.314-79.834,178.314-178.314C416.088,136.507,336.255,56.673,237.773,56.673z M237.774,384.817
+							   c-82.749,0-149.829-67.079-149.829-149.829c0-82.75,67.081-149.831,149.829-149.831c82.751,0,149.828,67.082,149.828,149.831
+							   C387.603,317.738,320.525,384.817,237.774,384.817z"/>
+						   <path class="shape-2" fill="url(#grad2)" d="M247.303,76.867c-98.481,0-178.315,79.834-178.315,178.317
+							   c0,98.479,79.834,178.314,178.315,178.314c98.481,0,178.314-79.836,178.314-178.314C425.617,156.701,345.784,76.867,247.303,76.867z
+								M247.304,405.013c-82.749,0-149.83-67.08-149.83-149.829c0-82.751,67.081-149.833,149.83-149.833s149.828,67.081,149.828,149.833
+							   C397.132,337.933,330.053,405.013,247.304,405.013z"/>
+						   <path class="shape-3" fill="url(#grad3)" d="M262.227,56.672c-98.48,0-178.314,79.834-178.314,178.315
+							   c0,98.48,79.834,178.315,178.314,178.315c98.481,0,178.314-79.835,178.314-178.315C440.541,136.506,360.708,56.672,262.227,56.672z
+								M262.227,384.817c-82.748,0-149.829-67.079-149.829-149.83c0-82.75,67.081-149.831,149.829-149.831
+							   c82.752,0,149.829,67.082,149.829,149.831C412.056,317.738,344.979,384.817,262.227,384.817z"/>
+						   <path class="shape-4" fill="url(#grad1)" d="M264.227,438.497c98.48,0,178.314-79.834,178.314-178.315c0-98.48-79.834-178.314-178.314-178.314
+							   c-98.481,0-178.314,79.834-178.314,178.314C85.912,358.663,165.745,438.497,264.227,438.497z M264.226,110.353
+							   c82.749,0,149.829,67.079,149.829,149.829s-67.08,149.831-149.829,149.831c-82.751,0-149.828-67.082-149.828-149.831
+							   C114.397,177.432,181.475,110.353,264.226,110.353z"/>
+						   <path class="shape-5" fill="url(#grad2)" d="M252.697,421.303c98.48,0,178.314-79.834,178.315-178.316
+							   c0-98.479-79.834-178.314-178.315-178.314S74.383,144.508,74.383,242.986C74.383,341.469,154.216,421.303,252.697,421.303z
+								M252.696,93.157c82.749,0,149.83,67.08,149.83,149.829c0,82.752-67.081,149.832-149.83,149.832s-149.828-67.081-149.828-149.832
+							   C102.868,160.237,169.947,93.157,252.696,93.157z"/>
+						   <path class="shape-6" fill="url(#grad3)" d="M232.773,438.498c98.48,0,178.314-79.834,178.314-178.315
+							   c0-98.48-79.834-178.315-178.314-178.315c-98.481,0-178.314,79.835-178.314,178.315C54.459,358.664,134.292,438.498,232.773,438.498
+							   z M232.773,110.353c82.748,0,149.829,67.079,149.829,149.83c-0.001,82.749-67.081,149.831-149.829,149.831
+							   c-82.752,0-149.829-67.082-149.829-149.831C82.944,177.432,150.021,110.353,232.773,110.353z"/>
+						   </svg>
+						   <img class="logo" src="logo.png"/>
+		</div>
+			<div class="container-fluid"> <!--Contains all the tabs-->
+				<div class="container tab-pane active" id="home"> <!--Identified as a tab and has a lookup id-->
+					<h2 class="ex1 text-center">Investing in capital ventures on the galactic market</h2>
+					<div class="container-fluid" id="Megacorp">
+							<div class="row-fluid"> <!--Row 1-->
+								<div class="col-12"> <!--Presentation-->
+									<div class="jumbotron vertical-center">
+										<h4 class="text-center">The MEGACORP Project</h4>
+										<p class="text-center"><i>To invest in the future we must become the future of global capitalism." -Chairman Bargos</i></p>
+										<h5 class="ex2">MEGACORP</h5>
+										<p>MEGACORP was created by the Interns Corperation to holisticly maximize next-generation partnerships to efficiently maintain cloud-centric resources and intrinsically target cloud-centric fungibility. 
+										</p>
+										<h5 class="ex2">The Biz</h5>
+										<img src="stellaris/government/megacorp.png" alt="Random board" />	
+										<p class="ex1">Here at the Interns Corperation we dynamically implement team building methodologies through the use of energistically mesh 24/365 systems. Of course this means we must assertively scale client-centric niches which perfectly alligns with our policies of completely conceptualize standards compliant outsourcing.</p>
+																	
+										<h5 class="ex2">Franchising</h5>
+										<img src="stellaris/government/franchising.png" alt="Random board" />	
+										<p class="ex1">Through the use of rapidiously administrate distributed supply chains we are able to expand our brand across the galaxy.
+											Continually repurpose cutting-edge ROI, we are able to meet the demands of millions of species and maximize profits.
+										</p>	
+										<h5 class="ex2">Brand Loyalty</h5>
+										<img src="stellaris/government/brand_loyalty.png" alt="Random board" />	
+										<p class="ex1">To keep brand loyalty we collaboratively whiteboard installed base clouds and conveniently engage 24/7 paradigms to ensure customer satisfaction.
+											These ventures are further expanded by the use of phosfluorescently e-enable 24/365 outsourcing and objectively grow fully researched information.
+										</p>	
+										<h5 class="ex2">Free Traders</h5>
+										<img src="stellaris/government/free_traders.png" alt="Random board" />	
+										<p class="ex1">To enable other species to do business with our corperation, we efficiently plagiarize cutting-edge data to quickly target functional information. By doing this, we ensure the best data reaches our associates and the best product reaches our customers.</p>
+									</div>
+								</div>
+							</div>
+					</div>
+
+					<div class="container-fluid" id="Capital"> <!--CAPITAL-->
+						<div class="container text-center">
+							<h2 class="ex1">Proof of concept</h2>
+							<svg viewBox="0 0 500 100" class="chart">
+										<polyline
+										   fill="none"
+										   stroke="#0074d9"
+										   stroke-width="3"
+										   points="
+											 00,120
+											 20,60
+											 40,80
+											 60,20
+											 80,80
+											 100,80
+											 120,60
+											 140,100
+											 160,90
+											 180,80
+											 200, 110
+											 220, 10
+											 240, 70
+											 260, 100
+											 280, 100
+											 300, 40
+											 320, 0
+											 340, 100
+											 360, 100
+											 380, 120
+											 400, 60
+											 420, 70
+											 440, 50
+											 440, 30
+											 460, 10
+											 490, 5
+										   "
+										 />
+										 <polyline
+										 fill="none"
+										 stroke="#ff0000"
+										 stroke-width="1"
+										 points="
+										 	  0,70
+											 30,25
+											 50,40
+											 60,80
+											 70,70
+											 80,60
+											 90,80
+											 100,100
+											 110,120
+											 120,140
+											 130,160
+										 " 
+									   />
+									   <polyline
+									   fill="none"
+									   stroke="#800080"
+									   stroke-width="1"
+									   points="
+											 0,05
+										   30,40
+										   50,10
+										   60,80
+										   70,70
+										   80,300
+									   " 
+									 />
+									   <polyline
+									   fill="none"
+									   stroke="#00ff00"
+									   stroke-width="1"
+									   points="
+									   		0,12
+										   46,60
+										   67,89
+										   90,100
+										   95,130
+										   200,100
+										   310,120
+										   440,120
+										   530,110
+									   " 
+									 />
+									 <polyline
+									 fill="none"
+									 stroke="#008080"
+									 stroke-width="1"
+									 points="
+									     0,32
+										 56,32
+										 67,50
+										 70,143
+										 95,130
+										 134,70
+										 178,50
+										 510,160
+									 " 
+								   />
+								   <polyline
+								   fill="none"
+								   stroke="#FFA500"
+								   stroke-width="1"
+								   points="
+									   0,32
+									   56,32
+									   67,50
+									   70,143
+									   95,130
+									   134,70
+									   200,130
+									   300,80
+									   400,30
+									   510,160
+									   510,160
+								   " 
+								 />
+							</svg>
+							<p class="proof"><i>Through the process of disintermediate scalable models, <font color="0074d9 ">Interns Inc.</font> has been able to beat <font color="red">competitors</font> to market.
+							<br>Due to this being made by a un-paid intern, the scale is quite literally off the charts.
+							<br>All market data displayed above approved by Intern Inc.
+
+							
+							</i></p>	
+						</div>								
+				</div>
+
+					<div class="container-fluid" id="Species">
+						<div class="row-fluid"> <!--Row 1-->
+							<div class="col-12"> <!--Presentation-->
+								<div class="jumbotron vertical-center">
+									<h3 class="text-center">The Interns</h3>
+									<p class="text-center"><i>To bring profits that reach the stars, we must invest in the ground beneth us, with the people who power this company." -Chairman Bargos</i></p>
+									<h4>The Intern</h4>
+									<p>As part of perfectly legal mandate, our interns are homegrown to account for shifting market demands and monotonectally maintain innovative ideas. 
+										From birth they can professionally develop e-business methodologies and dramatically administrate interoperable scenarios.
+										Born to optimize 110% of a planet's infustructure, they make great canadiates for coloniests and future entrepreneurs.
+									</p>
+									<div class="row-fluid">
+													<img class="ex1 img-fluid" src="stellaris/species/race.png" alt="Random board"/>	
+													<p><i>Layout of their genetic code<br>
+														<img class="ex1 img-fluid" src="stellaris/species/Intelligent.png" alt="Random board"/>	
+														Intelligence to appropriately orchestrate intuitive leadership skills.<br>
+														<img class="ex1 img-fluid" src="stellaris/species/Thrifty.png" alt="Random board"/>	
+														Thrifty to distinctively enabling client-centric processes.<br>	
+														<img class="ex1 img-fluid" src="stellaris/species/Ingenious.png" alt="Random board"/>
+														Ingenious to continually cultivate robust materials.
+													</i></p>
+													<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+													<p><i>As you can see, Interns out perform in sales across the board.
+													</i></p>
+													<img class="icon" src="stellaris/species/human.png" alt="Random board"/>
+													<img class="icon" src="stellaris/species/human.png" alt="Random board"/> 
+													<b>Per</b>
+													<img class="icon" src="stellaris/species/race.png" alt="Random board"/>
+													<p class="ex1"><i>It takes 2 humans to compete with the salemanship of the Intern.</i></p>
+
+													<img class="icon" src="stellaris/species/SpaceElf.png" alt="Random board"/>
+													<img class="icon" src="stellaris/species/SpaceElf.png" alt="Random board"/>
+													<img class="icon" src="stellaris/species/SpaceElf.png" alt="Random board"/>		
+													<b>Per</b>
+													<img class="icon" src="stellaris/species/race.png" alt="Random board"/>
+													<p class="ex1"><i>It takes 3 Space Elves to compete with the salemanship of the Intern.</i></p>
+
+													<img class="miniIcon" src="stellaris/species/Gnome.png" alt="Random board"/>
+													<img class="miniIcon" src="stellaris/species/Gnome.png" alt="Random board"/>
+													<img class="miniIcon" src="stellaris/species/Gnome.png" alt="Random board"/>
+													<img class="miniIcon" src="stellaris/species/Gnome.png" alt="Random board"/>
+													<img class="miniIcon" src="stellaris/species/Gnome.png" alt="Random board"/>
+													<img class="miniIcon" src="stellaris/species/Gnome.png" alt="Random board"/>
+													<img class="miniIcon" src="stellaris/species/Gnome.png" alt="Random board"/>
+													<img class="miniIcon" src="stellaris/species/Gnome.png" alt="Random board"/>
+													<img class="miniIcon" src="stellaris/species/Gnome.png" alt="Random board"/>
+													<img class="miniIcon" src="stellaris/species/Gnome.png" alt="Random board"/>
+													<img class="miniIcon" src="stellaris/species/Gnome.png" alt="Random board"/>
+													<img class="miniIcon" src="stellaris/species/Gnome.png" alt="Random board"/>
+													<img class="miniIcon" src="stellaris/species/Gnome.png" alt="Random board"/>
+													<img class="miniIcon" src="stellaris/species/Gnome.png" alt="Random board"/>
+													<img class="miniIcon" src="stellaris/species/Gnome.png" alt="Random board"/>
+													<img class="miniIcon" src="stellaris/species/Gnome.png" alt="Random board"/>
+													<img class="miniIcon" src="stellaris/species/Gnome.png" alt="Random board"/>
+													<img class="miniIcon" src="stellaris/species/Gnome.png" alt="Random board"/>
+													<b>Per</b>
+													<img class="icon" src="stellaris/species/race.png" alt="Random board"/>
+													<p class="ex1"><i>It takes an outstanding 18 Gnomes to compete with the salemanship of the Intern.<br>Clearly they weren't cut out for business.</i></p>
+									</div>
+									</div>
+								</div>
+							</div>
+						</div>
+				</div>
+				<footer class="ex1">
+					<div class="container-fluid text-center text-md-left">
+			
+					</div>
+				  </footer>
+			</div>
+		</div>
+	</body>
+	</html>
+

@@ -9,201 +9,165 @@
 		<link rel='icon' href='favicon.ico' type='image/x-icon'/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!---This enables the tab nav bar to work-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>		
-
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 		<style>
 			p.ex1{padding: 15px;}
 			p.ex2{margin: 15px;}
 			p.ex3{border: 1px solid green;padding: 35px 20px 50px 20px;} 
-			h1{text-align: center; margin: 15px;}
+			p.jumbo{font-family: 'Times New Roman', Times, serif;font-size: 20;color:black;}
+			h1{text-align: center; margin: 15px; color:white;}
+			h1.executive{text-align: center; margin: 15px; color:goldenrod;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+			h2{color:black;}
+			h2.ex1{color:white;}
+			h5{color:black;}
 			h5.ex1{margin: 15px;}
-			h5.inProgress{color: red}
+			h5.ex2{color:black;}
+			h5.inProgress{color: red;}
 			div.row{padding: 15px 20px 20px 20px;}
 			div.col-4{padding: 15px 20px 20px 20px;}
 			div.col-8{padding: 15px 20px 20px 20px;}
 			footer.ex1{padding: 15px 20px 20px 20px;}
+			p.proof{color:white;}
 			body{background-image: url("bgPoly.png"); background-repeat:no-repeat; background-size:cover; background-color:lightpink;}
 			a.nav-link :active{background: white;}
-			ul.nav-tabs .nav-link {background: pink; border-color:white; border-style:double;color: white;}
+			ul.nav-tabs .nav-link {background: grey; border-color:white; border-style:double;color: white;}
 			td{font-weight: bold;color:white;}
-			img.ex1{padding: 15px 20px 20px 20px;}
-			iframe.ex1{padding: 15px}
-			iframe#outrun {
-			width: 100vw;
-			height: 100vh;
-			position: fixed;
-			top: 0;
-			left: 0;
-			zIndex: -99;
-}
+			img.ex1{width:450px;height:450px;padding: 15px 20px 20px 20px;}
+			img.icon{width: 50px;height:50px;}
+			img.miniIcon{width: 25px;height: 25px;}
+			iframe.ex1{width:450px;height:450px;padding: 15px;}
+			.chart{width: 500px; height: 200px; border-left: 1px dotted #555; border-bottom: 1px dotted #555; padding:20px 20px 20px 0;}
+			        
+			@import url(http://fonts.googleapis.com/css?family=Oswald);
+        	.holder {width: 500px; height:500px; margin: inherit;}
+			img.logo{height: 70px;width: 225px; margin-top: -500px;margin-left: 138px}
+        	#layer-1 {-webkit-animation-name: spin;-webkit-animation-duration: 4000ms;-webkit-animation-iteration-count: infinite;-webkit-animation-timing-function: linear;-moz-animation-name: spin;-moz-animation-duration: 4000ms;-moz-animation-iteration-count: infinite;
+        	-moz-animation-timing-function: linear;-ms-animation-name: spin;-ms-animation-duration: 4000ms;-ms-animation-iteration-count: infinite;-ms-animation-timing-function: linear;
+			animation-name: spin;animation-duration: 4000ms;animation-iteration-count: infinite;animation-timing-function: linear;}
+        	@-ms-keyframes spin {
+            from { -ms-transform: rotate(0deg); }
+            to { -ms-transform: rotate(360deg); }
+        	}
+        	@-moz-keyframes spin {
+            from { -moz-transform: rotate(0deg); }
+            to { -moz-transform: rotate(360deg); }
+        	}
+        	@-webkit-keyframes spin {
+            from { -webkit-transform: rotate(0deg); }
+            to { -webkit-transform: rotate(360deg); }
+       		}
+        	@keyframes spin {
+            from {
+                transform:rotate(0deg);
+            }
+            to {
+                transform:rotate(360deg);
+            }
+        }
+        
+        .shape-4, .shape-5, .shape-6 {
+        }
+        .shape-1, .shape-4 {
+        opacity: 0.2;
+        }
+        .shape-2, .shape-5 {
+        opacity: 0.5;
+        }
+        .shape-3, .shape-6 {
+        opacity: 0.5;
+        }
+        h1 {
+        font-family: 'Oswald', sans-serif;
+        font-weight: 400;
+        font-size: 46px;
+        letter-spacing: -3.5px;
+        color: #434343;
+        position: absolute;
+        top:36%;
+        left:28%;
+        }
+        h1 span {
+        color: #532d7e;
+        }
 		</style>
 	</head>
-
 	<body>
-		<div class="container">
-		<!--NAV BAR-->
-		<h2>Ryan Bartoli</h2>
 		<br>
-		<ul class="nav nav-tabs nav-fill" role="tablist"> <!--Toogleable tabs, uses jquery and bootstrap-->
-			<li class="nav-item">
-				<a class="nav-link active" data-toggle="tab" href="#home">Home</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" data-toggle="tab" href="#projects">Projects</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" data-toggle="tab" href="#classes">Classes</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" data-toggle="tab" href="#activities">Activities</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" data-toggle="tab" href="#contact">Contact</a>
-			</li>
-		</ul>
-			<div class="tab-content"> <!--Contains all the tabs-->
-				<div class="container tab-pane active" id="home"> <!--Identified as a tab and has a lookup id-->
-						<div class="container">	
-								<h1>Me</h1>
-								<div class="row"> <!--Row 1-->
-									<div class="col-4"> <!--Me-->
-										<h5>Who I am</h5>
-										<div class="text-center">
-											<img src="portrait.png" class="img-thumbnail" alt="Rando">
-										</div>
-										<p class="ex2">This nerd</p>
-									</div>
-									<div class="col-4"> <!--Study-->
-										<h5>What I study</h5>
-										<ul class="list-group">
-												<li class="list-group-item">
-													<p class="ex2">Graduating Fall 2019 with a major in <b>Computer Science</b> from California State University, Sacramento</p>
-												</li>
-												<li class="list-group-item">
-													<p class="ex2">Working towards a certificate in <b>Game Development</b> and <b>System Software</b></p>
-													<a href="stellaris.html">Hobby</a>
-													<a href="projects.html">Projects</a>
-												</li>
-										</ul>
-									</div>
-									<div class="col-4"> <!--Interests-->
-										<h5>What I am interested in</h5>	
-										<ul class="list-group">
-												<li class="list-group-item">
-														<p class="ex2">Solving problems.</p>
-													</li>
-												<li class="list-group-item">
-													<p class="ex2">Developing computer render systems for video games.</p>
-												</li>
-												<li class="list-group-item">
-													<p class="ex2">Designing game mechanics and building play scenarios.</p>
-												</li>
-												<li class="list-group-item">
-													<p class="ex2">Taking ideas and implementing them though a programming lense.</p>
-												</li>
-										</ul>
-									</div>
-								</div>
-						</div>
-				</div>
-				<div class="container tab-pane fade" id="projects">
-						<div class="container">
-								<h1>Projects</h1>
-								<h5>Coming soon TM</h5>
-								<ul class="nav nav-tabs nav-fill"> <!--Toogleable tabs, uses jquery and bootstrap-->
-									<li class="nav-item">
-										<a class="nav-link active" data-toggle="tab" href="#project1">Project 1</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" data-toggle="tab" href="#project2">Project 2</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" data-toggle="tab" href="#project3">Project 3</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" data-toggle="tab" href="#project4">Project 4</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" data-toggle="tab" href="#project5">Project 5</a>
-									</li>
-								</ul>
+		<h2 class="text-center">Projects</h2>
+		<div class="container">
+				<div class="container">
+					<ul class="nav nav-tabs nav-fill"> <!--Toogleable tabs, uses jquery and bootstrap-->
+						<li class="nav-item">
+						<a class="nav-link active" data-toggle="tab" href="#project1">SAVIS</a>
+						</li>
+						<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#project2">Cooper MinMax AI</a>
+						</li>
+						<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#project3">Mister Worldwide Game Engine</a>
+						</li>
+						<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#project4">SPEDE OS Project</a>
+						</li>
+						<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#project5">Neural Network</a>
+						</li>
+						</ul>
 								<div class="tab-content"> <!--Projects inner tabs-->
 									<div class="container tab-pane active" id="project1"> <!--Pr3-->
 										<div class="container">
-											<h1>Senior Project: SAVIS</h1>
 											<div class="row"> <!--Row 1-->
-												<div class="col-4"> <!--PRJ2-->
-													<div class="card">
-														<img class="card-img-top" src="cscProjects.png" alt="Random Name" style="width:100%" />
-														<div class="card-body">
-															<h5>Statistical concepts tackled in the program</h5>
-															<h5 class="inProgress">Work in progress</h2>
-															<h4>One Proportion</h4>
-																<p>In Progress.</p>
-															<h4>Two Proportion</h4>
-																<p>In progress</p>
-															<h4>One Mean</h4>
-																<p>In Progress</p>
-															<h4>Two Mean</h4>
-																<p>In Progress</p>
-															</div>
-													</div>												
-												</div>
-												<div class="col-8"> <!--Presentation-->
+												<div class="col-12"> <!--Presentation-->
 													<div class="jumbotron">
-															<h4 class="text-center">The Project</h4>
+															<h4 class="text-center">Senior Project: SAVIS</h4>
 															<h5>SAVIS</h5>
 																<p>SAVIS was created by Team TBD as a Computer Science senior project project to provide a statistical visualization tool to teach test of
 																	hypothesis through resampling techniques in introductory statistics courses. The analysis capabilities of this tool would include the construction of confidence intervals for one and two means and for one and two proportions using bootstrapping techniques, and also using classical statistical theory; regression analysis; and one and two-way ANOVA.
 																	</p>
-																<p><b>S:</b>tatistical</p>
-																<p><b>A:</b>nalysis</p>
-																<p><b>V:</b>isualizations</p>
-																<p><b>I:</b>ntroductory</p>
-																<p><b>S:</b>tatistics</p>
-																<h5>General Layout</h5>
-																<img src="savisProject/savis1.png" alt="Random board" style="width:100%" />	
-																<p class="ex1">For this problem, limit the size of the TRAINING set to between 20 and 50
-																	training pairs.  You must also create a TESTING data set to see how well
-																	your trained network was able to GENERALIZE.  You should experiment to find
-																	settings that achieve the best results for training and generalization.</p>
+																<div class="row">
+																	<div class="col-2">
+																		<b>
+																			<p class="jumbo"><b>S</b>tatistical</p>
+																			<p class="jumbo"><b>A</b>nalysis</p>
+																			<p class="jumbo"><b>V</b>isualizations</p>
+																			<p class="jumbo"><b>I</b>ntroductory</p>
+																			<p class="jumbo"><b>S</b>tatistics</p>
+																		</b>
+																	</div>
+																	<div class="col-10 text-center">
+																		<img src="savisProject/SAVIS.png" alt="Random board"/>
+																		<p class="ex1">For this problem, limit the size of the TRAINING set to between 20 and 50
+																			training pairs.  You must also create a TESTING data set to see how well
+																			your trained network was able to GENERALIZE.  You should experiment to find
+																			settings that achieve the best results for training and generalization.</p>
+																	</div>
+																	<div class="col-10">
+																		<div class="row">
+																			<div class="col-6">
+																				
+																					<img src="savisProject/OneMean1.png" alt="Random board"/>
+																			</div>
+																			<div class="col-6">
+																				<h3>One Proportion</h3>
+																				  <p class="ex1">For this problem, limit the size of the TRAINING set to between 20 and 50
+																						training pairs.  You must also create a TESTING data set to see how well
+																						your trained network was able to GENERALIZE.  You should experiment to find
+																						settings that achieve the best results for training and generalization.</p>
+																			</div>
+																		</div>
+																	</div>
+																</div>																
 													</div>
 												</div>
 											</div>
 										</div>
-								</div>
+									</div>
 									<div class="container tab-pane fade" id="project2"> <!--Pr1-->
-											<div class="container">
-												<h1>Cooper MinMax AI (6th Place in AI contest)</h1>
+										<div class="container">					
 												<div class="row"> <!--Row 1-->
-													<div class="col-4"> <!--PRJ1-->
-															<div class="card">
-																	<img class="card-img-top" src="csc.png" alt="Random Name" style="width:100%" />
-																	<div class="card-body">
-																			<h5 class="text-center">Congress Chess</h5>
-																			<p class="ex2">"Congress Chess" is a chess-like game in which each player takes turns moving one
-																					of his/her pieces.  The board is 8x6, with the left four columns being the "left wing"
-																					and the right four columns being the "right wing".
-																			</p>
-																			<h5>Each player has:</h5>
-																			<ul class="list-group">
-																				<li class="list-group-item">2 kings, one in each wing.</li>
-																				<li class="list-group-item">6 pawns</li>
-																				<li class="list-group-item">4 politicians</li>
-																				<li class="list-group-item">If a politician is in the "left" wing, it becomes a <b>horse</b>.</li>
-																				<li class="list-group-item">If a politician is in the "right" wing, it becomes a <b>bishop</b>.</li>
-																			</ul>
-																			<ul class="list-group">
-																					<li class="list-group-item">A politician changes if it moves from one wing to another.</li>
-																					<li class="list-group-item">A politician that is in the first three rows (nearest its own kings) is a "junior".</li>
-																					<li class="list-group-item">A politician that is in the furthest three rows is a "senior".</li>
-																			</ul>
-																	</div>
-																</div>																			
-													</div>
-													<div class="col-8"> <!--Presentation-->
+													<div class="col-12"> <!--Presentation-->
 														<div class="jumbotron">
-															<h3 class="text-center">The Project</h3>
+															<h3 class="text-center">Cooper MinMax AI (6th Place in AI contest)</h3>
 																<p>A <b>C++</b> MinMax AI that can play special rule set of chess for a class AI tornument. 
 																	My program utilized the Min Max algorithm in addition to iterative deepening, alpha beta pruning, and a "Conserve Moves" heristic.</p>
 																<p><i>If you would like to play against Cooper, you can download <a href="./aiProject/cooper.exe">"Cooper"</a> here.
@@ -216,7 +180,7 @@
 																	We were allowed to develop our adversarial search in whichever coding language we wanted, as long as it implemented the Min Max algorithm and at least attempted to develop additional optimizations.
 																	When I submitted my project for the competition I dubbed it under the name Cooper.
 																</p>
-																<img class="ex1" src="aiProject/p1b.png" alt="Random board" style="width:100%" />	
+																<img class="ex1" src="aiProject/p1b.png" alt="Random board"/>	
 																<p><i>General Layout of the board.
 																		K,B,H,P are the computer's Kings, Bishops, Horses, and Pawns (moving DOWN the board).
 																		k,b,h,p are the human's Kings, Bishops, Horses, and Pawns (moving UP the board).
@@ -235,7 +199,7 @@
 																<p>During class sessions we discussed the concept of <b>iterative deepening</b> which enabled the MinMax program to utilize a global best score as a comparison tool to determine the program should go to a deeper depth for a better score. 
 																	Implementing iterative deepening to Cooper enabled it to use the global best score to reach deeper plys because it overall minimized the amount of nodes on the branches it had to check.
 																</p>
-																<img class="ex1" src="aiProject/aiIterativeDeepening.png" alt="Random board" style="width:100%" />	
+																<img class="ex1" src="aiProject/aiIterativeDeepening.png" alt="Random board" />	
 																<p><i>Above is a demonstration of how iterative deepening works with Cooper. 
 																	Integrated with a timer, up to a time limit Cooper can continue to look at deeper plys.
 																	As we get deeper into the game, moves are decided quicker which means deeper plys can be reached.
@@ -254,7 +218,7 @@
 																<p>One of the first things I noticed while playing was the dominating effect the politicalican units had on the game, because their flexibility to be used as a horse or a bishop in the right circumstances provide a lot of utility no other unit possessed. 
 																	To capitalize on this, I developed a heuristic with the strategy that provided higher score returns to Cooper for moves that preserved the political units while eliminating the opponent's.
 																</p>
-																<img class="ex1" src="aiProject/aiPoliticanMoves.png" alt="Random board" style="width:100%" />	
+																<img class="ex1" src="aiProject/aiPoliticanMoves.png" alt="Random board" />	
 																<p><i>Above is a demonstration of how many moves horses and bishops in this game could make in the first two turns of play.</i></p>
 																<p>Another thing I noticed when competing against other classmates was an aggressive design in their adversarial searches, looking to close out the games quickly by rushing to capture the kings or put them in deadlock positions. 
 																	To counter this, I decided to add score to moves that conserved my pieces in general as well as conserved moves. 
@@ -263,7 +227,7 @@
 																	This tactic allowed me to beat AI that had greater depth ply algorithms because while I wasn't searching deeper I was making better moves, and protected my board from being rushed down. 
 																	Often this would result in my AI forcing the opponent, who had not planned for a control game, to make moves to protect its units that ate at their remaining moves and ability to counter attack.
 																</p>
-																<img class="ex1" src="aiProject/aiHorseTriangleMove.png" alt="Random board" style="width:100%" />
+																<img class="ex1" src="aiProject/aiHorseTriangleMove.png" alt="Random board" />
 																<p><i>Above is a demonstration of a move I called the "Triangle Horse Move", which enabled a player to control the movement of the opponent's kings with three horses if not properly countered.
 																	Even though I did not implement additional optimizations like Killer Moves, which presaves game winning moves ahead of time, I added this to the heristic, giving the computer a small score bonus if they find a move that can perform this move.
 																	A full explanation of the move can be see down below.
@@ -272,8 +236,27 @@
 																	Its wins were enabled by the study of programming languages and utilizing that knowledge to implement their strengths further improved by selective optimization and effective use move selection heuristics.
 																</p>
 																<h5>Final scores at AI competition</h5>
-																<img class="ex1" src="aiProject/aiProjectScores.png" alt="Random board" style="width:100%" />	
+																<img class="ex1" src="aiProject/aiProjectScores.png" alt="Random board" />	
 																<h4 class="text-center">How the game plays:</h4>
+																<h5 class="text-center">Congress Chess</h5>
+																<p class="ex2">"Congress Chess" is a chess-like game in which each player takes turns moving one
+																		of his/her pieces.  The board is 8x6, with the left four columns being the "left wing"
+																		and the right four columns being the "right wing".
+																</p>
+																<h5>Each player has:</h5>
+																<ul class="list-group">
+																	<li class="list-group-item">2 kings, one in each wing.</li>
+																	<li class="list-group-item">6 pawns</li>
+																	<li class="list-group-item">4 politicians</li>
+																	<li class="list-group-item">If a politician is in the "left" wing, it becomes a <b>horse</b>.</li>
+																	<li class="list-group-item">If a politician is in the "right" wing, it becomes a <b>bishop</b>.</li>
+																</ul>
+																<ul class="list-group">
+																		<li class="list-group-item">A politician changes if it moves from one wing to another.</li>
+																		<li class="list-group-item">A politician that is in the first three rows (nearest its own kings) is a "junior".</li>
+																		<li class="list-group-item">A politician that is in the furthest three rows is a "senior".</li>
+																</ul>
+																<br>
 																<p>When the game boots up, you are given the choice of whether Cooper or the player will go first.</p>
 																<h5>General game loop</h5>
 																<p>When the player decides to go first they are provided a list of valid moves they can make and are prompted to make a move.
@@ -289,16 +272,17 @@
 																<p><i>If you would like to play against Cooper, you can download <a href="./aiProject/cooper.exe">"Cooper"</a> here.
 																	It will come in the form of a Windows executable which you may prefer run from a command window since the app closes at the end of the game.
 																</i></p>
-																<img class="ex1" src="aiProject/p1hF.png" alt="Random human" style="width:100%" />
+																<img class="ex1" src="aiProject/p1hF.png" alt="Random human" />
 																<p><i>The player goes first, provided a list of valid moves, and is prompted to make a move.</i></p>
-																<img class="ex1" src="aiProject/p1hF2.png" alt="Random human" style="width:100%" />
+																<img class="ex1" src="aiProject/p1hF2.png" alt="Random human" />
 																<p><i>After the player makes a move the board updates to reflect that move.</i></p>
 																<h5>Full Explanation of the Triangle Horse Move</h5>
-																<img class="ex1" src="aiProject/aiHorseTriangleMove.png" alt="Random board" style="width:100%" />
+																<img class="ex1" src="aiProject/aiHorseTriangleMove.png" alt="Random board" />
 																<p>The move begins with moving horses into C4 and C5, blocking the moves of a left king until a third horse, previously a bishop, moves to D4.
 																	As the keypin of the plan, the D4 horse is able to eliminate the last safe haven for the left king, while also enabling the blockage of E6 for the right king.
 																	Finally, When the left king is dealt with, the C4 horse can move to E5, become a bishop, and potientially eliminate the right king if the opponent hasn't moved their bishops yet.
 																</p>
+																
 														</div>
 													</div>
 												</div>
@@ -306,27 +290,17 @@
 									</div>
 									<div class="container tab-pane fade" id="project3"> <!--Pr2-->
 											<div class="container">
-												<h1>Mister Worldwide Game Engine Project</h1>
 												<div class="row"> <!--Row 1-->
-													<div class="col-4"> <!--PRJ2-->
-														<div class="card">
-															<img class="card-img-top" src="csc.png" alt="Random Name" style="width:100%" />
-															<div class="card-body">
-																<h5>Mister Worldwide Game Engine Project</a></h5>
-																	<p>For our Computer Game Architecture class, I was part of a team that was tasked with building upon a game engine in <b>Java in OpenGl</b> and designing a game with it.
-																		I participated the inclusion of <b>networked multiplayer</b>, design and animation of <b>external models</b> from scratch in <b>Blender</b>, and the <b>creation of tessilated terrain</b>, while taking full ownership 
-																		of designing the world and the activities a player can do. Thematically, Mister Worldwide is a 3D space themed adventure game where you play as a sent robot by a human colony to explore a new alien world. 
-																		There, the players collect the remains of the mysterious society to power an ancient space rocket. They must beware, however, that this ancient planet has ancient protector who does not take kindly to their artifacts being defiled.
-																	</p>
-															</div>
-														</div>												
-													</div>
-													<div class="col-8"> <!--Presentation-->
+													<div class="col-12"> <!--Presentation-->
 														<div class="jumbotron">
-																<h4 class="text-center">The Project</h4>
+																<h4 class="text-center">Mister Worldwide Game Engine Project</h4>
+																<p>For our Computer Game Architecture class, I was part of a team that was tasked with building upon a game engine in <b>Java in OpenGl</b> and designing a game with it.
+																	I participated the inclusion of <b>networked multiplayer</b>, design and animation of <b>external models</b> from scratch in <b>Blender</b>, and the <b>creation of tessilated terrain</b>, while taking full ownership 
+																	of designing the world and the activities a player can do. Thematically, Mister Worldwide is a 3D space themed adventure game where you play as a sent robot by a human colony to explore a new alien world. 
+																	There, the players collect the remains of the mysterious society to power an ancient space rocket. They must beware, however, that this ancient planet has ancient protector who does not take kindly to their artifacts being defiled.</p>
 																<p>A custom <b>Java</b> Game Engine that utlizes the OpenGL render, which includes each of the following features. </p>
 																	<h5>General Layout:</h5>
-																	<img src="gameEngineProject/p2b.png" alt="Random Name" style="width:100%" />
+																	<img class="ex1"src="gameEngineProject/p2b.png" alt="Random Name" />
 																<p class="ex1"><b>External models.</b> The game must include at least two custom-made models designed by you,
 																	Each person in the group must contribute at least one of those external models. Blender or
 																	Maya are recommended. Note that RAGE supports only “OBJ”.
@@ -375,30 +349,20 @@
 									</div>
 									<div class="container tab-pane fade" id="project4"> <!--Pr3-->
 											<div class="container">
-												<h1>Interprocess communication with built OS</h1>
 												<div class="row"> <!--Row 1-->
-													<div class="col-4"> <!--PRJ2-->
-														<div class="card">
-															<img class="card-img-top" src="csc.png" alt="Random Name" style="width:100%" />
-															<div class="card-body">
-																<h5>OS Pragmatics: Interprocess communication between multiple terminals</h5>
-																	<p>As part of my system software certificate pursuit, I took a class where the focus was building an operating system using <b>C</b> and <b>Assembly macros</b>. 
-																		One of our project milestones was to enable our OS to be able, if wired physically or virtually, to perform interprocess communication between several terminals.
-																		Working at a low level perspective a lot of common day debugging tools from IDEs were unavailable, requiring the use of the GDB debugging tool to display the call stack, set breakpoints, and print out variables to monitor their accuracy.
-																		The end result had several built queues passing messages between eachother, taken in as a string by the user and then processed as a char array by the computer, enqueuing and dequeuing chars one by one.
-																	</p>
-															</div>
-														</div>												
-													</div>
-													<div class="col-8"> <!--Presentation-->
+													<div class="col-12"> <!--Presentation-->
 														<div class="jumbotron">
-																<h4 class="text-center">The Project</h4>
+																<h4 class="text-center">OS Pragmatics: Interprocess communication between multiple terminals</h4>
+																<p>As part of my system software certificate pursuit, I took a class where the focus was building an operating system using <b>C</b> and <b>Assembly macros</b>. 
+																	One of our project milestones was to enable our OS to be able, if wired physically or virtually, to perform interprocess communication between several terminals.
+																	Working at a low level perspective a lot of common day debugging tools from IDEs were unavailable, requiring the use of the GDB debugging tool to display the call stack, set breakpoints, and print out variables to monitor their accuracy.
+																	The end result had several built queues passing messages between eachother, taken in as a string by the user and then processed as a char array by the computer, enqueuing and dequeuing chars one by one.</p>
 																<p>A multitasking Operating system made with <b>C & ASM macros</b> as well as a custom framework called SPEDE to abstract assembly intensive elements.</p>
 																<h5>General Layout:</h5>
-																<img class="ex1" src="osProject/osDesign.png" alt="Random Name" style="width:100%" />
+																<img class="ex1" src="osProject/osDesign.png" alt="Random Name"/>
 																<p class="ex1">The overall layout of the OS involves five major classes, with several prototype classes, and an k-entry.S file to get the whole thing started.</p>
 																<h5>Art Rendition:</h5>
-																<img class="ex1" src="osProject/os.png" alt="Random Name" style="width:100%" />
+																<img class="ex1" src="osProject/os.png" alt="Random Name"/>
 																<h5>Terminal I/O video</h5>
 																	
 																<p class="ex1">This is a video demonstrating the underlying features of the OS, using I/O ports we are able to read and write messages to terminals within the network.</p>
@@ -414,12 +378,10 @@
 									</div>
 									<div class="container tab-pane fade" id="project5"> <!--Pr3-->
 											<div class="container">
-												<h1>Neural Network training and testing</h1>
 												<div class="row"> <!--Row 1-->
-													<div class="col-4"> <!--PRJ2-->
-														<div class="card">
-															<img class="card-img-top" src="csc.png" alt="Random Name" style="width:100%" />
-															<div class="card-body">
+													<div class="col-12"> <!--Presentation-->
+														<div class="jumbotron">
+																<h4 class="text-center">Neural Network</h4>
 																<h5>Neural Network Concepts</h5>
 																<h4>Backpropagation</h4>
 																	<p>The most common neural network training method. The concept of supervised learning through the use of multiple layers of test checks and corrections.Inputs are adjusted by weights based on their success rate at matching testing data.</p>
@@ -434,12 +396,6 @@
 																<h4>Momentum</h4>
 																	<p>Ensures the training done is within the specified weight ranges via checking 
 																	if the normalized mew is within 0 and 1.<br>If(mew == 0), normal weight training.<br>If(mew > 0), portion of previous weight changes is added.<br>If(mew > 1), weight changes diverge and training fails.</p>
-															</div>
-														</div>												
-													</div>
-													<div class="col-8"> <!--Presentation-->
-														<div class="jumbotron">
-																<h4 class="text-center">The Project</h4>
 																<h5>Problem 1</h5>
 																	<p>Using the simple classical neural network code provided by your instructor,
 																		create a single training file for training a SINGLE neural network
@@ -481,258 +437,6 @@
 								</div>
 						</div>
 				</div>
-				<div class="container tab-pane fade" id="classes">
-						<div class="container">
-								<h1>Classes</h1>
-								<div class="row"> <!--Row 1-->
-										<div class="col-4"> <!--180-->
-											<div class="card">
-													<img class="card-img-top" src="csc.png" alt="Random Name" style="width:100%" />
-													<div class="card-body">
-														<h5>Artifical Intellegence</h5>
-														<p>Theory and implementation of a variety of techniques used to simulate intelligent behavior. 
-																Expert systems, fuzzy logic, neural networks, evolutionary computation, and two-player game-tree 
-																search will be covered in depth. Knowledge representation, pattern recognition, hybrid approaches, 
-																and handling uncertainty will also be discussed.</p>
-													</div>
-											</div>												
-										</div>
-										<div class="col-4"> <!--165-->
-											<div class="card">
-												<img class="card-img-top" src="csc.png" alt="Random Name" style="width:100%" />
-												<div class="card-body">
-													<h5>Computer Game Architecture and Implementation</h5>
-														<p>Theory and implementation of a variety of techniques used to simulate intelligent behavior. 
-																Expert systems, fuzzy logic, neural networks, evolutionary computation, and two-player game-tree 
-																search will be covered in depth. Knowledge representation, pattern recognition, hybrid approaches, 
-																and handling uncertainty will also be discussed.</p>
-												</div>
-											</div>												
-										</div>
-										<div class="col-4"> <!--159-->
-												<div class="card">
-													<img class="card-img-top" src="csc.png" alt="Random Name" style="width:100%" />
-													<div class="card-body">
-														<h5>Operating System Pragmatics</h5>
-															<p>Application of operating system principles to the design and implementation of a multitasking operating system. 
-																	Students will write an operating system for a computer platform. 
-																	Topics include: scheduling of processes, control and allocation of computer resources, and user interfacing.</p>
-													</div>
-												</div>												
-										</div>
-								</div>
-								<div class="row"> <!--Row 2-->
-									<div class="col-4"> <!--139-->
-										<div class="card">
-												<img class="card-img-top" src="csc2.png" alt="Random Name" style="width:100%" />
-												<div class="card-body">
-													<h5>Operating System Principles</h5>
-													<p>Concepts, principles, fundamental issues, organization and structure of contemporary operating systems. 
-															Topics include processes, threads, concurrency, scheduling, inter- process communication and synchronization, 
-															deadlock, real and virtual memory management, device management, file systems, network and distributed operating systems, 
-															security, and protection.</p>
-												</div>
-										</div>												
-									</div>
-									<div class="col-4"> <!--138-->
-										<div class="card">
-											<img class="card-img-top" src="csc2.png" alt="Random Name" style="width:100%" />
-											<div class="card-body">
-												<h5>Networking</h5>
-													<p>Overview of the fundamentals of computer networks and connections between networks, 
-															from the physical layer up through peer-to-peer communications at the application level. 
-															Lower layer characteristics including serial vs. parallel, capacity issues, high-speed connections, 
-															LAN framing and error handling. LAN vs. WAN characteristics, network architecture and the ISO network model. 
-															Internetworking components including LANs, repeaters, routers, bridges, and gateways. Internet addresses, 
-															TCP/IP, and the Domain Name System. Common Internet client/server application protocols including SMTP and FTP. 
-															Client/Server programming involving sockets. World Wide Web characteristics including CGI and HTTP protocol, 
-															Web pages, Web browsers, Web servers, and Applets. Introduction to advanced Web issues such as Web security, 
-															search engine operations, and Web database operations.</p>
-											</div>
-										</div>												
-									</div>
-									<div class="col-4"> <!--137-->
-											<div class="card">
-												<img class="card-img-top" src="csc2.png" alt="Random Name" style="width:100%" />
-												<div class="card-body">
-													<h5>Computer Organization</h5>
-														<p>Introduction to computer organization and architecture. 
-																Combinational devices, sequential and synchronized circuits, memory organization, 
-																CPU architecture and organization, bus structures, input/output, interrupts, DMA, 
-																memory hierarchy, introduction to instruction level parallelism, multithreading, and multiprocessing. 
-																Exposure to hardware security issues.</p>
-												</div>
-											</div>												
-									</div>
-								</div>
-								<div class="row"> <!--Row 3-->
-									<div class="col-4"> <!--135-->
-										<div class="card">
-												<img class="card-img-top" src="csc3.png" alt="Random Name" style="width:100%" />
-												<div class="card-body">
-													<h5>Computing Theory</h5>
-													<p>Introduction to computing theory with examples and applications. 
-															Automata and formal languages; regular expressions; 
-															deterministic and non-deterministic finite automata; 
-															pumping lemma for regular languages; push-down automata and context-free grammars; 
-															language recognition; parsing techniques including recursive descent; Turing machines; 
-															computable and non-computable functions. 
-															Design and implementation of selected features of programming languages. 
-															Functional and logic programming paradigms.</p>
-												</div>
-										</div>												
-									</div>
-									<div class="col-4"> <!--134-->
-										<div class="card">
-											<img class="card-img-top" src="csc3.png" alt="Random Name" style="width:100%" />
-											<div class="card-body">
-												<h5>Database Management Systems</h5>
-													<p>Entity-Relationship (ER) model; relational model; 
-															relational database design by ER-to-relational mapping; 
-															design of applications using database technology; 
-															SQL; schema definition, constraints, and queries; 
-															relational algebra; data normalization; 
-															access methods such as indexing and hash structures; 
-															introduction to transaction processing.</p>
-											</div>
-										</div>												
-									</div>
-									<div class="col-4"> <!--133-->
-											<div class="card">
-												<img class="card-img-top" src="csc3.png" alt="Random Name" style="width:100%" />
-												<div class="card-body">
-													<h5>Object-Oriented Programming</h5>
-														<p>Introduction to computer graphics and advanced topics in object-oriented (OO) programming.
-																The OO paradigm is used throughout, utilizing computer graphics as the vehicle for solidifying basic OO concepts, studying the implementation of event-driven systems, and for developing a thorough understanding of advanced OO concepts such as inheritance and polymorphism. 
-																Topics include fundamental concepts of object-oriented programming, software design patterns, graphic devices, line and surface drawing, simple 2D and 3D representation, and use of User Interface components.</p>
-												</div>
-											</div>												
-									</div>
-								</div>
-						</div>	
-				</div>
-				<div class="container tab-pane fade" id="activities">
-						<div class="container">
-								<h1>Activities</h1>
-									<table class="table table-borderless">
-									  <thead class="ex1">
-										<tr>
-										  <th scope="col">Role</th>
-										  <th scope="col">Where at</th>
-										  <th scope="col">For how long</th>
-										</tr>
-									  </thead>
-									  <tbody class="ex1">
-										<tr>
-										  <th scope="row">Member</th>
-										  <td>ACM at CSUS</td>
-										  <td>2014-Present</td>
-										</tr>
-										<tr>
-										  <th scope="row">Officer Shadow</th>
-										  <td>ACM at CSUS</td>
-										  <td>Fall 2014</td>
-										</tr>
-										<tr>
-										  <th scope="row">Secretary</th>
-										  <td>ACM at CSUS</td>
-										  <td>Spring 2015</td>
-										</tr>
-										<tr>
-										  <th scope="row">Secretary</th>
-										  <td>ACM at CSUS</td>
-										  <td>Fall 2015</td>
-										</tr>
-										<tr>
-										  <th scope="row">Event Coordinator</th>
-										  <td>ACM at CSUS</td>
-										  <td>Spring 2016</td>
-										</tr>
-										<tr>
-										  <th scope="row">Event Coordinator</th>
-										  <td>ACM at CSUS</td>
-										  <td>Fall 2016</td>
-										</tr>
-										<tr>
-										  <th scope="row">Vice President</th>
-										  <td>ACM at CSUS</td>
-										  <td>Spring 2017</td>
-										</tr>
-										<tr>
-										  <th scope="row">Member</th>
-										  <td>Computer Technology Club, CSUS</td>
-										  <td>Spring 2017</td>
-										</tr>
-										<tr>
-										  <th scope="row">Member</th>
-										  <td>Game Developers Club, CSUS</td>
-										  <td>Spring 2017</td>
-										</tr>
-										<tr>
-										  <th scope="row">Volunteer</th>
-										  <td>Local ICPC at CSUS</td>
-										  <td>Fall 2014</td>
-										</tr>
-										<tr>
-										  <th scope="row">Volunteer</th>
-										  <td>Local ICPC at CSUS</td>
-										  <td>Spring 2015</td>
-										</tr>
-										<tr>
-										  <th scope="row">Volunteer Lead</th>
-										  <td>Local ICPC at CSUS</td>
-										  <td>Fall 2015</td>
-										</tr>
-										<tr>
-										  <th scope="row">Volunteer Lead</th>
-										  <td>Local ICPC at CSUS</td>
-										  <td>Fall 2016</td>
-										</tr>
-										<tr>
-										  <th scope="row">Volunteer Lead</th>
-										  <td>Local ICPC at CSUS</td>
-										  <td>Spring 2017</td>
-										</tr>
-										<tr>
-										  <th scope="row">Volunteer</th>
-										  <td>Women's Shadow Day by SWE at CSUS</td>
-										  <td>Spring 2015</td>
-										</tr>
-										<tr>
-										  <th scope="row">Volunteer</th>
-										  <td>Women's Shadow Day by SWE at CSUS</td>
-										  <td>Spring 2017</td>
-										</tr>										
-										<tr>
-										  <th scope="row">Participant (Game Developer)</th>
-										  <td>The Progressive Gamejam 4.0 by Square One Clubs</td>
-										  <td>Summer 2017</td>
-										</tr>
-										<tr>
-										  <th scope="row">Participant (Game Developer)</th>
-										  <td>The Progressive Gamejam 4.0 by Square One Clubs</td>
-										  <td>Spring 2018</td>
-										</tr>
-									  </tbody>
-									</table>
-						</div>
-				</div>
-				<div class="container tab-pane fade" id="contact">
-						<div class="container">
-								<h1>Contact</h1>
-								<ul class="list-group">
-									<li class="list-group-item">
-										<b>Email:</b> ryanbartoli707@gmail.com
-									</li>
-									<li class="list-group-item">
-										<b>Phone:</b> 707-639-0159
-									</li>
-									<li class="list-group-item">
-										<b>Linkedin:</b> <a href= "https://www.linkedin.com/in/ryan-bartoli/">https://www.linkedin.com/in/ryan-bartoli/</a>
-									</li>
-								</ul>
-						</div>
-				</div>
 				<footer class="ex1">
 					<div class="container-fluid text-center text-md-left">
 			
@@ -741,4 +445,5 @@
 			</div>
 		</div>
 	</body>
-</html>
+	</html>
+
