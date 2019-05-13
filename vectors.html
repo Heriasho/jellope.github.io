@@ -2,69 +2,38 @@
 <html lang="en">
 
 	<head>
+		<title>SPEDE OS</title>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link rel="stylesheet" type="text/css" href="css/style.min.css" />
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css" />	
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-		<link rel='icon' href='favicon.ico' type='image/x-icon'/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!---This enables the tab nav bar to work-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
+		<script defer type="application/javascript" src="js/canvas/matrix.js"></script>
 		<style>
-			h1.executive{text-align: center; margin: 15px; color:goldenrod;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
-			.bar {fill: #aaa;height: 21px;transition: fill .3s ease;cursor: pointer;font-family: Helvetica, sans-serif;}
-			.bar:hover,.bar:focus {fill: red !important;}
-			figcaption {font-weight: bold;color: #000;margin-bottom: 20px;}
-			body {font-family: 'Open Sans', sans-serif;}
+		h1.title{color:whitesmoke;}
+		div.jumbotron{margin-left:50px;margin-right:50px;}
 		</style>
 	</head>
 
-	<body>
-		<div class="container">
-		<!--NAV BAR-->
-		<h1 class="executive">Vector graphics</h1>
-		<br>
-			<div class="tab-content"> <!--Contains all the tabs-->
-				<div class="container tab-pane active" id="home"> <!--Identified as a tab and has a lookup id-->
-						<div class="container">
-							<div class="row">
-								<div class="col-4">
-										<svg width="400" height="100">
-												<rect width="300" height="100" style="fill:rgb(146, 52, 45);stroke-width:3;stroke:rgb(0, 0, 0);fill-opacity:0.8;" />
-											  </svg>
-										<div class="jumbotron">
-											wwww
-										</div>	  
-								</div>
-								<div class="col-8">
-										<svg class="chart" width="420" height="150" aria-labelledby="Description boi" role="img">
-											<title id="title">Information on megacorp</title>
-											<desc id="desc">This is Description of my megacorp</desc>
-											<g class="bar">
-												<rect width="240" height="19" y="0"></rect>
-												<text x="245" y="9.5" dy=".35em">Profits</text>
-											</g>
-											<g class="bar">
-												<rect width="240" height="19" y="20"></rect>
-												<text x="245" y="28" dy=".35em">Profits</text>
-											</g>
-											<g class="bar">
-												<rect width="240" height="19" y="40"></rect>
-												<text x="245" y="48" dy=".35em">Profits</text>
-											</g>
-											
-										</svg>
-								</div>
-							</div>
-						</div>
-				</div>
+	<body id="body">
+    <div class="background" id="canvasContainer"></div>
+		<div class="text-center">
+				<h1 class="title">SPEDE OS</h1>
+		</div>
+		<!---<div class="jumbotron">
+			//Soon (0 v 0)
+			Hi snooper
+		</div>-->
+			
 
-				<footer class="ex1">
+
+			<footer class="ex1">
 					<div class="container-fluid text-center text-md-left">
 					</div>
 				  </footer>
-			</div>
-		</div>
-	</body>
+        </body>
 </html>
