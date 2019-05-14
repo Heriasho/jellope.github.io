@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title>SPEDE OS</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link rel="stylesheet" type="text/css" href="css/style.min.css" />
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css" />	
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!---This enables the tab nav bar to work-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<script defer type="application/javascript" src="js/canvas/matrix.js"></script>
+		<style>
+		h1.title{color:whitesmoke;}
+		h2.concepts{text-align: left;}
+		b{color:seashell;font-size:larger;}
+		table{color:royalblue;border-style:dotted;border-collapse: collapse;border:1px royalblue;}
+		tr{border-style:dotted;}
+		th{border-style:dotted;}
+		td{border-style:dotted;}
+		div.jumbotron{margin-left:50px;margin-right:50px;background-color:transparent;position: absolute;}
+		comment{color:yellowgreen;}
+		GreenBlock{color:yellowgreen;}
+		RedBlock{color:crimson;}
+		</style>
+	</head>
+
+
+	<body id="body">
+    
+		<div class="text-center">
+				<h1 class="title">Cooper</h1>
+		</div>
+		<div class="jumbotron" id="parentParagraph">
+			<h2 class="concepts">Concepts</h2>
+			<p id="Top Paragraph"></p>
+				<b>&lt;Turing Test&gt;</b>
+				<p>• Human in one room, hooked to an “agent” in another room via computer chat session (keyboard)</p>
+				<p>• Human tries to determine if “agent” is a human or a computer    </p>
+				<p>• Human is free to discuss anything, can ask challenging questions (human knows this is a “test”) </p>
+				<p>• Passing presumably requires knowledge base, natural language processing, context understanding </p>
+				<b>&lt;Eliza&gt;</b>
+				<p>• Computer program written in 1966 (Weizenbaum)</p>
+				<p>• Trivial program (~200 lines of code), simply bounces back human input with minor modifications</p>
+				<p>• Many people thought it was a human</p>
+				<p>• Challenges significance of Turing Test</p>
+				<b>&lt;Knowledge Engineering&gt;</b>
+				<p><i>The bridge between the domain expert and the programmer, utilizing an <b>Expert System</b></i></p>
+				<p><b>Rules or "Knowledge Base"</b> - things that are always true; usually IF-THEN or Horn clauses.</p>
+				<p><b>Facts or “Data base”</b> - things that are true for a given scenario.</p>
+				<p><b>Inference engine or "Shell"</b> - performs logical deductions, usually forward/backward chaining.</p>
+				<p>Extracting rules from a human expert can be difficult:</p>
+				<p>• expert might not be available</p>
+				<p>• expert might not be willing</p>
+				<p>• experts often don’t agree</p>
+				<p>• expert(s) often don’t know or can’t express what they know or do</p>
+				<p>• IF-THEN style rules may conflict. Difficulty to prioritize.</p>
+				<p>• Some expert systems can fire rules with “askable” items in the preconditions.</p>
+				<b>&lt;Inference Engine & First Order logic is used over Boolean logic&gt;</b>
+				<p>• Propositional or Boolean logic usually not sufficiently expressive for expert systems</p>
+				<p>• <b>First-Order logic</b> adds non-Boolean variables, making it possible to write rules that generalize</p>
+				<p>• Forward-Chaining (e.g. CLIPS) fires each satisfied rule – generates all conclusions.</p>
+				<p>• Backward-Chaining (e.g. Prolog) starts with query (goal), only fires rules needed to answer query.</p>
+				<b>&lt;Fuzzy Logic in Expert System Shell&gt;</b>
+				<p><b>Run Commands:</b></p>
+				<p><code>(clear) <comment>Removes all facts and rules.</comment></code></p>
+				<p><code><comment>;Use Semicolon for comments.</comment></code></p>
+				<p><code>(run) <comment>Runs the rules.</comment></code></p>
+				<p><b>Facts:</b></p>
+				<p><code>(assert (duck) (owl)) <comment>creates 2 facts. Can't assert a fact twice.</comment> </code></p>
+				<p><code>(assert (duck nil)) <comment>asserts a fact with an empty field</comment></code></p>
+				<p><code>(facts) <comment>lists the active facts, and their numbers.</comment></code></p>
+				<p><code>(retract 2) <comment>removes fact number 2</comment></code></p>
+				<p><code>(watch facts) <comment>shows the fact list at every operation</comment></code></p>
+				<p><code>		also (unwatch all) <comment>&DoubleLongRightArrow; means added, &DoubleLongLeftArrow; means removed</comment></code></p>
+				<p><code>(reset) <comment>asserts "initial fact" removes other facts and rules, then asserts all of the deffacts (to prepare for a run).</comment></code></p>
+				<p><b>Rules:</b></p>
+				<p><code>(defrule duck "comments can go here"</code></p>
+				<p><code>	(animal-is duck)</code></p>
+				<p><code>	&DoubleLongRightArrow;</code></p>
+				<p><code> (printout t "quack quack" crlf))</code></p>
+				<p><code>(rules) <comment>Shows rules</comment></code></p>
+				<p><code>(run) <comment>Runs the rules.</comment></code></p>
+				<p><b>Variables and Binding</b></p>
+				<p><code>(defrule grandfather-gender</code></p>
+				<p><code>  	(is-a-grandfather ?name)</code></p>
+				<p><code>  	&DoubleLongRightArrow;</code></p>
+				<p><code>	 	(assert (is-a-man ?name) (is-a-father ?name))</code></p>
+				<p><comment>Can also retract facts:</comment></p>
+				<p><code>(defrule older-ducks</code></p>
+				<p><code>		?x &DoubleLeftArrow; (duck-age ?age)</code></p>
+				<p><code>		&DoubleLongRightArrow;</code></p>
+				<p><code>		(retract ?x)</code></p>
+				<p><code>		(assert (new-duck-age (+ ?age 1))))</code></p>
+				<p><comment>Simple rule set for a tree-like structure</comment></p>
+				<p><comment>Check 1</comment></p>
+				<p><code>(defrule p1</code></p>
+				<p><code>  	?p &DoubleLeftArrow; (start)</code></p>
+				<p><code>		&DoubleLongRightArrow;</code></p>
+				<p><code>  	(printout t "engine turns?")</code></p>
+				<p><code>	 	(assert (turns (read)))</code></p>
+				<p><code>	 	(retract ?p))</code></p>
+				<p><comment>Check 2</comment></p>
+				<p><code>(defrule p2</code></p>
+				<p><code>  	(turns no)</code></p>
+				<p><code>		&DoubleLongRightArrow;</code></p>
+				<p><code>  	(printout t "lights work?")</code></p>
+				<p><code>	 	(assert (lights (read)))</code></p>
+				<p><comment>Sample rule based on checks 1 and 2</comment></p>
+				<p><code>(defrule p3</code></p>
+				<p><code>  	(turns no)</code></p>
+				<p><code>  	(lights no)</code></p>
+				<p><code>		&DoubleLongRightArrow;</code></p>
+				<p><code>  	(printout t "problem is battery" crlf)</code></p>
+				<p><comment>startup</comment></p>
+				<p><code>(deffacts startup</code></p>
+				<p><code>			(start))</code></p>
+				<b>&lt;Fuzzy Expert System Shell Process&gt;</b>
+				<p><b>Fuzzy Logic Basics</b></p>
+				<p>&mu;  is the “degree of membership” of the variable “height” in the fuzzy set “TALL”</p>
+				<p><i>&mu; in math terms is the mean of a graph.</i></p>
+				<p>“Crisp” values for “height” are measured (e.g.: 5’6”). The corresponding &mu; is its fuzzy membership.</p>
+				<p><b>Fuzzy logic operations</b></p>
+				<p><code>		NOT(x) = 1 - &mu;(x)</code></p>
+				<p><code>		x AND y = min(x,y)</code></p>
+				<p><code>		x OR y = max(x,y)</code></p>
+				<p><b>Fuzzification</b></p>
+				<p>Determine the degree of membership for each input in the antecedent fuzzy sets.</p>
+				<p><b>Fuzzy sets</b> are the conversion of graph inputs into Fuzzy numbers our Fuzzy Shell can use.</p>
+				<p><comment>Input example:</comment></p>
+				<p><code>negative=(-2/1,0/0), zero=(-2/0,0/1,2/0), positive=(0/0,2/1)</code></p>
+				<p><code>negative=(-5/1,0/0), zero=(-5/0,0/1,5/0), positive=(0/0,5/1)</code></p>
+				<p><comment>Output example:</comment></p>
+				<p><code>bigneg=(-16/1,-8/0), neg=(-16/0,-8/1,0/0), zero=(0/0,8/1,16/0), pos=(0/0,8/1,16/0), bigpos=(8/0,16/0). </code></p>
+				<p><comment>These rules can then be expressed as a Fuzzy Associative Matrix (FAM)</comment></p>
+				<table>
+					<tr><th>θ | dθ/dt</th><th>POS</th><th>ZERO</th><th>NEG</th>	</tr>
+					<tr><td>POS</td><td>BP</td><td>P</td><td>Z</td></tr>
+					<tr><td>ZERO</td><td>P</td><td>Z</td><td>N</td></tr>
+					<tr><td>NEG</td><td>Z</td><td>N</td><td>BN</td></tr>
+				</table>
+				<p><comment>This FAM contains 9 rules.</comment></p>
+				<p>Plug in values for θ and dθ along the graph to get values of &mu;pos(θ),&mu;zero(θ),&mu;neg(θ),&mu;pos(dθ),&mu;zero(dθ),and &mu;neg(dθ)</p>
+				<p></p>
+				<p><b>Rule Evaluation</b></p>
+				<p>Combine antecedents using fuzzy logic operations (AND, OR, NOT)</p>
+				<p>Given our previous evaluation we then plug in the values into the rules.</p>
+				<table>
+						<tr><td>If θ = pos AND dθ = pos<br>action = BP</td><td>If θ = pos AND dθ = zero<br>action = P</td><td>If θ = pos AND dθ = neg<br>action = Z</td></tr>
+						<tr><td>If θ = zero AND dθ = pos<br>action = P</td><td>If θ = zero AND dθ = zero<br>action = Z</td><td>If θ = zero AND dθ = neg<br>action = N</td></tr>
+						<tr><td>If θ = neg AND dθ = pos<br>action = Z</td><td>If θ = neg AND dθ = zero<br>action = N</td><td>If θ = neg AND dθ = neg<br>action = BN</td></tr>
+					</table>
+				<p>After tested, all non-zero output memebership rules fire.</p>
+				<p><b>Aggregation</b></p>
+				<p>Express consequents as a single (aggregate) fuzzy set</p>
+				<p><b>Defuzzification</b></p>
+				<p>Determine weighted sum, usually using “centroid” method.</p>
+				<p><code>&int;&mu;(x)&DiacriticalDot;x&#x2215;&int;&mu;(x)	<comment>Reimann sum</comment></code></p>
+				<p>We are then given a crisp results that can be used to perform an action, such as apply a force for the cart problem.</p>
+				<b>&lt;Fuzzy Clips&gt;</b>
+				<p><b>Fuzzy sets</b></p>
+				<p>We can use deftemplate to define the fuzzy sets and linguistic values.</p>
+				<p><code>(deftemplate Angle</code></p>
+				<p><code> -4 4 degrees</code></p>
+				<p><code>	((Neg (-2 1) (0 0))</code>	<comment>“negative” Angle = (-2/1, 0/0)</comment></p>
+				<p><code>		(Zer (-2 0) (0 1) (2 0))</code>	<comment>“zero” Angle = (-2/0, 0/1, 2/0)</comment></p>
+				<p><code>   (Pos (0 0) (2 1))))</code>	<comment>“positive” Angle = (0/0, 2/1)</comment></p>
+				<p><b>Fuzzify the inputs</b></p>
+				<p><code>(assert (Angle (3.2 0) (3.2 1) (3.2 0)</code>
+				<p><b>Fuzzy Rules via FAMs</b></p>
+				<p><code>(defrule PositiveZero</code></p>
+				<p>  <code>(Angle Pos)</code></p>
+				<p>  <code>(DAngle ZERO)</code></p>
+				<p>	 <code>&DoubleLongRightArrow;</code></p>
+				<p>	 <code>(assert (action Forward)</code></p>
+				<p><b>Defuzzify the aggregation</b></p>
+				<p><code>(defrule defuzzify1</code></p>
+				<p>	 <code>(declare (salience -1)	<comment>Decreases priority of your function so it gets called last.</comment></code></p>
+				<p>	 <code>?f &DoubleLeftArrow; (action ?)</code></p>
+				<p>	 <code>&DoubleLongRightArrow;</code></p>
+				<p>	 <code>(bind ?t (moment-defuzzify ?f))</code>	<comment>Black box helper method that does the Defuzzification.</comment></p>
+				<p>	 <code>(assert (crispAction ?t))</code></p>
+				<b>&lt;Search Algorithms&gt;</b>
+				<p><b>Types of Search</b></p>
+				<p>• exhaustive</p>
+				<p>• selective</p>
+				<p>• full-width vs. narrow</p>
+				<p>• BF vs DF</p>
+				<p>• Guided by heuristic</p>
+				<p>• Random</p>
+				<p>• Depth-limited</p>
+				<p><b>Criteria for success</b></p>
+				<p>Finding the optimal solution.</p>
+				<p>Finding an adequate solution.</p>
+				<p>Finding all solutions, or as many as possible.</p>
+				<p><b>State space</b> is the amount of states a problem can be in.</p>
+				<p><b>8 Queens problem</b></p>
+				<p>• Each queen can go on any square: state space is 64!/56! = 3x1014 states.</p>
+				<p>• One queen per column: state space is 88 ≈ 2x107 states.</p>
+				<p><b>Branching factor</b> is the number of children at each node</p>
+				<p>When a problem becomes massive, the cost of evaluation is expensive, typically because of the branching factor.</p>
+				<p><b>Heuristics or "Rule of thumb" estimation metrics</b> can be used for estimating an evaluation.</p>
+				<p>An admissable heuristic is one that always underestimates.</p>
+				<p><b>Tree Search Algorithm</b></p>
+				<table>
+					<th>
+						<p><code>fringe = generate children</code></p>
+						<p><code>do</code></p>
+						<p><code>{	if fringe empty, fail</code></p>
+						<p><code> 	take one from fringe.</code></p>
+						<p><code> 	if node = solution, return node.</code></p>
+						<p><code> 	generate children of node and add them to fringe.</code></p>
+						<p><code>}</code></p>
+					</th>
+				</table>>
+				<p><b>Breadth-First Search (BFS)</b></p>
+				<p>It starts at the tree root, and explores all of the neighbor nodes at the present depth prior to moving on to the nodes at the next depth level.</p>
+				<p><GreenBlock>When you find a solution, you know it's the shallowest.</GreenBlock></p>
+				<p><RedBlock>If solution is deep, significant memory requirements.</RedBlock></p>
+				<p><b>Depth-First Search (DFS)</b></p>
+				<p>The algorithm starts at the root node and explores as far as possible along each branch before backtracking.</p>
+				<p><GreenBlock>Low memory requirement.</GreenBlock></p>
+				<p><RedBlock>If solution is shallow, time wasted wandering elsewhere.</RedBlock></p>
+				<p><b>Iterative Deepening Search (DLS)</b></p>
+				<table>
+						<th>
+							<p><code>for depth = 0 to infinity</code></p>
+							<p><code>{	DLS(depth)</code></p>
+							<p><code> 	if found, return result.</code></p>
+							<p><code>}</code></p>
+						</th>
+				</table>>
+				<p><GreenBlock>Overhead is minimal compared to DLS.</GreenBlock></p>
+				<p><GreenBlock>Because of branching factor, number of nodes at final depth dominate.</GreenBlock></p>
+				<p><GreenBlock>Combines the advantages of BFS with low memory requirements of DFS.</GreenBlock></p>
+				<p><b>A* Search</b></p>
+				<p>The algorithm is formulated in terms of weighted graphs: starting from a specific starting node of a graph, it aims to find a path to the given goal node having the smallest cost (least distance travelled, shortest time, etc.).</p>
+				<p>It does this by maintaining a tree of paths originating at the start node and extending those paths one edge at a time until its termination criterion is satisfied.</p>
+				<p>At each iteration of its main loop, A* needs to determine which of its paths to extend. </p>
+				<p>It does so based on the cost of the path and an estimate of the cost required to extend the path all the way to the goal.</p>
+				<p>Specifically, A* selects the path that minimizes the following equation:</p>
+				<p><code>f(n)=g(n)+h(n)</code></p>
+				<p><commment><comment>n is the next node on the path<br>g(n) is the cost of the path from the start node<br>h(n) is a heuristic function that estimates the cost of the cheapest path from n to the goal.</commment></p>
+				<p>A* terminates when the path it chooses to extend is a path from start to goal or if there are not paths eligible to be extended.</p>
+				<p>The heuristic function is problem-specific. </p>
+				<p>If the heuristic function is admissible, meaning that it never overestimates the actual cost to get to the goal, A* is guaranteed to return a least-cost path from start to goal.</p>
+				<p>Common trend is for the algorithm to bounce back and forth between assessments of paths, going from one path to another based on newly determined shortest path.</p>
+				<table>
+						<tr><th>g(n)</th><th>h(n)</th></tr>
+						<tr><td>Place A-B: 118</td><td>Place A: 0</td></tr>
+						<tr><td>Place A-C: 111</td><td>Place B: 80</td></tr>
+						<tr><td>Place C-D: 120</td><td>Place C: 150</td></tr>
+						<tr><td>Place B-E: 140</td><td>Place D: 70</td></tr>
+						<tr><td>Place D-F: 75</td><td>Place E: 75</td></tr>
+						<tr><td>Place E-G: 80</td><td>Place F: 160</td></tr>
+						<tr><td>Place F-H: 12</td><td>Place G: 0</td></tr>
+						<tr><td>Place H-G: 146</td><td>Place H: 140</td></tr>
+				</table>
+				<p><comment>Using A* to find the next shortest path toward Place G (Goal).</comment></p>
+				<table>
+						<th>
+						<p class="text-center">Place A</p>
+						</th>
+						<td>	
+						<p>Place B: 118+150 = 268</p>
+						<p>Place C: 111+80 = 191</p>
+					  </td>
+				</table>
+				<p><comment>Place C is chosen because it is the shortest path.</comment></p>
+				<table>
+						<th>
+						<p class="text-center">Place A</p>
+						</th>
+						<td>	
+						<p>Place B: 118+150 = 268</p>
+						<p>Place C: 111+80 = 191 &DoubleLongRightArrow; Place D: (111 + 70) + 120 = 301</p>
+					  </td>
+				</table>
+				<p><comment>Place B is chosen because it is the shortest path.</comment></p>
+				<table>
+						<th>
+						<p class="text-center">Place A</p>
+						</th>
+						<td>	
+						<p>Place B: 118+150 = 268 &DoubleLongRightArrow; Place E: (118 + 140) + 75 = 333</p>
+						<p>Place C: 111+80 = 191 &DoubleLongRightArrow; Place D: (111 + 70) + 120 = 301</p>
+					  </td>
+				</table>
+				<p><comment>Place D is chosen because it is the shortest path.</comment></p>
+				<table>
+						<th>
+						<p class="text-center">Place A</p>
+						</th>
+						<td>	
+						<p>Place B: 118+150 = 268 &DoubleLongRightArrow; Place E: (118 + 140) + 75 = 333</p>
+						<p>Place C: 111+80 = 191 &DoubleLongRightArrow; Place D: (111 + 70) + 120 = 301 &DoubleLongRightArrow; Place F: (111 + 70 + 75) + 160 = 416</p>
+					  </td>
+				</table>
+				<p><comment>Place E is chosen because it is the shortest path.</comment></p>
+				<table>
+						<th>
+						<p class="text-center">Place A</p>
+						</th>
+						<td>	
+						<p>Place B: 118+150 = 268 &DoubleLongRightArrow; Place E: (118 + 140) + 75 = 333 &DoubleLongRightArrow; Place G: (111 + 140 + 80) + 0 = 338 &dotsquare; <comment>Destination</comment></p>
+						<p>Place C: 111+80 = 191 &DoubleLongRightArrow; Place D: (111 + 70) + 120 = 301 &DoubleLongRightArrow; Place F: (111 + 70 + 75) + 160 = 416</p>
+					  </td>
+				</table>
+				<p><comment>Place G is chosen because it is the shortest path.</comment></p>
+				<p><comment>A* terminates because we have reached our destination.</comment></p>
+				<p><comment>The path is A-B-E-G</comment></p>
+			</p>	
+		</div>
+		<div class="background" id="canvasContainer"></div>
+		<script>
+				var pDiv = document.getElementById('parentParagraph');
+				var cParagraph = pDiv.children;
+				for(var i=0; i<cParagraph.length;i++){
+					if(cParagraph[i].tagName == "P"){
+						cParagraph[i].style.color = "white";
+					}
+				}
+			</script>
+
+
+			<footer class="ex1">
+					<div class="container-fluid text-center text-md-left">
+					</div>
+			</footer>
+  </body>
+</html>
