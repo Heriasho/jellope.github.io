@@ -2,7 +2,7 @@
 <html lang="en">
 
 	<head>
-		<title>SPEDE OS</title>
+		<title>AI</title>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
@@ -32,7 +32,7 @@
 	<body id="body">
     
 		<div class="text-center">
-				<h1 class="title">Cooper</h1>
+				<h1 class="title">Artifical Intellegence Study page</h1>
 		</div>
 		<div class="jumbotron" id="parentParagraph">
 			<h2 class="concepts">Concepts</h2>
@@ -53,10 +53,10 @@
 				<p><b>Facts or “Data base”</b> - things that are true for a given scenario.</p>
 				<p><b>Inference engine or "Shell"</b> - performs logical deductions, usually forward/backward chaining.</p>
 				<p>Extracting rules from a human expert can be difficult:</p>
-				<p>• expert might not be available</p>
-				<p>• expert might not be willing</p>
-				<p>• experts often don’t agree</p>
-				<p>• expert(s) often don’t know or can’t express what they know or do</p>
+				<p>• Experts might not be available</p>
+				<p>• Experts might not be willing</p>
+				<p>• Experts often don’t agree</p>
+				<p>• Experts often don’t know or can’t express what they know or do</p>
 				<p>• IF-THEN style rules may conflict. Difficulty to prioritize.</p>
 				<p>• Some expert systems can fire rules with “askable” items in the preconditions.</p>
 				<b>&lt;Inference Engine & First Order logic is used over Boolean logic&gt;</b>
@@ -251,8 +251,8 @@
 				<table>
 						<tr><th>g(n)</th><th>h(n)</th></tr>
 						<tr><td>Place A-B: 118</td><td>Place A: 0</td></tr>
-						<tr><td>Place A-C: 111</td><td>Place B: 80</td></tr>
-						<tr><td>Place C-D: 120</td><td>Place C: 150</td></tr>
+						<tr><td>Place A-C: 111</td><td>Place B: 150</td></tr>
+						<tr><td>Place C-D: 120</td><td>Place C: 80</td></tr>
 						<tr><td>Place B-E: 140</td><td>Place D: 70</td></tr>
 						<tr><td>Place D-F: 75</td><td>Place E: 75</td></tr>
 						<tr><td>Place E-G: 80</td><td>Place F: 160</td></tr>
@@ -312,6 +312,118 @@
 				<p><comment>Place G is chosen because it is the shortest path.</comment></p>
 				<p><comment>A* terminates because we have reached our destination.</comment></p>
 				<p><comment>The path is A-B-E-G</comment></p>
+				<b>&lt;Adversarial Search&gt;</b>
+				<p>Implementing this will allow for a computer to read a state and then make decisions based on that.</p>
+				<p><RedBlock>Huge Search space. Large branching factors will require the viewing of alot of nodes.</RedBlock></p>
+				<p><RedBlock>Cannot search entire tree. Thus it must use shorter depth, or narrow width.</RedBlock></p>
+				<p><RedBlock>Needs a heuristic to evaluate who is winning, but sometimes this heuristic can be wrong.</RedBlock></p>
+				<p><code>eval(P) = pieceCount(computer) - pieceCount(human)</code>	<comment>Example of a very simple heuristic. Usually there are multiple factors that play into the evaluation.</comment></p>
+				<p><RedBlock>Complex heuristics are slower, further reducing the number of nodes that can be searched.</RedBlock></p>
+				<p><b>MINIMAX</b></p>
+				<p>A decision rule used in artificial intelligence, decision theory, game theory, statistics and philosophy for minimizing the possible loss for a worst case (maximum loss) scenario. </p>
+				<p>When dealing with gains, it is referred to as "maximin"—to maximize the minimum gain. </p>
+				<p>Our implementation used full-width with fixed depth.</p>
+				<p>Later on we can implement <b>Iterative deepening</b> to allow for variable depth.</p>
+				<p>Each level of the tree is known as PLY</p>
+				<p><b>Fastest win, slowest loss</b></p>
+				<p>The computer should pick the fastest win and pick the slowest loss.</p>
+				<p>This can be done through apply the PLY to the heuristic.</p>
+				<table>
+						<th>
+							<p><code>int pieceCount(bool humanPlayer){</code></p>
+							<p><code>int count = 0;</code></p>
+							<p><code>int score = 300;</code></p>
+							<p><code>if(humanPlayer) score -= ply;</code></p>
+							<p><code>if(!humanPlayer) score += ply;</code></p>
+							<p><code>for(int i=0;i&ltBOARD_COL_SIZE; i++)</code></p>
+							<p><code>for(int j=0;i&ltBOARD_ROW_SIZE; j++)</code></p>
+							<p><code>if(board[i][j] == politican) count++</code></p>
+							<p><code>return count*score;</code></p>
+							<p><code>}</code></p>
+						</th>
+				</table>
+				<p><b>Minmax Pseudocode</b></p>
+				<table>
+						<th>
+							<p><code>minimax(Board)</code></p>
+							<p><code>{ best.move = ""</code></p>
+							<p><code> best.score = -9999</code></p>
+							<p><code> For each legal move m</code></p>
+							<p><code> { make move m.move on Board</code></p>
+							<p><code>   m.score = MIN</code></p>
+							<p><code>   if(m.score > best.score) then best = m</code></p>
+							<p><code>   retract move m.move on Board</code></p>
+							<p><code>	}</code></p>
+							<p><code>Make move best.move</code></p>
+							<p><code>}</code></p>
+						</th>
+				</table>
+				<p><b>MIN Pseudocode</b></p>
+				<table>
+						<th>
+							<p><code>min()</code></p>
+							<p><code>{ if (game over) return EVAL-WINNING-MOVE;</code></p>
+							<p><code> if(depth is maxDepth) return EVAL</code></p>
+							<p><code> else</code></p>
+							<p><code> { best.score = -9999</code></p>
+							<p><code>   For each legal move m</code></p>
+							<p><code> { make move m.move on Board</code></p>
+							<p><code>   m.score = MAX</code></p>
+							<p><code>   if(m.score &lt best.score) then best = m</code></p>
+							<p><code>   retract move m.move on Board</code></p>
+							<p><code>	}</code></p>
+							<p><code>return best.score</code></p>
+							<p><code>}</code></p>
+						</th>
+				</table>
+				<p><b>MAX Pseudocode</b></p>
+				<table>
+						<th>
+							<p><code>min()</code></p>
+							<p><code>{ if (game over) return EVAL-WINNING-MOVE;</code></p>
+							<p><code> if(depth is maxDepth) return EVAL</code></p>
+							<p><code> else</code></p>
+							<p><code> { best.score = -9999</code></p>
+							<p><code>   For each legal move m</code></p>
+							<p><code> { make move m.move on Board</code></p>
+							<p><code>   m.score = MIN</code></p>
+							<p><code>   if(m.score &gt best.score) then best = m</code></p>
+							<p><code>   retract move m.move on Board</code></p>
+							<p><code>	}</code></p>
+							<p><code>return best.score</code></p>
+							<p><code>}</code></p>
+						</th>
+				</table>
+				<p><comment>EVAL applies heuristics to evaluate position B, from computer’s perspective (more+ = computer winning, more- = human winning).</comment></p>
+				<p><comment>EVAL-ENDING = +999(computer won), -999(human won), 0 if drawn.</comment></p>
+				<p><comment>Board (game state) is global. All other variables are local.</comment></p>
+				<p>Variables “best” and “m” represent legal moves, where:</p>
+				<p>• “.mv” represents the move itself</p>
+				<p>• “.score” represents the evaluation for the move</p>
+				<p><b>Iterative Deepening Algorithm</b></p>
+				<p><GreenBlock>Enables MINMAX to continue to search deeper PLYS while time permits.</GreenBlock></p>
+				<p><GreenBlock>When combined with <b>history tables</b>, can be faster than DFS.</GreenBlock></p>
+				<table>
+						<th>
+							<p><code>for searchDepth = 1 to maxDepth</code></p>
+							<p><code>{ minimax(searchDepth)</code></p>
+							<p><code>if out of time, exit</code></p>
+							<p><code>}</code></p>
+						</th>
+				</table>
+				<p><b>Alpha-Beta pruning</b></p>
+				<p><i>αβ-pruning: “once you have proven that a move is bad, it isn’t necessary to show how truly awful it is.”</i></p>
+				<p><GreenBlock>The benefit of alpha–beta pruning lies in the fact that branches of the search tree can be eliminated. 
+					This way, the search time can be limited to the 'more promising' subtree, and a deeper search can be performed in the same time. 
+					The optimization reduces the effective depth to slightly more than half that of simple minimax if the nodes 
+					are evaluated in an optimal or near optimal order (best choice for side on move ordered first at each node).</GreenBlock></p>
+				<p><b>Killer Move heuristic</b></p>
+				<p>Variable holds the move that generated the most recent αβ prune.</p>
+				<p><GreenBlock>If the Killer move is one of the children, considers it first. Great if you know what are good moves in a game.</GreenBlock></p>
+				<p><b>History table heuristic</b></p>
+				<p>hash table indexed by all possible (single) moves</p>
+				<p><GreenBlock>Content of hash table is a count of the number of times that move generated an αβ-prune.</GreenBlock></p>
+				<p><GreenBlock>Sorts child nodes by the corresponding count in the history table. This means there is quick lookup.</GreenBlock></p>
 			</p>	
 		</div>
 		<div class="background" id="canvasContainer"></div>
