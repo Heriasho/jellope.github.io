@@ -12,23 +12,14 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>		
 
 		<style>
-			p.ex1{padding: 15px;}
-			p.ex2{margin: 15px;}
-			p.ex3{border: 1px solid green;padding: 35px 20px 50px 20px;} 
-			h1{text-align: center; margin: 15px;}
-			h2.ex1
-			h5.ex1{margin: 15px; padding: 5px;}
-			h5.inProgress{color: red}
-			div.row{padding: 15px 20px 20px 20px;}
-			div.col-4{padding: 15px 20px 20px 20px;}
-			div.col-8{padding: 15px 20px 20px 20px;}
 			footer.ex1{padding: 15px 20px 20px 20px;}
 			body{background-image: url("mainSite/bgPoly.png"); background-repeat:no-repeat; background-size:cover; background-color:lightpink;}
 			a.nav-link :active{background: white;}
 			ul.nav-tabs .nav-link {background: pink; border-color:white; border-style:double;color: white;}
 			td{font-weight: bold;color:white;}
-			img.ex1{padding: 15px 20px 20px 20px;height:300px;width: 300px;}
-			
+			img{padding: 15px 20px 20px 20px;height:300px;width: 300px;max-width:100%; height:auto;}
+			div.jumbotron{margin-left:50px;margin-right:50px;background-color:transparent;}
+			li.list-group-item{background: transparent;border: transparent;}
 			iframe.ex1{padding: 15px}
 			iframe#outrun {
 			width: 100vw;
@@ -36,61 +27,14 @@
 			position: fixed;
 			top: 0;
 			left: 0;
-			zIndex: -99;
 }
-		/* Smartphones (portrait and landscape) ----------- */
-		@media only screen
-		and (min-device-width : 320px) 
-		and (max-device-width : 480px) {
-			img.ex1{width: 250px;height: 250px;}
-			.vertical-center {min-height: 100%; 
-				min-height: 100vh; /* These two lines are counted as one :-)
-				display: flex;
-				align-items: center;}
-			}'
-		/**/
-		}
- 
-		/* Smartphones (landscape) ----------- */
-		@media only screen
-		and (min-width : 321px) {
-			.vertical-center {min-height: 100%; 
-				min-height: 100vh; /* These two lines are counted as one :-)
-				display: flex;
-				align-items: center;}
-			}
-			.chart{width: 300px; height: 200px; border-left: 1px dotted #555; border-bottom: 1px dotted #555; padding:20px 20px 20px 0;}
-		/* Styles */
-		}
- 
-		/* Smartphones (portrait) ----------- */
-		@media only screen
-		and (max-width : 320px) {
-					.holder {width: 500px; height:500px; margin: inherit; margin-left:-50px}  /* Fallback for browsers do NOT support vh unit */
-			.vertical-center {min-height: 100%; 
-				min-height: 100vh; /* These two lines are counted as one :-)
-				display: flex;
-				align-items: center;}
-			}
-			.chart{width: 300px; height: 200px; border-left: 1px dotted #555; border-bottom: 1px dotted #555; padding:20px 20px 20px 0;}
-		/* Styles */
-		}
-		 
-		/* iPads (portrait and landscape) ----------- */
-		@media only screen
-		and (min-device-width : 768px) 
-		and (max-device-width : 1024px) {
-			img.ex1{width: 500px;height: 500px;}
-		/* Styles */
-		}
+
 		</style>
 	</head>
 
 	<body>
 		<div class="container-fluid">
 		<!--NAV BAR-->
-		<br>
-		<h2 class="ex1 text-center">Ryan Bartoli</h2>
 		<br>
 		<ul class="nav nav-tabs nav-fill" role="tablist"> <!--Toogleable tabs, uses jquery and bootstrap-->
 			<li class="nav-item">
@@ -109,70 +53,34 @@
 				<a class="nav-link" href="Contact.html">Contact</a>
 			</li>
 		</ul>
-			<div class="tab-content"> <!--Contains all the tabs-->
-				<div class="container-fluid id="home">
-					<div class="row-fluid"> <!--Row 1-->
-						<div class="col-12"> <!--Presentation-->
-							<h1>Me</h1>
-							<h5 class="ex1 text-center">Who I am</h5>
-							<div class="text-center">
-								<img src="mainSite/Portrait.png" class="ex1 image-fluid" alt="Rando">
-							</div>
-							<p class="ex1 text-center"><b>This nerd</b></p>
-							<div class="jumbotron">
-								<h5 class="ex1">What I study</h5>
-								<ul class="list-group">
-								<li class="list-group-item">
-								<p class="ex1">Graduating Fall 2019 with a major in <b>Computer Science</b> from <a href="https://www.csus.edu/">California State University, Sacramento (CSUS)</a></p>
-									</li>
-								<li class="list-group-item">
-								<p class="ex1">Working towards a certificate in <b>Game Development</b> and <b>System Software</b></p>
-									</li>
-								</ul>
-								<br>
-								<h5 class="ex1">What I am interested in</h5>	
-								<ul class="list-group">
-								<li class="list-group-item">
-								<p class="ex1">Solving problems.</p>
-									</li>
-								<li class="list-group-item">
-								<p class="ex1">Developing computer render systems for video games.</p>
-									</li>
-								<li class="list-group-item">
-								<p class="ex1">Designing game mechanics and building play scenarios.</p>
-									</li>
-								<li class="list-group-item">
-								<p class="ex1">Taking ideas and implementing them though a programming lense.</p>
-									</li>
-									</ul>
-								<br>
-								<h5 class="ex1">What my hobbies are</h5>	
-								<ul class="list-group">
-								<li class="list-group-item">
-								<p class="ex1"><a href="stellaris.html">Making webpages</a></p>
-									</li>
-								<li class="list-group-item">
-								<p class="ex1">Making games</p>
-									</li>
-								<li class="list-group-item">
-								<p class="ex1">Playing games</p>
-									</li>
-								<li class="list-group-item">
-								<p class="ex1">Drawing</p>
-									</li>
-									</ul>
-							</div>
-						</div>
-					</div>
-				</div>
+			<div class="jumbotron">
+				<p id="Top Paragraph"></p>
+					<p><b>&lt;Ryan Bartoli&gt;</b></p>
+					<p><img src="mainSite/Portrait.png" class="ex1 image-fluid" alt="Rando"></p>
+					<p><b>&lt;What I study&gt;</b></p>
+					<p>Graduating Fall 2019 with a major in <b>Computer Science</b> from <a href="https://www.csus.edu/">California State University, Sacramento (CSUS)</a></p>
+					<p>Working towards a certificate in <b>Game Development</b> and <b>System Software</b></p>
+					<br>
+					<b>&lt;What I am interested in&gt;</b>
+					<p>Solving problems.</p>
+					<p>Developing computer render systems for video games.</p>
+					<p>Designing game mechanics and building play scenarios.</p>
+					<p>Taking ideas and implementing them though a programming lense.</p>
+					<br>
+					<b>&lt;What my hobbies are&gt;</b>
+					<p>Making webpages</a></p>
+					<p><a href="stellaris.html">Interns Incorporated</a></p>
+					<p><a href="aI.html">Artifical Intellegence study page</a></p>
+					<p>Making games</p>
+					<p>Playing games</p>
+					<p>Drawing</p>			
+				</p>
 			</div>
-		</div>
 				<footer class="ex1">
 					<div class="container-fluid text-center text-md-left">
 			
 					</div>
 				  </footer>
-			</div>
 		</div>
 	</body>
 </html>

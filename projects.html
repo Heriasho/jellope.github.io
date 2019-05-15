@@ -27,6 +27,8 @@
 			div.col-4{padding: 15px 20px 20px 20px;}
 			div.col-8{padding: 15px 20px 20px 20px;}
 			footer.ex1{padding: 15px 20px 20px 20px;}
+			div.jumbotron{background-color:transparent;}
+			div.embed-responsive{width:500px;height:500px;}
 			p.proof{color:white;}
 			body{background-image: url("mainSite/bgPoly.png"); background-repeat:no-repeat; background-size:cover; background-color:lightpink;}
 			a.nav-link :active{background: white;}
@@ -36,9 +38,7 @@
 			img.ex1{width:450px;height:450px;padding: 15px 20px 20px 20px;}
 			img.icon{width: 50px;height:50px;}
 			img.miniIcon{width: 25px;height: 25px;}
-			iframe.ex1{width:450px;height:450px;padding: 15px;}
-			.chart{width: 500px; height: 200px; border-left: 1px dotted #555; border-bottom: 1px dotted #555; padding:20px 20px 20px 0;}
-			        
+			.chart{width: 500px; height: 200px; border-left: 1px dotted #555; border-bottom: 1px dotted #555; padding:20px 20px 20px 0;}			        
 			@import url(http://fonts.googleapis.com/css?family=Oswald);
         	.holder {width: 500px; height:500px; margin: inherit;}
 			img.logo{height: 70px;width: 225px; margin-top: -500px;margin-left: 138px}
@@ -141,8 +141,6 @@
 	</head>
 	<body>
 		<br>
-		<h2 class="text-center">Projects</h2>
-		<br>
 		<div class="container-fluid">
 				<ul class="nav nav-tabs nav-fill" role="tablist"> <!--Toogleable tabs, uses jquery and bootstrap-->
 					<li class="nav-item">
@@ -177,7 +175,7 @@
 						<a class="nav-link" data-toggle="tab" href="#spedeOSProject">SPEDE OS Project</a>
 						</li>
 						<li class="nav-item">
-						<a class="nav-link" data-toggle="tab" href="#neuralNetworksProject">Neural Network</a>
+						<a class="nav-link" href="aI.html">Artifical Intelligence</a>
 						</li>
 						</ul>
 					<div class="tab-content"> <!--Projects inner tabs-->
@@ -187,7 +185,7 @@
 								<div class="row-fluid"> <!--Row 1-->
 									<div class="col-12"> <!--Presentation-->
 										<div class="jumbotron">
-											<h4 class="text-center">Senior Project: SAVIS</h4>
+											<h4>Senior Project: SAVIS</h4>
 											<h5 class="ex1">SAVIS</h5>
 											<p>SAVIS was created by Team TBD as a Computer Science senior project project to provide a statistical visualization tool to teach test of
 												hypothesis through resampling techniques in introductory statistics courses. The analysis capabilities of this tool would include the construction of confidence intervals for one and two means and for one and two proportions using bootstrapping techniques, and also using classical statistical theory; regression analysis; and one and two-way ANOVA.
@@ -319,7 +317,7 @@
 							<div class="row-fluid"> <!--Row 1-->
 										<div class="col-12"> <!--Presentation-->
 											<div class="jumbotron">
-												<h3 class="text-center">Cooper MinMax AI (6th Place in AI contest)</h3>
+												<h3>Cooper MinMax AI (6th Place in AI contest)</h3>
 													<p>A <b>C++</b> MinMax AI that can play special rule set of chess for a class AI tornument. 
 														My program utilized the Min Max algorithm in addition to iterative deepening, alpha beta pruning, and a "Conserve Moves" heristic.</p>
 													<p><i>If you would like to play against Cooper, you can download <a href="./aiProject/cooper.exe">"Cooper"</a> here.
@@ -389,8 +387,8 @@
 																</p>
 																<h5>Final scores at AI competition</h5>
 																<img class="ex1" src="aiProject/aiProjectScores.png" alt="Random board" />	
-																<h4 class="text-center">How the game plays:</h4>
-																<h5 class="text-center">Congress Chess</h5>
+																<h4>How the game plays:</h4>
+																<h5>Congress Chess</h5>
 																<p class="ex2">"Congress Chess" is a chess-like game in which each player takes turns moving one
 																		of his/her pieces.  The board is 8x6, with the left four columns being the "left wing"
 																		and the right four columns being the "right wing".
@@ -446,8 +444,8 @@
 												<div class="row-fluid"> <!--Row 1-->
 													<div class="col-12"> <!--Presentation-->
 														<div class="jumbotron">
-																<h4 class="text-center">Mister Worldwide Game Engine Project</h4>
-																<h5 class="ex1 text-center"><font color="red">Work in progress</font></h5>
+																<h4>Mister Worldwide Game Engine Project</h4>
+																<h5><font color="red">Work in progress</font></h5>
 																<p>For our Computer Game Architecture class, I was part of a team that was tasked with building upon a game engine in <b>Java in OpenGl</b> and designing a game with it.
 																	I participated the inclusion of <b>networked multiplayer</b>, design and animation of <b>external models</b> from scratch in <b>Blender</b>, and the <b>creation of tessilated terrain</b>, while taking full ownership 
 																	of designing the world and the activities a player can do. Thematically, Mister Worldwide is a 3D space themed adventure game where you play as a sent robot by a human colony to explore a new alien world. 
@@ -507,8 +505,8 @@
 								<div class="row-fluid"> <!--Row 1-->
 									<div class="col-12"> <!--Presentation-->
 										<div class="jumbotron">
-											<h4 class="text-center">OS Pragmatics: Building an OS</h4>
-											<h5 class="ex1 text-center"><font color="red">Work in progress</font></h5>
+											<h4>OS Pragmatics: Building an OS</h4>
+											<h5><font color="red">Work in progress</font></h5>
 											<p>As part of my system software certificate pursuit, I took a class where the focus was building an operating system using <b>C</b> and <b>Assembly macros</b>. 
 												One of our project milestones was to enable our OS to be able, if wired physically or virtually, to perform interprocess communication between several terminals.
 												Working at a low level perspective a lot of common day debugging tools from IDEs were unavailable, requiring the use of the GDB debugging tool to display the call stack, set breakpoints, and print out variables to monitor their accuracy.
@@ -537,8 +535,8 @@
 												<div class="row"> <!--Row 1-->
 													<div class="col-12"> <!--Presentation-->
 														<div class="jumbotron">
-																<h4 class="text-center">Genetic Algorithms and Neural Networking</h4>
-																<h5 class="ex1 text-center"><font color="red">Work in progress</font></h5>
+																<h4>Genetic Algorithms and Neural Networking</h4>
+																<h5><font color="red">Work in progress</font></h5>
 																<h5>Neural Network Concepts</h5>
 																<h4>Backpropagation</h4>
 																	<p>The most common neural network training method. The concept of supervised learning through the use of multiple layers of test checks and corrections.Inputs are adjusted by weights based on their success rate at matching testing data.</p>
