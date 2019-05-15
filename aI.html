@@ -418,12 +418,174 @@
 					The optimization reduces the effective depth to slightly more than half that of simple minimax if the nodes 
 					are evaluated in an optimal or near optimal order (best choice for side on move ordered first at each node).</GreenBlock></p>
 				<p><b>Killer Move heuristic</b></p>
-				<p>Variable holds the move that generated the most recent αβ prune.</p>
+				<p><GreenBlock>Variable holds the move that generated the most recent αβ prune.</GreenBlock></p>
 				<p><GreenBlock>If the Killer move is one of the children, considers it first. Great if you know what are good moves in a game.</GreenBlock></p>
 				<p><b>History table heuristic</b></p>
-				<p>hash table indexed by all possible (single) moves</p>
+				<p><GreenBlock>Hash table indexed by all possible (single) moves.</GreenBlock></p>
 				<p><GreenBlock>Content of hash table is a count of the number of times that move generated an αβ-prune.</GreenBlock></p>
 				<p><GreenBlock>Sorts child nodes by the corresponding count in the history table. This means there is quick lookup.</GreenBlock></p>
+				<b>&lt;Neural Network basics&gt;</b>
+				<p>A class of machine learning algorithms that use multiple layers to progressively extract higher level features from raw input.</p>
+				<p>In its most base form, a <b>Perceptron</b>, is akin to a biological neuron. It either fires <RedBlock>&#x3DF;</RedBlock> or doesn't fire.</p>
+				<p><b>Perceptron</b></p>
+				<p>When a neuron fires, electrochemical pressure isexerted on the connected neighboring neurons.</p>
+				<p>If incoming electrochemical pressure exceeds a certain “threshold”, a neuron fires.</p>
+				<p><comment>Weight (W) is a scalar for each input.</comment></p>
+				<table>
+						<tr><th><p>Input 1</p></th><th><p>Input 2</p></th><th><p>Input 3</p></th></tr>
+				</table>
+				<table>
+					<tr>
+						<th>
+						<p>Input 1: W1 &rArr;</p>	
+						<p>Input 2: W2 &rArr; &dotsquare; &rArr; Output</p>
+						<p>Input 3: W3 &rArr;</p></th></tr>
+				</table>
+				<p><code>SUM = W1 x Input 1 + W2 x Input 2 + W3 x Input 3</code></p>
+				<p><code>if(SUM >= Threshold) Output = 1</code></p>
+				<p><code>else Output = 0</code></p>
+				<p><b>Example of Perception that performs functions</b></p>
+				<table>
+						<tr><th><p>Input 1</p></th><th><p>Input 2</p></th><th><p>&sum;</p></th><th><p>AND</p></th></tr>
+						<tr><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+						<tr><td>0</td><td>1</td><td>0.66</td><td>0</td></tr>
+						<tr><td>1</td><td>0</td><td>0.66</td><td>0</td></tr>
+						<tr><td>1</td><td>1</td><td>1.3</td><td>1</td></tr>
+				</table>
+				<table>
+					<tr>
+						<th>
+						<p>Input 1 x (0.66) &rArr;</p>	
+						<p>-------------------&dotsquare; &rArr; Output</p>
+						<p>Input 2 x (0.66) &rArr;</p>
+				</table>
+				<p><comment>(0.66)Input 1 + (0.66) Input 2 >= 1</comment></p>
+				<p>The above graph demonstrates a perception can learn to perform a function.</p>
+				<p><b>Perceptron Learning via Supervised Learning</b></p>
+				<p>Supervised learning allows the perception to see a <b>training set</b> of inputs with known correct outputs to train it.</p>
+				<p>A <b>training pair</b> in this set is one input to one output.</p>
+				<p>After training, a <b>testing set</b> is used, showing a variety of inputs with known correct outputs used for testing.</p>
+				<p>Training sets test the Perceptions accuracy when fed the expected data, while testing sets test its ability to generalize.</p>
+				<p><b>Delta Rule</b></p>
+				<p>The delta rule multiplies the error for this case by each input value, and a learning rate coefficient, to adjust each corresponding weight.</p>
+				<p>If no error, no adjustment. Adjusting thresholds is generally unecessary.</p>
+				<p>In theory, for small &alpha;, this learning algorithm is proven to learn the training set, but only if the network is capable of representing the solution</p>
+				<p><code>ERROR = Target - Actual</code></p>
+				<p><code>&Delta;Weight i = &alpha; x ERROR x Input i</code></p>
+				<p><comment>&alpha; is the learning rate of the Perceptron.</comment></p>
+				<p><comment>i is the number of iterations.</comment></p>
+				<p><b>Linear Separability</b></p>
+				<p><RedBlock>The perceptron cannot represent non-linear solution spaces.</RedBlock></p>
+				<p><RedBlock>To represent XOR, since it is not linearly separable, requires more than one layer of neurons, however it can't train with it because it has no target ouput.</RedBlock></p>
+				<p><RedBlock>This was a problem that stumpped reserachers until the 1980s.</RedBlock></p>
+				<p><b>Backpropagation</b></p>
+				<p>An extension of perceptron learning that can perform multilayer nets.</p>
+				<p>Changes made:</p>
+				<p>• Threshold replaced by logistic (or hyperbolic tangent), which has a similar shape to threshold.</p>
+				<p>• Replacement function is continuous with a derivative.</p>
+				<p><code>SUM = W1 x Input 1 + W2 x Input 2 + W3 x Input 3</code></p>
+				<p><code>Output = 1&frasl;1+power(e,-SUM)</code></p>
+				<p><code>&sigma;Output = Output x (1- Output)</code></p>
+				<p>The training steps:</p>
+				<p>1. Select a training pair from the training set.</p>
+				<p>2. Apply the inputs to the neural network.</p>
+				<p>3. Calculate the output(s) <comment>A concept called <b>Forward Passing</b></comment></p>
+				<p>4. Calculate the error (target - actual) for each output.</p>
+				<p>5. Adjust the weights <comment>A concept called <b>Backward Passing</b></comment></p>
+				<p>6. If still too much aggregate error, repeat.</p>
+				<p><b>Modified Delta Rule</b></p>
+				<p><code>ERROR(output i) = Target(output i) - output(output i)</code></p>
+				<p><code>&sigma; = output(1-output) x ERROR</code></p>
+				<p><code>&Delta;Weight pq,k = &sigma; q,k x output p,j x &alpha;</code></p>
+				<p><comment>p and q are neurons.</comment></p>
+				<p><comment>j and k are layers.</comment></p>
+				<p>To perform hidden layer weight adjustments use same formula, but estimate the delta term based on previous data.</p>
+				<p><code>&sigma; p,j = [output p,j x (1 - output p,j)] x &sum; q (&sigma; q,k x W pq,k)</code></p>
+				<p><b>Bias Nodes</b></p>
+				<p>Extra nodes added to each layer that will always output a "1".</p>
+				<p>It has outgoing weights that are trained along with the other weights.</p>
+				<p><GreenBlock>It provides a mechanism for the neurons in the next layer to adjust their thresholds.</GreenBlock></p>
+				<p><b>Generalization</b></p>
+				<p>• Tested after training is complete.</p>
+				<p>• Trained network behavior is checked on the testing cases.</p>
+				<p>• If network performs well on the untrained test cases, the network is said to "generalize"</p>
+				<p><b>Overfitting</b></p>
+				<p><RedBlock>Sometimes, training to an overly-tight criteria can lead to poor generalization.</RedBlock></p>
+				<p>Usually happens if the training data is noisy, because close criteria causes network to learn the noise.</p>
+				<p><b>Momentum</b></p>
+				<p><code>&delta;w(t) = &sigma; x output x &alpha; + &mu; x &delta;w(target - 1)</code></p>
+				<p><code>&mu; &isin; [0,1] if &mu; = 0, normal weight training.</code></p>
+				<p><code> If &mu;>0, a portion of previous weight change is added in.</code></p>
+				<p><code> If &mu;>1, weight changes diverge and training fails.</code></p>
+				<p><GreenBox>Including some momentum can often speed up training.</GreenBox></p>
+				<b>&lt;Deep Learning&gt;</b>
+				<p>A “catch-all” phrase that refers to recent advances in neural networks, such as convolutional neural networks (CNN), that:</p>
+				<p>• Utilize large number of neurons and/or large number of layers</p>
+				<p>• Employ sophisticated or specialized organization of layers</p>
+				<p>• Utilize GPUs for backpropagation computation, and thus have trained effectively with backpropagation on very large data sets.</p>
+				<p>Some specific breakthroughs in Neural Networks that have contributed to Deep Learning include:</p>
+				<p>• New activation functions to replace the logistic function, such as ReLU and Leaky-ReLU</p>
+				<p>• New organizations of neurons in layers, such as Convolutional and Dropout layers.</p>
+				<p><b>ReLU (Rectified Linear Unit)</b></p>
+				<p>As seen previously, standard neural networks require a non-linear activation function between layers</p>
+				<p>Thus far, we have used “squashing” logistic or tanh functions, both of which have the following drawbacks:</p>
+				<p><RedBlock>Slow learning when input has large magnitude, because gradient approaches 0.</RedBlock></p>
+				<p><RedBlock>Inability to output values with magnitude greater than 1.</RedBlock></p>
+				<p><GreenBlock>A popular replacement is <b>ReLU</b> which is defined as follows:</GreenBlock></p>
+				<p><code>f(x) = max(0,x)</code></p>
+				<p><GreenBlock>A popular varient is <b>Leaky ReLU</b> which is defined as follows:</GreenBlock></p>
+				<p><code>f(x)=x when x &gt= 0 and ax when x &lt 0 where 0&lt a &gt 1</code></p>
+				<p>Researchers have often observed faster learning when using ReLU or Leaky ReLU, instead of logistic or tanh.</p>
+				<p>To facilitate implementing neural networks with many layers, potentially with different activation functions between layers, the choice of activation function is usually separated into it’s own separate layer:</p>
+				<table>
+						<tr>
+							<th>
+							<p>Input 1: W1 &rArr;</p>	
+							<p>Input 2: W2 &rArr; &dotsquare; fully-connected &sum; layer &rArr; &dotsquare; activation (ReLU) layer &rArr; Output</p>
+							<p>Input 3: W3 &rArr;</p></th></tr>
+					</table>
+				<p><b>Convolutional Layer</b></p>
+				<p>Typically used for input data that is organized into square 2D grids (such as for image recognition).</p>
+				<p>A convolutional layer has a set of some number of <b>filters</b>. Each filter performs a series of dot products:</p>
+				<p>Example of a Dot Product</p>
+				<p><code> Matrix A x Matrix B</code></p>
+				<table>
+						<tr><th>Matrix A</th><th>Matrix B</th><th>Output</th></tr>
+						<tr><td>2</td><td>3</td><td>6</td></tr>
+						<tr><td>1</td><td>12</td><td>12</td></tr>
+						<tr><td>6</td><td>6</td><td>36</td></tr>
+				</table>
+				<p><b>Filters</b> are a small array of trainable floating point values.</p>
+				<p>An output grid is produced by repeated applications of a single filter, to all locations in the input grid</p>
+				<p>Each cell in the output grid is computed by taking the dot product of the filter, and a section of the input grid.</p>
+				<p>We apply the filter to every location in the input grid. </p>
+				<p>The output grid is often smaller than the input grid.</p>
+				<p>The total number of cells in the output grid depends on the size of the <b>stride</b>.</p>
+				<p>Grayscale images would have a 2D input grid (NxNx2), and we would use a 2D filter (KxKx2).</p>
+				<p>Color images would have a 3D input grid (NxNx3), thus we would correspondingly use 3D filters (KxKx3).</p>
+				<p>One filter always produces a single 2D output grid, regardless of whether the image is color or grayscale.</p>
+				<p>Example of a 3x3x1 Matrix for grayscale</p>
+				<table>
+						<tr><td>0</td><td>9</td><td>0</td></tr>
+						<tr><td>0</td><td>9</td><td>1</td></tr>
+						<tr><td>0</td><td>8</td><td>0</td></tr>
+				</table>
+				<p>Scaling up the number of filters will scale up the number of tables used.</p>
+				<p>The role of the filters in a convolutional layer is to identify small features in the image, wherever they occur.</p>
+				<p>For this reason, the output grids are often called <b>activation maps</b>.</p>
+				<p>It is usually useful to have multiple convolutional layers. This allows the network to learn higher-level features based on previously-identified lower-level features.</p>
+				<p><RedBlock>To interchange inbetween filter sizes for future convolutional layers, we will need a non-linear activation layer (such as ReLU or tanh) between the layers.</RedBlock></p>
+				<table>
+						<tr>
+							<th>
+							<p></p>	
+							<p>NxNx3 &rArr; 5 KxKx3 filters &rArr; MxMx5 &rArr; activation (ReLU) layer &rArr; MxMx5 &rArr; 4 LuLx5 filters &rArr; PxPx4</p>
+							<p class="text-center">Same as: Convolutional layer &rArr; Activation layer &rArr; Convolutional layer</p>
+							<p></p>
+						</th></tr>
+					</table>
+					<p>Ah each layer the depth of the output set of the activation maps is equal to the number of filters that produced it.</p>
+					<p>Because of this, we could compute M based on N, K, and the stride.</p>
 			</p>	
 		</div>
 		<div class="background" id="canvasContainer"></div>
