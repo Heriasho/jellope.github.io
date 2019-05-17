@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title>SPEDE OS</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link rel="stylesheet" type="text/css" href="css/style.min.css" />
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css" />	
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!---This enables the tab nav bar to work-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<script defer type="application/javascript" src="js/canvas/matrix.js"></script>
+		<style>
+		h1.title{color:whitesmoke;}
+		b{color:seashell;font-size:larger;}
+		table{color:#ff6e8e;border-style:dotted;border-collapse: collapse;border:1px #ff6e8e;}
+		tr{border-style:dotted;}
+		th{border-style:dotted;}
+		td{border-style:dotted;}
+		div.jumbotron{margin-left:50px;margin-right:50px;background-color:transparent;position: absolute;}
+		comment{color:yellowgreen;}
+		GreenBlock{color:yellowgreen;}
+		RedBlock{color:crimson;}
+		</style>
+	</head>
+
+	<body id="body">
+    <div class="background" id="canvasContainer"></div>
+		<div class="text-center">
+			<h1 class="title">SPEDE OS</h1>
+			<p><i><a href="https://jellope.github.io/index.html">My Website</a></i></p>
+		</div>
+		<div class="jumbotron" id="parentParagraph">
+			<h2>The project</h2>
+			<p id="Top Paragraph"></p>
+				<b>&lt;Phase 0&gt;</b>
+				<p>The first phase is a series of preparatory steps to get us acquainted with CSUS template OS named "SPEDE", the GDB debugger, and general UNIX/LINUX shell commands.</p>
+				<table>
+						<tr><th>UNIX/LINUX Commands</th><th>Purpose</th>
+						<tr><td>pwd</td><td>Print current working directory.</td>
+						<tr><td>ll</td><td>Long listing of directory content.</td>
+						<tr><td>ls -l</td><td>Long listing of directory content.</td>
+						<tr><td>mkdir phase0</td><td>Make a new directory named "phase0".</td>
+						<tr><td>cd phase0</td><td>Change current directory to "phase0".</td>
+						<tr><td>rm sample.c</td><td>Removes a file named "sample.c".</td>			
+						<tr><td>rm -r phase0</td><td>Removes a directory named "phase0".</td>
+						<tr><td>mv phase0/sample.c phase1/sample.c</td><td>Moves sample.c from directory phase0 to directory phase1, named the same thing.</td>			
+						<tr><td>mv phase0/ . ..</td><td>Moves all files from directory phase0 to a directory above it.</td>
+						<tr><td>ps -u</td><td>Shows all user's running Process ID's.</td>
+						<tr><td>cat sample.c</td><td>Displays the text content in the file named "sample.c".</td>
+						<tr><td>grep page</td><td>Finds the word "page" in all .c files.</td>					
+						<tr><td>grep -n page</td><td>Finds the word "page" in all .c files and shows line numbers when found.</td>			
+						<tr><td>!!</td><td>Repeat the previous command.</td>		
+				</table>
+				<p></p>
+		</div>
+		<script>
+				var pDiv = document.getElementById('parentParagraph');
+				var cParagraph = pDiv.children;
+				for(var i=0; i<cParagraph.length;i++){
+					if(cParagraph[i].tagName == "P"){
+						cParagraph[i].style.color = "white";
+					}
+				}
+			</script>
+			
+
+			<footer class="ex1">
+					<div class="container-fluid text-center text-md-left">
+					</div>
+				  </footer>
+        </body>
+</html>
