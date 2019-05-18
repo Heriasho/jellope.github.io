@@ -17,14 +17,68 @@
 		h1.title{color:whitesmoke;}
 		b{color:seashell;font-size:larger;}
 		table{color:#ff6e8e;border-style:dotted;border-collapse: collapse;border:1px #ff6e8e;}
+		table.EmptyTable{empty-cells: show; width: 50%;}
+		.lcol { width: 40px; height: 40px; border-style: none;}
+		.mcol { width: 300px; border-style: none;}
+		.rcol { width: 40px; border-style: none;}
+		.mrow { height: 300px; border-style: none;}
+		.brow { height: 40px; border-style: none;}
 		tr{border-style:dotted;}
 		th{border-style:dotted;}
 		td{border-style:dotted;}
+		tr.ET{vertical-align: top;text-align: left;}
 		div.jumbotron{margin-left:50px;margin-right:50px;background-color:transparent;position: absolute;}
 		comment{color:yellowgreen;}
 		GreenBlock{color:yellowgreen;}
 		RedBlock{color:crimson;}
-		</style>
+
+		b.Blink {
+		-moz-animation-duration: 100ms;
+		-moz-animation-name: blink;
+		-moz-animation-iteration-count: infinite;
+		-moz-animation-direction: alternate;
+		
+		-webkit-animation-duration: 500ms;
+		-webkit-animation-name: blink;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-direction: alternate;
+		
+		animation-duration: 500ms;
+		animation-name: blink;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+	}
+
+	@-moz-keyframes blink {
+		from {
+			opacity: 1;
+		}
+		
+		to {
+			opacity: 0;
+		}
+	}
+
+	@-webkit-keyframes blink {
+		from {
+			opacity: 1;
+		}
+		
+		to {
+			opacity: 0;
+		}
+	}
+
+	@keyframes blink {
+		from {
+			opacity: 1;
+		}
+		
+		to {
+			opacity: 0;
+		}
+	}
+	</style>
 	</head>
 
 	<body id="body">
@@ -55,7 +109,148 @@
 						<tr><td>grep -n page</td><td>Finds the word "page" in all .c files and shows line numbers when found.</td>			
 						<tr><td>!!</td><td>Repeat the previous command.</td>		
 				</table>
-				<p></p>
+				<table>
+					<tr><th>GDB Commands</th><th>Purpose</th>
+					<tr><td>c</td><td>Continues till the next breakpoint.</td>
+					<tr><td>q</td><td>Quits GDB debugging.</td>
+					<tr><td>list</td><td>Lists scoure code from the GDB prompt starting at current line.</td>
+					<tr><td>list 210</td><td>Lists scoure code from the GDB prompt starting at line 210.</td>
+					<tr><td>list k-sr.c:210</td><td>Lists scoure code from the GDB prompt starting in file k-sr.c at line 210.</td>
+					<tr><td>next</td><td>Executes source code one statement at a time, but won't step into subroutines.</td>
+					<tr><td>step</td><td>Executes source code one line at a time, and will step into subroutines.</td>
+					<tr><td>info b</td><td>Gives info on breakpoints.</td>
+					<tr><td>info reg</td><td>Gives info on register values.</td>
+					<tr><td>where</td><td>Displays current program call sequence.</td>
+					<tr><td>delete 2</td><td>Removes breakpoint number 2.</td>	
+					<tr><td>clear</td><td>Removes all breakpoints.</td>						
+					<tr><td>q</td><td>Quits GDB debugging.</td>						
+					<tr><td>b k-sr.c:210</td><td>Creates a breakpoint in k-sr.c at line 210.</td>
+					<tr><td>p page_number</td><td>Prints a local variable named page_number in hex.</td>
+					<tr><td>p/d page_number</td><td>Prints a local variable named page_number in decimal.</td>
+				</table>
+				<p><b>Installing SPEDE</b></p>
+				<p>With these commands at your disposal you now are going to install the SPEDE.</p>
+				<p>To begin, you will be setting the path of your folder to include SPEDE in it:</p>
+				<code>set path=($path ~spede2/bin)</code>
+				<p>Note that this only temporarily sets the path for the session and will require you to edit the <b>.cshrc</b> by adding the same line there to make it permanent.</p>
+				<p>After this you should run the following command to create a SPEDE makefile:</p>
+				<code>spede-mkmf -q</code>
+				<p>Once done, the makefile is created and allows the user to type <code>make</code> to compile their code in the directory into a <b>MyOS.dli</b>.</p>
+				<p>In this format all the code is congealed into this file which can be ran through <code>flash MyOS.dli</code>.</p>
+				<p>This flash prompt enables the use of the <font color="ff6e8e">flames</font> shell for compiling.</p>
+				<p>Once here you are here you can use the following commands:</p>
+				<table>
+					<tr><th>Flames Commands</th><th>Purpose</th>
+					<tr><td>d</td><td>Downloads the dli file to the Target PC. Necessary before running.</td>
+					<tr><td>g</td><td>Gets the GDB prompt, where pressing c will run the program.</td>
+					<tr><td>q</td><td>Quits the Flash prompt.</td>
+				</table>
+				<p>This will be the primarly loop throughout all the phases when it comes to compiling and running the SPEDE OS.</p>
+				<p>Should you need to delete the makefile or get a new one, you can regenerate it by <code>spede-mkmf -q</code> again in the command prompt.</p>
+				<b>&lt;Phase 1&gt;</b>
+				<p>The first phase we focused on making our OS have multitasking cababilities by establishing a timer device to interrupt the CPU, enabling a switch between execution of process code to kernel code.</p>
+				<p>The timer looked along the lines of this:</p>
+				<table>
+					<th>
+						<code><p>void TimerSR(void) {</p></code>
+						<code><p>	outportb((PIC_CONTROL, TIMER_DONE);</p></code>
+						<code><p>	pcb[run_pid].run_count++;</p></code>
+						<code><p>	pcb[run_pid.total_count++;</p></code>
+						<code><p>	if(pcb[run_pid].run_count == TIME_SLICE) {</p></code>
+						<code><p>		EnQ(run_pid, &ready_q);</p></code>
+						<code><p>		pcb[run_pid].state = READY;</p></code>
+						<code><p>		run_pid = NONE;</p></code>
+						<code><p>	}</p></code>
+						<code><p>}</p></code>
+					</th>
+				</table>
+				<p>This builds off an establish structure for the <b>Process Control Blocks (PCB)</b> which looks like this:</p>
+				<comment>typedef struct {state_t state; int run_count, total_count; trapframe_t *trapframe_p;} pcb_t;</comment>
+				<p>The template is then used throughout the OS by pcb variable.</p>
+				<comment>extern pcb_t pcb[PROC_SIZE]; </comment>
+				<p>To then mimic the underlying design of a trapframe, we build a similar structure for it, including all 8 registers, eip, cs, and efl.</p>
+				<comment>typedef struct {unsigned int reg[8]; unsigned int eip; unsigned int cs; unsigned int efl;} trapframe_t;</comment>
+				<p>We establish a series of queues the maintain and hold data as it flowed through the system:</p>
+				<comment>extern int run_pid; </comment>
+				<p>The running pid will be -1 if none are selected and be sent into various queues throughout its lifecycle.</p>
+				<comment>	extern q_t pid_q, ready_q; </comment>
+				<p>Finally we establish the process stack size, which for this project we set to have 20 processes and a stack size of 4096 bytes.</p>
+				<comment>extern char proc_stack[PROC_SIZE][PROC_STACK_SIZE];</comment>
+				<p>When our OS runs it triggers an initial process which while it runs it repeatedly flashes a dot symbol at the upper-left corner on the display of the Targe PC, approximately once a second.</p>
+				<table class="EmptyTable">
+					<tr><td class="lcol"></td><td class="mcol"></td><td class="rcol"></td></tr>
+					<tr class="ET"><td class="mrow"></td><td><b class="Blink">.</b></td><td></td></tr>
+					<tr><td class="brow"></td><td></td><td></td></tr>
+				</table>
+				<p>Once you get a blinking dot, you successfully ran the initial process.</p>
+				<p><comment>So long as no new process is ran, the dot will continue blink.</comment></p>
+				<p>What is going on in the background is that the timer service routine (SR) counts the runtime of the process that is currently running.</p>
+				<p>If it reaches a OS time slice, the kernel would suspend it and choose a different process to run from the <b>ready_q</b> selected in round-robin fashion.</p>
+				<p>Once a new process is called the current one is suspended, which will freeze the dot on whatever state it was in while the new process runs.</p>
+				<p>For our OS we enabled a keyboard function that allows the user to create a new process by pressing <comment>'n'</comment>.</p>
+				<p>Once the process completes, the kernel regain control, symbolized by the continuation of the blinking dot.</p>
+				<b>&lt;Phase 2&gt;</b>
+				<p>By this time, we can create processes that fill up time but do not have much utility.</p>
+				<p>To overcome this, we begin to develop OS service calls that enable processes to be able to do more with the OS.</p>
+				<p>An OS fulfills these requests by running its service routine code, causing the processes currently running to be suspended for the CPU to perform the service.</p>
+				<p>Once completed, the process is resumed.</p>
+				<p>This part had us developing assembly based code using macros to carry values of registers eax and ebx to kernel service routines (k-sr).</p>
+				<table>
+					<tr><th>System Call Names</th><th>Purpose</th></tr>
+					<tr><td>GetPidCall</td><td>Puts the run_pid into the process trapframe (eax) to be loaded by the CPU into the process trapframe and jmp to a common routine that switches the CPU stack pointer to the kernel stack.</td></tr>
+					<tr><td>ShowCharCall</td><td>Sends information of which row, which col, and what character via (eax, ebx, ecx) to the kernel to perform the service ShowCharSR()</td></tr>
+					<tr><td>SleepCall</td><td>Given the number of centi-seconds to sleep, the SleepSR() will compute and set the wake time for the requesting process through the PCB's wake_centi_sec variable.</td></tr>
+				</table>
+				<p><b>GetPid()</b></p>
+				<p>This function returns the entry ID given by the GetPidCall.</p>
+				<p>Functionally, this allows our OS to be able to find the address of a given entry when called even if changes over the course of operation.</p>
+				<p><b>ShowChar()</b></p>
+				<p>Given a row, col, and a character, we can display to the Target PC specific characters like that dot.</p>
+				<p>For this phase we use this to simplify the process of creating the dot, but in future phases it acts as our way to output sentences to the Target PC.</p>
+				<p><b>SleepSR()</b></p>
+				<p>Given a set amount of centi-seconds, the function will compute and set a wake time for the requesting process.</p>
+				<p>The process is then set into a sleep state and added to a <b>sleep_q</b>, with a run_pid value of NONE (-1).</p>
+				<p>The timer will check if wake times of the process have arrived and will wake them up, set its state to ready and place them back into the <b>ready_q</b>.</p>
+				<b>&lt;Phase 3&gt;</b>
+				<p>In this phase we establish OS services for interprocess communication (IPC).</p>
+				<p>Since uncontrol messages sent at asyncronous times can scrable a message, we implement muxtex to avoid "racing" conditions in order to synchronize these operations.</p>
+				<p>The mutex we built enables processes to call a OS service to lock a video mutex (the display) before continuing to write to the video display.</p>
+				<p>If the mutex is already locked (some other process is running in the critical section) the asking process is placed in a <b>mutex suspend_q</b> while it waits to use the lock.</p>
+				<p>Once a using process is complete with their task, they unlock the mutex.</p>
+				<table class="text-align text-center">
+					<tr><td>Running Process</td><td><b>&rarr;</b></td><td>Mutex [UNLOCKED]</td><td><b>&rarr;</b></td><td>[LOCK MUTEX]</td><td>Critical Section</td><td>[UNLOCK MUTEX]</td><td><b>&rarr;</b></td><td>Carry on</td></tr>
+					<tr><td>Running Process</td><td><b>&rarr;</b></td><td>Mutex [LOCKED]</td><td><b>&rarr;</b></td><td>EnQ to Suspend_q</td><td><b>&#8635;</b></td><td>Wait for Mutex [UNLOCKED]</td><td><b>&rarr;</b></td><td>Enter Mutex</td></tr>
+				</table>
+				<p><b>Mutex</b></p>
+				<p>To accomplish these goals, we will be creating an additional data type called Mux which has the following variables:</p>
+				<comment>typedef struct {int flag, int creator, q_t suspend_q} mux_t;</comment>
+				<p>To create a mutex, we build additional system calls for mutex creation and mutex operations.</p>
+				<table>
+						<tr><th>System Call Names</th><th>Purpose</th></tr>
+						<tr><td>MuxCreateCall</td><td>Returns the mutex ID vias a register (eax). </td></tr>
+						<tr><td>MuxOpCall</td><td>Returns a mux ID and a flag via registers (eax, ebx).</td></tr>
+				</table>
+				<p><b>MuxCreateSR()</b></p>
+				<p>In MuxCreateSR a mutex is allocated from the OS mutex queue, empties the mutex, and set the flag and creator PCB.</p>
+				<p><b>MuxOPSR()</b></p>
+				<p>Given a mux ID and a flag, if the flag is LOCK, the SR will suspend the calling process, setting the process into a suspend state and adding to a <b>mux suspend_q</b> according to which mux they wish to access, and set run_pid value of NONE (-1).</p>
+				<p>If the flag is UNLOCK, it lets the process in and then LOCKS the mux.</p>
+				<p>It is up to the process to then UNLOCK the mux when it completes its task.</p>
+				<p><b>IPC operations</b></p>
+				<p>To text out these mutex locks,we designed system calls that enable writing to a given video mux like Target PC:</p>
+				<table>
+						<tr><th>System Call Names</th><th>Purpose</th></tr>
+						<tr><td>WriteCall</td><td>Given a device and char pointer to a char array via registers (eax,ebx), this function gets the running pid via GetPidCall() to set the row number, and uses a local count for the column. <br>
+							Given this information, based on the device (such as STDOUT for TargetPC) this method will read through a char array with the pointer and use existing service calls, like ShowCharCall, to print out to the screen.</td></tr>
+				</table>
+				<p>With these operations we allow the creation of each new process to display a little blurb about itself upon creation rather than just a single char while being protected from scrambling.</p>
+				<table class="EmptyTable">
+						<tr><td class="lcol"></td><td class="mcol"></td><td class="rcol"></td></tr>
+						<tr class="ET"><td class="mrow"></td><td><b>.</b><br><b class="Blink">pid: 1</b></td><td></td></tr>
+						<tr><td class="brow"></td><td></td><td></td></tr>
+				</table>
+				<p>A successful implementation showcases that the creation of a new process will now display text followed its pid number.</p>
+				<p>Like previous iterations, the blinking property follows the currently running process. In this case, the kernel is frozen while process 1 runs.</p>
 		</div>
 		<script>
 				var pDiv = document.getElementById('parentParagraph');
@@ -66,8 +261,6 @@
 					}
 				}
 			</script>
-			
-
 			<footer class="ex1">
 					<div class="container-fluid text-center text-md-left">
 					</div>
