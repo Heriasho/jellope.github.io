@@ -18,6 +18,7 @@
 		b{color:seashell;font-size:larger;}
 		table{color:#ff6e8e;border-style:dotted;border-collapse: collapse;border:1px #ff6e8e;}
 		table.EmptyTable{empty-cells: show; width: 50%;}
+		table.TextTerminal{color:royalblue;border: royalblue;}
 		.lcol { width: 40px; height: 40px; border-style: none;}
 		.mcol { width: 300px; border-style: none;}
 		.rcol { width: 40px; border-style: none;}
@@ -27,6 +28,7 @@
 		th{border-style:dotted;}
 		td{border-style:dotted;}
 		tr.ET{vertical-align: top;text-align: left;}
+		input{background: transparent;border:transparent;border-collapse:collapse;width: 35%;color: whitesmoke;}
 		div.jumbotron{margin-left:50px;margin-right:50px;background-color:transparent;position: absolute;}
 		comment{color:yellowgreen;}
 		GreenBlock{color:yellowgreen;}
@@ -236,7 +238,7 @@
 				<p>Given a mux ID and a flag, if the flag is LOCK, the SR will suspend the calling process, setting the process into a suspend state and adding to a <b>mux suspend_q</b> according to which mux they wish to access, and set run_pid value of NONE (-1).</p>
 				<p>If the flag is UNLOCK, it lets the process in and then LOCKS the mux.</p>
 				<p>It is up to the process to then UNLOCK the mux when it completes its task.</p>
-				<p><b>IPC operations</b></p>
+				<p><b>IPC Write Operation</b></p>
 				<p>To text out these mutex locks,we designed system calls that enable writing to a given video mux like Target PC:</p>
 				<table>
 						<tr><th>System Call Names</th><th>Purpose</th></tr>
@@ -251,7 +253,86 @@
 				</table>
 				<p>A successful implementation showcases that the creation of a new process will now display text followed its pid number.</p>
 				<p>Like previous iterations, the blinking property follows the currently running process. In this case, the kernel is frozen while process 1 runs.</p>
+				<b>&lt;Phase 4&gt;</b>
+				<p>Now that we have an OS that can perform IPC services we will want to extend out the range of devices we can use these one.</p>
+				<p>For this project we enabled the OS to beabvle to talk to peripheral text terminal devices, connected into the computer through a few ports.</p>
+				<p>Because an I/O device is usually much slower than the CPU, a device driver, after issuing work to an I/O device, would suspend itself for the OS to run other processes.</p>
+				<p>When the I/O completes, the hardware will issue an interrupt signal and the OS will then respond to it and resume the device driver.</p>
+				<p><b>Terminals</b></p>
+				<p>To extend the WriteCall's cababilities, we added additional device type conditions to tell it where to display the ouput.</p>
+				<comment>TERM0 (device:35) and TERM1 (device:36)</comment>>
+				<comment>typedef struct {int tx_missed, io_base, out_mux; q_t out_q} term_t;</comment>
+				<p>Additionally we must estabish the I/O base for each terminal:</p>
+				<comment>term_t term[2] = {{TRUE,0x2f8},{TRUE,0x3e8}}</comment>
+				<p>Due to the fact that upon creation we do not have a gaurantee that the terminal will receive the first message, we intentionally miss it so that the next one is gauranteed.</p>
+				<p>To properly do this we expand WriteCall to EnQ a broadcasted message to a terminal specific <b>out_q</b> if the device is either terminal and then call a Terminal specific interrupt <RedBlock>[TERM0_INTR or TERM1_INTR]</RedBlock></p>
+				<p><b>TermSR()</b></p>
+				<p>Once the kernel takes control, it reads the interrupt and calls the TermSR function, passing in the calling terminal as a device parameter.</p>
+				<p>The function checks the calling device to see if it <RedBlock>missed its message</RedBlock>.</p>
+				<p>If it <RedBlock>missed the message</RedBlock>,TermSR() calls <b>TermTxSR()</b> which returns if the terminal's <b>out_q</b> is empty, else, it begins DeQing the <b>out_q</b>, sends to the data register, and sets the <GreenBlock>tx_missed to false</GreenBlock>.</p>
+				<p>If it is the first message, it will always <RedBlock>miss</RedBlock>.</p>
+				<p>If it <GreenBlock>didn't miss the message</GreenBlock>,TermSR() calls <b>TermRxSR()</b>, which for this phase doesn't do anything. In the future this will handle services that can read the input in a text terminal.</p>
+				<table class="EmptyTable">
+						<tr><td class="lcol"></td><td class="mcol"></td><td class="rcol"></td></tr>
+						<tr class="ET"><td class="mrow"></td><td><b>.</b></td><td></td></tr>
+						<tr><td class="brow"></td><td></td><td></td></tr>
+				</table>
+				<p>When properly setup the creation of a new process spawns the pid message on an appropriate text terminal. </p>
+				<p>All odd pid calls will appear on Terminal 0 while all even pid calls will appear on Terminal 1</p>
+				<table class="EmptyTable TextTerminal">
+						<tr><td class="lcol"></td><td class="mcol"><p>TERM 0</p></td><td class="rcol"></td></tr>
+						<tr class="ET"><td class="mrow"></td><td><b>pid: 1</b><br><b class="Blink">pid: 3</b></td><td></td></tr>
+						<tr><td class="brow"></td><td></td><td></td></tr>
+				</table>
+				<p>Based on which process was called, they will display a blinking text to signify they are the running process.</p>
+				<p>In this particular scenario, three processes were created, displaying in the order of their creation, with process 3 being the most recent to run.</p>
+				<table class="EmptyTable TextTerminal">
+						<tr><td class="lcol"></td><td class="mcol"><p>TERM 2</p></td><td class="rcol"></td></tr>
+						<tr class="ET"><td class="mrow"></td><td><b>pid: 2</b></td><td></td></tr>
+						<tr><td class="brow"></td><td></td><td></td></tr>
+				</table>
+				<p>Later these ICP controls will be expanded to allow for input as well as output from the text terminals.</p>
+				<b>&lt;Phase 5&gt;</b>
+				<p>In this phase we establish the read OS service, which allows us to input into the text terminal and have it read on the Target PC.</p>
+				<p><b>IPC Read Operation</b></p>
+				<p>To do this, we add additional queues and a new mux to the terminal type:</p>
+				<comment>q_t in_q; q_t echo_q; int in_mux;</comment>
+				<p>Additionally, we add functionality to TermRXSR, which now reads a char from the terminal data by the io_base and EnQs it to the <b>echo_q</b> and <b>in_q</b>.</p>
+				<p>It's able to perform this read function via a new system call we create:</p>
+				<table>
+						<tr><th>System Call Names</th><th>Purpose</th></tr>
+						<tr><td>ReadCall</td><td>Given a device and char pointer to a char array via registers (eax,ebx), this function gets the running pid via GetPidCall() and sets a count for the amount of chars read so far.<br>
+							Given this information, based on the device (such as STDOUT for TargetPC) this method will DeQ their <b>in_q</b>, reading the input.</td></tr>
+				</table>
+				<p>Once the data is completely read and the read function detects the end of the sentence, TermRxSR() returns.</p>
+				<p>At this point we also make modifications to TermTxSR() to check if either the <b>echo_q</b> or <b>out_q</b> are empty to set the <RedBlock>missed message</RedBlock> and if not, DeQ the input and send to the outportb.</p>
+				<table class="EmptyTable">
+						<tr><td class="lcol"></td><td class="mcol"></td><td class="rcol"></td></tr>
+						<tr class="ET"><td class="mrow"></td><td><b>.</b><br><b id="input1"></b><br><b id="input2"></output></b></td><td></td></tr>
+						<tr><td class="brow"></td><td></td><td></td></tr>
+				</table>
+				<p>When successfully implemented, a user can type input into spawned text terminal processes and have the input displayed on the Target PC.</p>
+				<p>Below you can see a demo of what it would look like, with the exception of pressing the ENTER key.</p>
+				<table class="EmptyTable TextTerminal">
+						<tr><td class="lcol"></td><td class="mcol"><p>TERM 0</p></td><td class="rcol"></td></tr>
+						<tr class="ET"><td class="mrow"></td><td><b>pid 01><input type="text" class="biginputbarinline preview" id="ShipToFullname" data-copy="#input1" name="ShipToFullname" value="Insert Input Here" required><b class="Blink">[]</b></b></td><td></td></tr>
+						<tr><td class="brow"></td><td></td><td></td></tr>
+				</table>
+				<p>For the sake of the user's sanity, we altered the display so that only a leading cursor will blink.</p>
+				<table class="EmptyTable TextTerminal">
+						<tr><td class="lcol"></td><td class="mcol"><p>TERM 2</p></td><td class="rcol"></td></tr>
+						<tr class="ET"><td class="mrow"></td><td><b>pid 02><input type="text" class="biginputbarinline preview"id="ShipToFullname"  data-copy="#input2" name="ShipToFullname" value="Insert Input Here"required><b class="Blink">[]</b></b></td><td></td></tr>
+						<tr><td class="brow"></td><td></td><td></td></tr>
+				</table>
+				<p>Additionally, in this web version the user only needs to type in their input in the above input fields rather than through the creation of additional processes.</p>
 		</div>
+		<script>
+			$(document).ready(function() {
+					$(".preview").on('keyup', function() {
+						$($(this).data('copy')).html($(this).val());
+					});
+				});
+		</script>
 		<script>
 				var pDiv = document.getElementById('parentParagraph');
 				var cParagraph = pDiv.children;
