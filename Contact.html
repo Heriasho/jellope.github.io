@@ -13,29 +13,39 @@
 		<style>
 			footer.ex1{padding: 15px 20px 20px 20px;}
 			li.list-group-item{background: transparent;border: transparent;}
-			div.jumbotron{margin-left:50px;margin-right:50px;background-color:transparent;}
+			div.jumbotron{background-color:transparent;}
 			body{background-image: url("mainSite/bgPoly.png"); background-repeat:repeat; background-size:cover; background-color:lightpink;}
 			a.nav-link :active{background: white;}
-			ul.nav-tabs .nav-link {background: pink; border-color:white; border-style:double;color: white;}
+			ul.nav-tabs .nav-link {background: darkslateblue; border-color:white; border-style:double;color: white;}
+			a{color:whitesmoke;}
+			RedBlock{color:darkred;}
 			td{font-weight: bold;color:white;}
-	
-			h1 {
-			font-family: 'Oswald', sans-serif;
-			font-weight: 400;
-			font-size: 46px;
-			letter-spacing: -3.5px;
-			color: #434343;
-			position: absolute;
-			top:36%;
-			left:28%;
+			#mainBackground {background: linear-gradient(271deg, #dd85a7, #c148a7, #c1bbc0);
+			background-size: 600% 600%;
+			-webkit-animation: mainBackground 44s ease infinite;
+			-moz-animation: mainBackground 44s ease infinite;
+			animation: mainBackground 44s ease infinite;}
+
+			@-webkit-keyframes mainBackground {
+				0%{background-position:31% 0%}
+				50%{background-position:70% 100%}
+				100%{background-position:31% 0%}
 			}
-			h1 span {
-			color: #532d7e;}
+			@-moz-keyframes mainBackground {
+				0%{background-position:31% 0%}
+				50%{background-position:70% 100%}
+				100%{background-position:31% 0%}
+			}
+			@keyframes mainBackground { 
+				0%{background-position:31% 0%}
+				50%{background-position:70% 100%}
+				100%{background-position:31% 0%}
+			}
 		</style>
 	</head>
-	<body>
+	<body id="mainBackground">
 		<br>
-		<div class="container-fluid">
+		<div class="jumbotron">
 				<ul class="nav nav-tabs nav-fill" role="tablist"> <!--Toogleable tabs, uses jquery and bootstrap-->
 					<li class="nav-item">
 						<a class="nav-link" href="index.html">Home</a>
@@ -44,37 +54,28 @@
 						<a class="nav-link" href="projects.html">Projects</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="Classes.html">Classes</a>
+						<a class="nav-link" href="classes.html">Classes</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="Activities.html">Activities</a>
+						<a class="nav-link" href="activities.html">Activities</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link active"href="Contact.html">Contact</a>
+						<a class="nav-link active"href="contact.html">Contact</a>
 					</li>
 				</ul>
 				<br>
-                <div class="container-fluid">
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                                <b>Email:</b> ryanbartoli707@gmail.com
-                            </li>
-                            <li class="list-group-item">
-                                <b>Phone:</b> 707-639-0159
-                            </li>
-                            <li class="list-group-item">
-                                <b>Linkedin:</b> <a href= "https://www.linkedin.com/in/ryan-bartoli/">https://www.linkedin.com/in/ryan-bartoli/</a>
-                            </li>
-                        </ul>
-                </div>
-				</div>
-				<footer class="ex1">
-					<div class="container-fluid text-center text-md-left">
-			
-					</div>
-				  </footer>
-			</div>
+            <div class="jumbotron">
+				<h1 class="title">Contact information</h1>
+				<p id="topParagraph"></p>
+				<p><b>Email: ryanbartoli707@gmail.com</b></p>
+				<p><b>Phone: 707-639-0159</b></p>
+				<p><b>Linkedin: <a href= "https://www.linkedin.com/in/ryan-bartoli/">https://www.linkedin.com/in/ryan-bartoli/</a></b></p>
+            </div>
 		</div>
+		<footer class="ex1">
+			<div class="container-fluid text-center text-md-left">
+			</div>
+		</footer>
 	</body>
 	</html>
 

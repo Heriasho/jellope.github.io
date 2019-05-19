@@ -15,25 +15,40 @@
 			footer.ex1{padding: 15px 20px 20px 20px;}
 			body{background-image: url("mainSite/bgPoly.png"); background-repeat:no-repeat; background-size:cover; background-color:lightpink;}
 			a.nav-link :active{background: white;}
-			ul.nav-tabs .nav-link {background: pink; border-color:white; border-style:double;color: white;}
+			ul.nav-tabs .nav-link {background: darkslateblue; border-color:white; border-style:double;color: white;}
 			td{font-weight: bold;color:white;}
 			img{padding: 15px 20px 20px 20px;height:300px;width: 300px;max-width:100%; height:auto;}
-			div.jumbotron{margin-left:50px;margin-right:50px;background-color:transparent;}
+			div.jumbotron{background-color:transparent;}
 			li.list-group-item{background: transparent;border: transparent;}
-			iframe.ex1{padding: 15px}
-			iframe#outrun {
-			width: 100vw;
-			height: 100vh;
-			position: fixed;
-			top: 0;
-			left: 0;
-}
+			a{color:whitesmoke;}
+			RedBlock{color:darkred;}
+			#mainBackground {background: linear-gradient(271deg, #dd85a7, #c148a7, #c1bbc0);
+			background-size: 600% 600%;
 
+			-webkit-animation: mainBackground 44s ease infinite;
+			-moz-animation: mainBackground 44s ease infinite;
+			animation: mainBackground 44s ease infinite;}
+
+			@-webkit-keyframes mainBackground {
+				0%{background-position:31% 0%}
+				50%{background-position:70% 100%}
+				100%{background-position:31% 0%}
+			}
+			@-moz-keyframes mainBackground {
+				0%{background-position:31% 0%}
+				50%{background-position:70% 100%}
+				100%{background-position:31% 0%}
+			}
+			@keyframes mainBackground { 
+				0%{background-position:31% 0%}
+				50%{background-position:70% 100%}
+				100%{background-position:31% 0%}
+			}
 		</style>
 	</head>
 
-	<body>
-		<div class="container-fluid">
+	<body id="mainBackground">
+		<div class="jumbotron">
 		<!--NAV BAR-->
 		<br>
 		<ul class="nav nav-tabs nav-fill" role="tablist"> <!--Toogleable tabs, uses jquery and bootstrap-->
@@ -44,37 +59,34 @@
 				<a class="nav-link" href="projects.html">Projects</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="Classes.html">Classes</a>
+				<a class="nav-link" href="classes.html">Classes</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="Activities.html">Activities</a>
+				<a class="nav-link" href="activities.html">Activities</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="Contact.html">Contact</a>
+				<a class="nav-link" href="contact.html">Contact</a>
 			</li>
 		</ul>
 			<div class="jumbotron">
 				<p id="Top Paragraph"></p>
-					<p><b>&lt;Ryan Bartoli&gt;</b></p>
+					<h1 class="title">Ryan Bartoli</h1>
 					<p><img src="mainSite/Portrait.png" class="ex1 image-fluid img-thumbnail" alt="Rando"></p>
-					<p><b>&lt;What I study&gt;</b></p>
-					<p>Graduating Fall 2019 with a major in <b>Computer Science</b> from <a href="https://www.csus.edu/">California State University, Sacramento (CSUS)</a></p>
+					<h2>&lt;What I study&gt;</h2>
+					<p>Graduating Fall 2019 with a major in <b>Computer Science</b> from <b><a href="https://www.csus.edu/">California State University, Sacramento (CSUS)</a></b></p>
 					<p>Working towards a certificate in <b>Game Development</b> and <b>System Software</b></p>
 					<br>
-					<b>&lt;What I am interested in&gt;</b>
+					<h2>&lt;What I am interested in&gt;</h2>
 					<p>Solving problems.</p>
 					<p>Developing computer render systems for video games.</p>
 					<p>Designing game mechanics and building play scenarios.</p>
 					<p>Taking ideas and implementing them though a programming lense.</p>
 					<br>
-					<b>&lt;What my hobbies are&gt;</b>
+					<h2>&lt;What my hobbies are&gt;</h2>
 					<p>Making webpages</a></p>
-					<p><a href="stellaris.html">Interns Incorporated</a></p>
-					<p><a href="aI.html">Artifical Intellegence study page</a></p>
 					<p>Making games</p>
 					<p>Playing games</p>
 					<p>Drawing</p>			
-				</p>
 			</div>
 				<footer class="ex1">
 					<div class="container-fluid text-center text-md-left">

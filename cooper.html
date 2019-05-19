@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" class="-webkit-">
+
+	<head>
+		<title>Cooper</title>
+		<meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css" />	
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!---This enables the tab nav bar to work-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<style>
+		h1.title{color:whitesmoke;}
+        b{color:seashell;font-size:larger;}
+        p{padding: 10px;}
+        table{color:#368a0f;border-style:dotted;border-collapse: collapse;border:1px;color:springgreen;}
+		tr{border-style:dotted;}
+		th{border-style:dotted;}
+        td{border-style:dotted;}
+        h2{color:seashell;}
+		tr.ET{vertical-align: top;text-align: left;}
+		input{background: transparent;border:transparent;border-collapse:collapse;width: 35%;color: whitesmoke;}
+        div.jumbotron{margin-left:50px;margin-right:50px;background-color:transparent;position: absolute;}
+        li.list-group-item{background: transparent;border: transparent;}
+        img{width: 450px;height:450px;padding: 15px 20px 20px 20px;}
+		comment{color:springgreen;}
+		GreenBlock{color:springgreen;}
+        RedBlock{color:crimson;}
+        #cooperBackground {background: linear-gradient(132deg, #163a11, #434b41, black);background-size: 600% 600%;
+        -webkit-animation: cooperBackground 44s ease infinite;
+        -moz-animation: cooperBackground 44s ease infinite;
+        animation: cooperBackground 44s ease infinite;}
+
+        @-webkit-keyframes cooperBackground {
+            0%{background-position:0% 50%}
+            50%{background-position:100% 50%}
+            100%{background-position:0% 50%}
+        }
+        @-moz-keyframes cooperBackground {
+            0%{background-position:0% 50%}
+            50%{background-position:100% 50%}
+            100%{background-position:0% 50%}
+        }
+        @keyframes cooperBackground { 
+            0%{background-position:0% 50%}
+            50%{background-position:100% 50%}
+            100%{background-position:0% 50%}
+        }
+	</style>
+	</head>
+
+	<body id="cooperBackground">
+		<div class="text-center">
+			<h1 class="title">Cooper MinMax program</h1>
+			<p><i><a style="color: cyan" href="https://jellope.github.io/index.html">My Website</a></i></p>
+		</div>
+		<div class="jumbotron" id="parentParagraph">
+			<h2>The project</h2>
+			<p id="Top Paragraph"></p>
+            <b>&lt;Adversaral search&gt;</b>
+            <p>A <b>C++</b> MinMax AI that can play special rule set of chess for a class AI tornument. 
+                My program utilized the Min Max algorithm in addition to iterative deepening, alpha beta pruning, and a "Conserve Moves" heristic.</p>
+            <p><i>If you would like to play against Cooper, you can download <a style="color: cyan"  href="./aiProject/cooper.exe">"Cooper"</a> here.
+                It will come in the form of a Windows executable which you may prefer run from a command window since the app closes at the end of the game.
+            </i></p>
+            <p><b>The setup</b></p>
+            <p>During the time of taking our college's artificial intelligence class; the second class project gave us a month to develop an adversarial search AI to play a specific game and then compete with classmates in an AI competition after the submission date. 
+                The results of this competition did not affect our grades and mostly was for point of pride and showcase of mastery of the subject. 
+                The way that semester panned out, there was three weeks during the semester; where our professor went over the general theory, and then one week during the spring break to develop and finish the project. 
+                We were allowed to develop our adversarial search in whichever coding language we wanted, as long as it implemented the Min Max algorithm and at least attempted to develop additional optimizations.
+                When I submitted my project for the competition I dubbed it under the name Cooper.
+            </p>
+            <img  src="aiProject/p1b.png" alt="Random board"/>	
+            <p><i>General Layout of the board.
+                K,B,H,P are the computer's Kings, Bishops, Horses, and Pawns (moving DOWN the board).
+                k,b,h,p are the human's Kings, Bishops, Horses, and Pawns (moving UP the board).
+            </i></p>	
+            <p><b>Language Selection</b></p>
+            <p>Since our school primarily taught Java and some aspects of Python, most of the class decided to go down those paths to develop the project. 
+                Given knowledge on the subject, however  it appeared to me that to more effectively utilize the Min Max algorithm you needed to minimize the overhead the chosen language had over the program, otherwise it would get bogged down. 
+                To counter that, I decided to pick up C++ to minimize the need for objects and more effectively manage memory, so that the MixMax algorithm could reach deeper plys and thus more effectively plan it’s moves out. 
+                Being that it was my first time designing in C++, it proved to be a challenge that required that full extent of those four weeks. 
+                This included coming to campus during the entirety of spring break to iron out its design.
+                </p>
+            <p><b>Optimizations</b></p>
+            <p>The contributing factors to the program's success was the optimizations I implemented to to improve its performance in pruning depth branches, and the development of a competitive heuristic for the game.</p>
+            <p><b>Iterative deepening</b></p>
+            <p>During class sessions we discussed the concept of <b>iterative deepening</b> which enabled the MinMax program to utilize a global best score as a comparison tool to determine the program should go to a deeper depth for a better score. 
+                Implementing iterative deepening to Cooper enabled it to use the global best score to reach deeper plys because it overall minimized the amount of nodes on the branches it had to check.
+            </p>
+            <img  src="aiProject/aiIterativeDeepening.png" alt="Random board" />	
+            <p><i>Above is a demonstration of how iterative deepening works with Cooper. 
+                Integrated with a timer, up to a time limit Cooper can continue to look at deeper plys.
+                As we get deeper into the game, moves are decided quicker which means deeper plys can be reached.
+                If this feature was not included in Cooper, they would be stuck with whichever max ply depeth I set, potientially handicapping its effectiveness in the late game.
+            </i></p>
+            <p><b>Alpha beta pruning</b></p>
+            <p>Another method of pruning we learned about was <b>alpha beta pruning</b>, meant to work alongside the Min Max algorithm, it provides the adversarial search with the ability to ignore branches (which would be up to millions of nodes) that provide a worst score than previously evaluated nodes on that branch. 
+                For Cooper, this meant it would be able utilize a local best score as a comparison tool for detecting and avoiding dead end paths, further minimizing the amount of nodes it had to check.
+                </p>
+            <b>&lt;Heuristics&gt;</b>
+            <p><b>Reading the meta</b></p>
+            <p>The final contributing factor to Cooper's success was its heuristic during the competition. 
+                To develop this we needed an in depth understanding of how Congress Chess was played.
+            </p>
+            <p>One of the first things I noticed while playing was the dominating effect the politicalican units had on the game, because their flexibility to be used as a horse or a bishop in the right circumstances provide a lot of utility no other unit possessed. 
+                To capitalize on this, I developed a heuristic with the strategy that provided higher score returns to Cooper for moves that preserved the political units while eliminating the opponent's.
+            </p>
+            <img  src="aiProject/aiPoliticanMoves.png" alt="Random board" />	
+            <p><i>Above is a demonstration of how many moves horses and bishops in this game could make in the first two turns of play.</i></p>
+            <p>Another thing I noticed when competing against other classmates was an aggressive design in their adversarial searches, looking to close out the games quickly by rushing to capture the kings or put them in deadlock positions. 
+                To counter this, I decided to add score to moves that conserved my pieces in general as well as conserved moves. 
+                These were both lesser values than the ones I put for the politicians so their protection was a greater concern to me. 
+                As an unintended consequence, Cooper played a conservative long game with its opponents, revealing bugs in my opponent's adversarial searches, bugs that I previously found out and eliminated from the ironing out process. For the games that were not automatically won by opponent disqualification, Cooper set the board up so that it would eliminate the opponent's politicians, block its pawns, and trap their kings. 
+                This tactic allowed me to beat AI that had greater depth ply algorithms because while I wasn't searching deeper I was making better moves, and protected my board from being rushed down. 
+                Often this would result in my AI forcing the opponent, who had not planned for a control game, to make moves to protect its units that ate at their remaining moves and ability to counter attack.
+            </p>
+            <img  src="aiProject/aiHorseTriangleMove.png" alt="Random board" />
+            <p><i>Above is a demonstration of a move I called the "Triangle Horse Move", which enabled a player to control the movement of the opponent's kings with three horses if not properly countered.
+                Even though I did not implement additional optimizations like Killer Moves, which presaves game winning moves ahead of time, I added this to the heristic, giving the computer a small score bonus if they find a move that can perform this move.
+                A full explanation of the move can be see down below.
+            </i></p>
+            <p>Throughout the entire tournament Cooper did not break once, or make illegal moves. 
+                Its wins were enabled by the study of programming languages and utilizing that knowledge to implement their strengths further improved by selective optimization and effective use move selection heuristics.
+            </p>
+            <b>&lt;Final scores at School AI Competition&gt;</b><br>
+            <img  src="aiProject/aiProjectScores.png" alt="Random board"/>
+            <p>You can find these results on Dr. Gordon's <a style="color: cyan" href="http://athena.ecs.csus.edu/~gordonvs/180/Tournaments/19Stres.html">tournament results</a> webpage.</p>
+            <b>&lt;How the game plays&gt;</b>
+            <p><b>Congress Chess</b></p>
+            <p class="ex2">"Congress Chess" is a chess-like game in which each player takes turns moving one
+                of his/her pieces.  The board is 8x6, with the left four columns being the "left wing"
+                and the right four columns being the "right wing".
+            </p>
+            <p><b>Each player has:</b></p>
+            <table>
+                <tr><th>Rules</th></tr>
+                <tr><td>2 kings, one in each wing.</td></tr>
+                <tr><td>6 pawns</td></tr>
+                <tr><td>4 politicians</td></tr>
+                <tr><td>If a politician is in the "left" wing, it becomes a horse.</td></tr>
+                <tr><td>If a politician is in the "right" wing, it becomes a bishop.</td></tr>
+                <tr><td>A politician changes if it moves from one wing to another.</td></tr>
+                <tr><td>A politician that is in the first three rows (nearest its own kings) is a "junior".</td></tr>
+                <tr><td>A politician that is in the furthest three rows is a "senior".</td></tr>
+            </table>
+            <p>When the game boots up, you are given the choice of whether Cooper or the player will go first.</p>
+            <p><b>General game loop</b></p>
+            <p>When the player decides to go first they are provided a list of valid moves they can make and are prompted to make a move.
+                Once a move is made, the game determines if that move either won the game. 
+                If not, it passes control over to the next player, in this case Cooper, and checks to see if Cooper is out of moves. 
+                If its doesn't, its their turn.
+                On Cooper's turn, it will be provided a list of legal moves, evaluate the boardstate and make its move.
+                This process will repeat until either a player makes a winning move (capturing both of the opponent's kings) or a player runs out of legal moves they can make.
+                Should the player decide Cooper goes first, Cooper will make its move as before, the player is prompted to make a move, and the cycle continues as before.
+            </p>
+            <p>Cooper has been tuned to be a decent competetor to other adversaral AI, but is definitely beatable by human opponents who observe its patterns.</p>
+            <p><i>If you would like to play against Cooper, you can download <a style="color: cyan" href="./aiProject/cooper.exe">"Cooper"</a> here.
+                It will come in the form of a Windows executable which you may prefer run from a command window since the app closes at the end of the game.
+            </i></p>
+            <img  src="aiProject/p1hF.png" alt="Random human" />
+            <p><i>The player goes first, provided a list of valid moves, and is prompted to make a move.</i></p>
+            <img  src="aiProject/p1hF2.png" alt="Random human" />
+            <p><i>After the player makes a move the board updates to reflect that move.</i></p>
+            <b><p>Full Explanation of the Triangle Horse Move</p></b>
+            <img  src="aiProject/aiHorseTriangleMove.png" alt="Random board" />
+            <p>The move begins with moving horses into C4 and C5, blocking the moves of a left king until a third horse, previously a bishop, moves to D4.
+            As the keypin of the plan, the D4 horse is able to eliminate the last safe haven for the left king, while also enabling the blockage of E6 for the right king.
+            Finally, When the left king is dealt with, the C4 horse can move to E5, become a bishop, and potientially eliminate the right king if the opponent hasn't moved their bishops yet.
+            </p>                    
+        </div>
+        <script>
+            var pDiv = document.getElementById('parentParagraph');
+            var cParagraph = pDiv.children;
+            for(var i=0; i<cParagraph.length;i++){
+                if(cParagraph[i].tagName == "P"){
+                    cParagraph[i].style.color = "white";
+                }
+            }
+        </script>
+			<footer >
+					<div class="container-fluid text-center text-md-left">
+					</div>
+				  </footer>
+        </body>
+</html>

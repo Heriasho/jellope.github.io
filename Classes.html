@@ -11,91 +11,39 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 		<style>
-			p.ex1{padding: 15px;}
-			p.ex2{margin: 15px;}
-			p.ex3{border: 1px solid green;padding: 35px 20px 50px 20px;} 
-			p.jumbo{font-family: 'Times New Roman', Times, serif;font-size: 20;color:black;}
-			h1{text-align: center; margin: 15px; color:white;}
-			h1.executive{text-align: center; margin: 15px; color:goldenrod;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
-			h2{color:black;}
-			h2.ex1{color:white;}
-			h5{color:black;}
-			h5.ex1{margin: 15px;}
-			h5.ex2{color:black;}
-			h5.inProgress{color: red;}
-			div.row{padding: 15px 20px 20px 20px;}
-            div.card{margin:15px;padding:15px;}
-			div.col-4{padding: 15px 20px 20px 20px;}
-			div.col-8{padding: 15px 20px 20px 20px;}
 			footer.ex1{padding: 15px 20px 20px 20px;}
-			p.proof{color:white;}
-            div.jumbotron{margin-left:50px;margin-right:50px;background-color:transparent;}
-            div.card{background-color:transparent;border:transparent;}
+            div.card{background-color:transparent;border:transparent;margin:15px;padding:15px;}
+            div.jumbotron{background-color:transparent;}
 			body{background-image: url("mainSite/bgPoly.png"); background-repeat:no-repeat; background-size:cover; background-color:lightpink;}
 			a.nav-link :active{background: white;}
-			ul.nav-tabs .nav-link {background: pink; border-color:white; border-style:double;color: white;}
-			td{font-weight: bold;color:white;}
-			img.savisDemo{width:300px;}
-			img.ex1{width:450px;height:450px;padding: 15px 20px 20px 20px;}
-			img.icon{width: 50px;height:50px;}
-			img.miniIcon{width: 25px;height: 25px;}
-			.chart{width: 500px; height: 200px; border-left: 1px dotted #555; border-bottom: 1px dotted #555; padding:20px 20px 20px 0;}        
-			@import url(http://fonts.googleapis.com/css?family=Oswald);
-        	.holder {width: 500px; height:500px; margin: inherit;}
-			img.logo{height: 70px;width: 225px; margin-top: -500px;margin-left: 138px}
-        	#layer-1 {-webkit-animation-name: spin;-webkit-animation-duration: 4000ms;-webkit-animation-iteration-count: infinite;-webkit-animation-timing-function: linear;-moz-animation-name: spin;-moz-animation-duration: 4000ms;-moz-animation-iteration-count: infinite;
-        	-moz-animation-timing-function: linear;-ms-animation-name: spin;-ms-animation-duration: 4000ms;-ms-animation-iteration-count: infinite;-ms-animation-timing-function: linear;
-			animation-name: spin;animation-duration: 4000ms;animation-iteration-count: infinite;animation-timing-function: linear;}
-        	@-ms-keyframes spin {
-            from { -ms-transform: rotate(0deg); }
-            to { -ms-transform: rotate(360deg); }
-        	}
-        	@-moz-keyframes spin {
-            from { -moz-transform: rotate(0deg); }
-            to { -moz-transform: rotate(360deg); }
-        	}
-        	@-webkit-keyframes spin {
-            from { -webkit-transform: rotate(0deg); }
-            to { -webkit-transform: rotate(360deg); }
-       		}
-        	@keyframes spin {
-            from {
-                transform:rotate(0deg);
-            }
-            to {
-                transform:rotate(360deg);
-            }
-        }
-        
-        .shape-4, .shape-5, .shape-6 {
-        }
-        .shape-1, .shape-4 {
-        opacity: 0.2;
-        }
-        .shape-2, .shape-5 {
-        opacity: 0.5;
-        }
-        .shape-3, .shape-6 {
-        opacity: 0.5;
-        }
-        h1 {
-        font-family: 'Oswald', sans-serif;
-        font-weight: 400;
-        font-size: 46px;
-        letter-spacing: -3.5px;
-        color: #434343;
-        position: absolute;
-        top:36%;
-        left:28%;
-        }
-        h1 span {
-        color: #532d7e;
-        }
+            ul.nav-tabs .nav-link {background: darkslateblue; border-color:white; border-style:double;color: white;}
+            #mainBackground {background: linear-gradient(271deg, #dd85a7, #c148a7, #c1bbc0);
+			background-size: 600% 600%;
+
+			-webkit-animation: mainBackground 44s ease infinite;
+			-moz-animation: mainBackground 44s ease infinite;
+			animation: mainBackground 44s ease infinite;}
+
+			@-webkit-keyframes mainBackground {
+				0%{background-position:31% 0%}
+				50%{background-position:70% 100%}
+				100%{background-position:31% 0%}
+			}
+			@-moz-keyframes mainBackground {
+				0%{background-position:31% 0%}
+				50%{background-position:70% 100%}
+				100%{background-position:31% 0%}
+			}
+			@keyframes mainBackground { 
+				0%{background-position:31% 0%}
+				50%{background-position:70% 100%}
+				100%{background-position:31% 0%}
+			}
 		</style>
 	</head>
-	<body>
+	<body id="mainBackground">
 		<br>
-		<div class="container-fluid">
+		<div class="jumbotron">
 				<ul class="nav nav-tabs nav-fill" role="tablist"> <!--Toogleable tabs, uses jquery and bootstrap-->
 					<li class="nav-item">
 						<a class="nav-link" href="index.html">Home</a>
@@ -104,19 +52,20 @@
 						<a class="nav-link" href="projects.html">Projects</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link active" href="Classes.html">Classes</a>
+						<a class="nav-link active" href="classes.html">Classes</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="Activities.html">Activities</a>
+						<a class="nav-link" href="activities.html">Activities</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link"href="Contact.html">Contact</a>
+						<a class="nav-link"href="contact.html">Contact</a>
 					</li>
 				</ul>
                 <br>
-                <div class="container-fluid">
-                    <div class="card-group"> <!--Row 1-->
-                        <div class="card">
+        <div class="jumbotron">
+            <h1 class="title">Classes</h1>
+            <div class="card-group"> <!--Row 1-->
+                <div class="card">
                             <img class="card-img-top" src="mainSite/csc.png" alt="Random Name" style="width:100%" />
                                 <div class="card-body">
                                     <h5>Artifical Intellegence</h5>
@@ -125,8 +74,8 @@
                                         search will be covered in depth. Knowledge representation, pattern recognition, hybrid approaches, 
                                         and handling uncertainty will also be discussed.</p>
                                 </div>
-                        </div>												
-                        <div class="card">
+                </div>												
+                <div class="card">
                             <img class="card-img-top" src="mainSite/csc.png" alt="Random Name" style="width:100%" />
                                 <div class="card-body">
                                     <h5>Computer Game Architecture and Implementation</h5>
@@ -139,16 +88,16 @@
                                             game development tools and environments. 
                                             Substantial programming and project work.</p>
                                 </div>
-                        </div>												
-                        <div class="card">
-                            <img class="card-img-top" src="mainSite/csc.png" alt="Random Name" style="width:100%" />
-                                <div class="card-body">
-                                    <h5>Operating System Pragmatics</h5>
-                                    <p>Application of operating system principles to the design and implementation of a multitasking operating system. 
-                                        Students will write an operating system for a computer platform. 
-                                        Topics include: scheduling of processes, control and allocation of computer resources, and user interfacing.</p>
-                                </div>
-                        </div>												
+                </div>												
+                <div class="card">
+                <img class="card-img-top" src="mainSite/csc.png" alt="Random Name" style="width:100%" />
+                    <div class="card-body">
+                        <h5>Operating System Pragmatics</h5>
+                        <p>Application of operating system principles to the design and implementation of a multitasking operating system. 
+                            Students will write an operating system for a computer platform. 
+                            Topics include: scheduling of processes, control and allocation of computer resources, and user interfacing.</p>
+                    </div>
+                </div>												
                         <div class="card-group"> <!--Row 2-->
                             <div class="card">
                                 <img class="card-img-top" src="mainSite/csc2.png" alt="Random Name" style="width:100%" />

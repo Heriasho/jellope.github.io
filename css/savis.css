@@ -1,0 +1,22 @@
+background: linear-gradient(69deg, #51ce17, #ee5325);
+background-size: 400% 400%;
+
+-webkit-animation: savisBackground 29s ease infinite;
+-moz-animation: savisBackground 29s ease infinite;
+animation: savisBackground 29s ease infinite;
+
+@-webkit-keyframes savisBackground {
+    0%{background-position:0% 74%}
+    50%{background-position:100% 27%}
+    100%{background-position:0% 74%}
+}
+@-moz-keyframes savisBackground {
+    0%{background-position:0% 74%}
+    50%{background-position:100% 27%}
+    100%{background-position:0% 74%}
+}
+@keyframes savisBackground { 
+    0%{background-position:0% 74%}
+    50%{background-position:100% 27%}
+    100%{background-position:0% 74%}
+}
