@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" class="-webkit-">
+
+	<head>
+		<title>Edo</title>
+		<meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css" />	
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!---This enables the tab nav bar to work-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<style>
+		h1.title{color:whitesmoke;}
+        b{color:seashell;font-size:larger;}
+        p{padding: 10px;}
+        table{color:#368a0f;border-style:dotted;border-collapse: collapse;border:1px;color:springgreen;}
+		tr{border-style:dotted;}
+		th{border-style:dotted;}
+        td{border-style:dotted;}
+        h2{color:seashell;}
+		tr.ET{vertical-align: top;text-align: left;}
+		input{background: transparent;border:transparent;border-collapse:collapse;width: 35%;color: whitesmoke;}
+        div.jumbotron{margin-left:50px;margin-right:50px;background-color:transparent;position: absolute;}
+        li.list-group-item{background: transparent;border: transparent;}
+        img{width: 450px;height:450px;padding: 15px 20px 20px 20px;}
+		comment{color:springgreen;}
+		GreenBlock{color:springgreen;}
+        RedBlock{color:crimson;}
+        body{background: #368a0f;}
+        .page-header {
+        height: 100vh;
+        background-image: url("sideProject/80Bg.png");
+        }
+
+        .page-header:after {
+        animation: grain 8s steps(10) infinite;
+        background-image: url("sideProject/80Bg.png");
+        content: "";
+        height: 300%;
+        left: -50%;
+        opacity: 0.3;
+        position: fixed;
+        top: -100%;
+        width: 300%;
+        }
+
+        @keyframes grain {
+        0%, 100% { transform:translate(0, 0) }
+        10% { transform:translate(-5%, -10%) }
+        20% { transform:translate(-15%, 5%) }
+        30% { transform:translate(7%, -25%) }
+        40% { transform:translate(-5%, 25%) }
+        50% { transform:translate(-15%, 10%) }
+        60% { transform:translate(15%, 0%) }
+        70% { transform:translate(0%, 15%) }
+        80% { transform:translate(3%, 35%) }
+        90% { transform:translate(-10%, 10%) }
+        }
+	</style>
+	</head>
+
+	<body class="page-header">
+		<div class="text-center">
+			<h1 class="title">Edo</h1>
+			<p><i><a style="color: cyan" href="https://jellope.github.io/index.html">My Website</a></i></p>
+		</div>
+		<div class="jumbotron" id="parentParagraph">
+			<p id="Top Paragraph"></p>
+            <b>&lt;The Fall&gt;</b>
+            <p>In the mortal realm of Edo, medieval parallels to Earth diverge after the crash landing of the Edo meteor over Edo, Toyoko.  
+                The city sized crater left by the fallen rock destroyed the primary seat of power for the Shogun and the entire governing infrastructure in Japan. 
+                In the ensuing power vacuum, civil war broke out between all noble houses, with the practices of the samurai warrior and the ninja becoming a divisive factor in each side's war effort. 
+                Over the course of the war, these warriors families forged alliances and plotted and conspired against each-other, amounting greater forces to ensure their dominance.  
+                Effectively, an arms race had begun to stir. </p>
+            <p>In the span of the war stretched long and the two life times of propaganda bred animosity were neither side could see each other as once  kinsmen. 
+                After a half of a century fighting the north demolished the south's defenses and enslaved them, establishing authoritarian rule over their kinsmen and crowning a ruler from the victorious militant general of the north known as the Protector Magistrate.</p>   
+            <p>Though the Protector Magistrate was successful in his campaign to dismantle the south a life time of fear propaganda has left the once bold general terrified of a southern uprising. Unwilling to risk a future rebellion, he decided to not reconstruct the south's infrastructure and instead to let them live in the ruins of their failed subnation, now simply referred to in historical accounts as "The Southern Shame". </p>  
+            <p>Generations later northern Japan still had dictatorial rule over the south, though the people no longer knew why they held this animosity. Soon future Protector Magistrates would need to reeducate its populous which gradually animosity from his own people. </p>
+            <p>One day, in the ancient ruins of Edo southerns built a small town near the crater. It emitted a ominous white smoke unexplained by their best minds, attributed  the rock's astrological traits to the bittersweet sign from the divines. The southerners created a folk tale retelling the south's defeat so long ago as a cosmic battle between two bother celestial deities. In the tale,  the northern brother stabbing his younger brother through the heart and his stoic anguish let out a single tear that plummeted to earth. A bit sweet story for a bitter sweet existence.</p>
+        </div>
+        <script>
+            var pDiv = document.getElementById('parentParagraph');
+            var cParagraph = pDiv.children;
+            for(var i=0; i<cParagraph.length;i++){
+                if(cParagraph[i].tagName == "P"){
+                    cParagraph[i].style.color = "white";
+                }
+            }
+        </script>
+			<footer >
+					<div class="container-fluid text-center text-md-left">
+					</div>
+				  </footer>
+        </body>
+</html>
