@@ -11,12 +11,10 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 		<style>
+        html{background-color:#368a0f;background-size: cover;margin:0;padding:0}
 		h1.title{color:whitesmoke;}
         b{color:seashell;font-size:larger;}
         p{padding: 10px;}
-		tr{border-style:dotted;}
-		th{border-style:dotted;}
-        td{border-style:dotted;}
         h2{color:seashell;}
 		tr.ET{vertical-align: top;text-align: left;}
 		input{background: transparent;border:transparent;border-collapse:collapse;width: 35%;color: whitesmoke;}
@@ -25,47 +23,21 @@
 		comment{color:yellowgreen;}
 		GreenBlock{color:yellowgreen;}
         RedBlock{color:crimson;}
-        
-        #savisBackground {background: linear-gradient(69deg, #368a0f, #f7a288); background-size: contain;
-            -webkit-animation: savisBackground 45s ease infinite;
-            -moz-animation: savisBackground 45s ease infinite;
-            animation: savisBackground 45s ease infinite;}
-
-            @-webkit-keyframes savisBackground {
-                0%{background-position:0% 74%}
-                50%{background-position:100% 27%}
-                100%{background-position:0% 74%}
-            }
-            @-moz-keyframes savisBackground {
-                0%{background-position:0% 74%}
-                50%{background-position:100% 27%}
-                100%{background-position:0% 74%}
-            }
-            @keyframes savisBackground { 
-                0%{background-position:0% 74%}
-                50%{background-position:100% 27%}
-                100%{background-position:0% 74%}
-            }
 	</style>
 	</head>
 
-	<body id="savisBackground">
-		<div class="text-center">
-			<h1 class="title">SAVIS Senior Project</h1>
-			<p><i><a style="color: cyan" href="https://jellope.github.io/index.html">My Website</a></i></p>
-		</div>
-		<div class="jumbotron" id="parentParagraph">
+	<body>
+        <div class="jumbotron" id="parentParagraph">
+            <div id="title" class="text-center">
+                <h1 class="title">SAVIS Senior Project</h1>
+                <i><a style="color: cyan" href="https://jellope.github.io/index.html">My Website</a></i>
+            </div>
 			<h2>The project</h2>
 			<p id="Top Paragraph"></p>
                 <b>&lt;SAVIS&gt;</b>
                 <p>My senior project, Statistics Analysis Visualizations for Introductory Statistics (SAVIS), is a website/standalone program to assist teachers in teaching statistics.</p>
                 <p>My teammates and I worked with CSUS statistics professor Rafael Diaz to create the software and translate it into Spanish so it can be used to teach hypothesis testing strategies to students in Mexico.</p>
                 <p><i>If you would like to try out our <b><a style="color: cyan" href="https://www.csus.edu/faculty/d/rdiaz/">senior project</a></b>, a link to the project and its downloadable versions can be found on Professor Diaz’ website.</i></p>
-                <p class="jumbo"><b>S</b>tatistical</p>
-                <p class="jumbo"><b>A</b>nalysis</p>
-                <p class="jumbo"><b>V</b>isualizations</p>
-                <p class="jumbo"><b>I</b>ntroductory</p>
-                <p class="jumbo"><b>S</b>tatistics</p>
                 <b>&lt;One Proportion&gt;</b><br>
                 <img class="savisDemo img-fluid"src="savisProject/oneProportionFilled.png" alt="Random board"/>
                 <p><b>Probability and Number of Tosses</b></p>

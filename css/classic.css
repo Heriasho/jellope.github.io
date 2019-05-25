@@ -1,0 +1,93 @@
+.banner-bg{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:50%;
+    z-index:0;
+    background-image:	url(../classic/Orgrimmar.png);
+    animation: slider-sm ease-in-out 30s infinite;
+    animation-delay: 0.15s;
+    perspective: 1000;
+    backface-visibility: hidden;
+   }
+       
+    @media (min-width: 32em) {
+     .banner-bg{background-image: url(../classic/Orgrimmar.png);
+     animation: slider-lg ease-in-out 30s infinite;
+     animation-delay: 0.15s;
+     perspective: 1000;
+     backface-visibility: hidden;
+    }}
+   
+
+@keyframes slider-sm {
+  0%,100%{
+    background-image: url(../classic/Orgrimmar.png), url(../classic/Stormwind.png);
+  }
+  10%{
+    background-image: url(../classic/Stormwind.png), url(../classic/Undercity.png);
+  }
+  20%{
+    background-image: url(../classic/Undercity.png), url(../classic/RedridgeMountains.png);
+  }
+  30%{
+   background-image: url(../classic/RedridgeMountains.png), url(../classic/BurningSteppes.png);
+  }
+  40%{
+    background-image: url(../classic/BurningSteppes.png), url(../classic/SearingGorge.png);
+  }
+  50%{
+    background-image: url(../classic/SearingGorge.png), url(../classic/TheBarrens.png);
+  }
+  60%{
+   background-image: url(../classic/TheBarrens.png), url(../classic/Tanaris.png);
+  }
+  70%{
+    background-image: url(../classic/Tanaris.png), url(../classic/ilverpineForest.png);
+  }
+  80%{
+    background-image: url(../classic/SilverpineForest.png),url(../classic/BlastedLands.png);
+  }
+  90%{
+   background-image: url(../classic/BlastedLands.png),url(../classic/Orgrimmar.png);
+  }
+}
+
+/*----------------------------------------------   
+--Keyframes Slider - Lg
+-----------------------------------------------  */
+@keyframes slider-lg {
+  0%,100%{
+    background-image: url(../classic/Orgrimmar.png), url(../classic/Stormwind.png);
+  }
+  10%{
+    background-image: url(../classic/Stormwind.png), url(../classic/Undercity.png);
+  }
+  20%{
+    background-image: url(../classic/Undercity.png), url(../classic/RedridgeMountains.png);
+  }
+  30%{
+   background-image: url(../classic/RedridgeMountains.png), url(../classic/BurningSteppes.png);
+  }
+  40%{
+    background-image: url(../classic/BurningSteppes.png), url(../classic/SearingGorge.png);
+  }
+  50%{
+    background-image: url(../classic/SearingGorge.png), url(../classic/TheBarrens.png);
+  }
+  60%{
+   background-image: url(../classic/TheBarrens.png), url(../classic/Tanaris.png);
+  }
+  70%{
+    background-image: url(../classic/Tanaris.png), url(../classic/ilverpineForest.png);
+  }
+  80%{
+    background-image: url(../classic/SilverpineForest.png),url(../classic/BlastedLands.png);
+  }
+  90%{
+   background-image: url(../classic/BlastedLands.png),url(../classic/Orgrimmar.png);
+  }
+}

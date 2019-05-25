@@ -1,185 +1,148 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dark="true">
+  <head>
+	<meta charset="UTF-8">
+    <title>Ryan Bartoli | Index</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  </head>
+  <body>
+    <div id="viewport">
+      <div id="webpage">
+        <div id="shadow">
+          <div id="content">
+            <span id="headerSpan">
+              <h1 id="nameTag">Ryan Bartoli</h1>
+              <h4 id="titleTag"></h4>
+              <span id="linkSpan">
+                <a href="index.html">Index</a> |
+                <a href="projects.html">Projects</a> |
+                <a href="activities.html">Activities</a> |
+                <a href="resume.html">Resume</a>
+              </span>
+            </span>
 
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css" />	
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-		<link rel='icon' href='favicon.ico' type='image/x-icon'/>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!---This enables the tab nav bar to work-->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-		<style>
-			footer.ex1{padding: 15px 20px 20px 20px;}
-			body{background-image: url("mainSite/bgPoly.png"); background-repeat:no-repeat; background-size:cover; background-color:lightpink;}
-			a.nav-link :active{background: white;}
-      ul.nav-tabs .nav-link {background: darkslateblue; border-color:white; border-style:double;color: white;}
-      div.jumbotron{background-color:transparent;}
-      table{border-style: double;border-color: black;}
-      thead{border-style: double;border-color: black;}
-      tr{border-style: double;}
-      td{border-style: double;}
-      th{border-style: double;}
-			a{color:cyan;}
-			RedBlock{color:darkred;}
-			#mainBackground {background: linear-gradient(271deg, #dd85a7, #c148a7, #c1bbc0);
-			background-size: 600% 600%;
-
-			-webkit-animation: mainBackground 44s ease infinite;
-			-moz-animation: mainBackground 44s ease infinite;
-			animation: mainBackground 44s ease infinite;}
-
-			@-webkit-keyframes mainBackground {
-				0%{background-position:31% 0%}
-				50%{background-position:70% 100%}
-				100%{background-position:31% 0%}
-			}
-			@-moz-keyframes mainBackground {
-				0%{background-position:31% 0%}
-				50%{background-position:70% 100%}
-				100%{background-position:31% 0%}
-			}
-			@keyframes mainBackground { 
-				0%{background-position:31% 0%}
-				50%{background-position:70% 100%}
-				100%{background-position:31% 0%}
-			}		
-		</style>
-	</head>
-	<body id="mainBackground">
-		<br>
-		<div class="jumbotron">
-				<ul class="nav nav-tabs nav-fill" role="tablist"> <!--Toogleable tabs, uses jquery and bootstrap-->
-					<li class="nav-item">
-						<a class="nav-link" href="index.html">Home</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="projects.html">Projects</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="classes.html">Classes</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link active" href="activities.html">Activities</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link"href="contact.html">Contact</a>
-					</li>
-				</ul>
-				<br>
-          <div class="jumbotron">
-            <h1 class="title">Activities</h1>
-                            <table>
-                              <thead class="ex1">
-                                <tr>
-                                  <th scope="col">Role</th>
-                                  <th scope="col">Where at</th>
-                                  <th scope="col">For how long</th>
-                                </tr>
-                              </thead>
-                              <tbody class="ex1">
-                                <tr>
-                                  <th scope="row">Member</th>
-                                  <td><BlueBlock><b>ACM, CSUS</b></BlueBlock></td>
-                                  <td><b>2014-Present</b></td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Officer Shadow</th>
-                                  <td><BlueBlock><b>ACM, CSUS</b></BlueBlock></td>
-                                  <td><b>Fall 2014</b></td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Secretary</th>
-                                  <td><BlueBlock><b>ACM, CSUS</b></BlueBlock></td>
-                                  <td><b>Spring 2015</b></td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Secretary</th>
-                                  <td><BlueBlock><b>ACM, CSUS</b></BlueBlock></td>
-                                  <td><b>Fall 2015</b></td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Event Coordinator</th>
-                                  <td><BlueBlock><b>ACM, CSUS</b></BlueBlock></td>
-                                  <td><b>Spring 2016</b></td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Event Coordinator</th>
-                                  <td><BlueBlock><b>ACM, CSUS</b></BlueBlock></td>
-                                  <td><b>Fall 2016</b></td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Vice President</th>
-                                  <td><BlueBlock><b>ACM, CSUS</b></BlueBlock></td>
-                                  <td><b>Spring 2017</b></td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Member</th>
-                                  <td><GreenBlock><b>Computer Technology Club, CSUS</b></GreenBlock></td>
-                                  <td><b>Spring 2017</b></td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Member</th>
-                                  <td><GreenBlock><b>Game Developers Club, CSUS</b></GreenBlock></td>
-                                  <td><b>Spring 2017</b></td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Volunteer</th>
-                                  <td><SlantB><b>Local ICPC, CSUS</b></SlantB></td>
-                                  <td><b>Fall 2014</b></td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Volunteer</th>
-                                  <td><SlantB><b>Local ICPC, CSUS</b></SlantB></td>
-                                  <td><b>Spring 2015</b></td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Volunteer Lead</th>
-                                  <td><SlantB><b>Local ICPC, CSUS</b></td>
-                                  <td><b>Fall 2015</b></td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Volunteer Lead</th>
-                                  <td><SlantB><b>Local ICPC, CSUS</b></td>
-                                  <td><b>Fall 2016</b></td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Volunteer Lead</th>
-                                  <td><SlantB><b>Local ICPC, CSUS</b></td>
-                                  <td><b>Spring 2017</b></td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Volunteer</th>
-                                  <td><SweBlock><b>Women's Shadow Day by SWE at CSUS</b></SweBlock></td>
-                                  <td><b>Spring 2015</b></td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Volunteer</th>
-                                  <td><SweBlock><b>Women's Shadow Day by SWE at CSUS</b></SweBlock></td>
-                                  <td><b>Spring 2017</b></td>
-                                </tr>										
-                                <tr>
-                                  <th scope="row">Participant (Game Developer)</th>
-                                  <td><SquareOneClubsBlock><b>The Progressive Gamejam 4.0 by Square One Clubs</b></SquareOneClubsBlock></td>
-                                  <td><b>Summer 2017</b></td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">Participant (Game Developer)</th>
-                                  <td><SquareOneClubsBlock><b>The Progressive Gamejam 4.0 by Square One Clubs</b></SquareOneClubsBlock></td>
-                                  <td><b>Spring 2018</b></td>
-                                </tr>
-                              </tbody>
-                            </table>
-                </div>
-				</div>
-				<footer class="ex1">
-					<div class="container-fluid text-center text-md-left">
-			
-					</div>
-				  </footer>
-			</div>
-		</div>
-	</body>
-	</html>
-
+            <div id="page-content-wrap">
+              <div id="page-content">
+                <h1 id="hello-world">Activities</h1>
+                <table>
+                    <thead class="ex1">
+                      <tr>
+                        <th scope="col">Role</th>
+                        <th scope="col">Where at</th>
+                        <th scope="col">For how long</th>
+                      </tr>
+                    </thead>
+                    <tbody class="ex1">
+                      <tr>
+                        <th scope="row">Member</th>
+                        <td><BlueBlock><b>ACM, CSUS</b></BlueBlock></td>
+                        <td><b>2014-Present</b></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Officer Shadow</th>
+                        <td><BlueBlock><b>ACM, CSUS</b></BlueBlock></td>
+                        <td><b>Fall 2014</b></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Secretary</th>
+                        <td><BlueBlock><b>ACM, CSUS</b></BlueBlock></td>
+                        <td><b>Spring 2015</b></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Secretary</th>
+                        <td><BlueBlock><b>ACM, CSUS</b></BlueBlock></td>
+                        <td><b>Fall 2015</b></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Event Coordinator</th>
+                        <td><BlueBlock><b>ACM, CSUS</b></BlueBlock></td>
+                        <td><b>Spring 2016</b></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Event Coordinator</th>
+                        <td><BlueBlock><b>ACM, CSUS</b></BlueBlock></td>
+                        <td><b>Fall 2016</b></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Vice President</th>
+                        <td><BlueBlock><b>ACM, CSUS</b></BlueBlock></td>
+                        <td><b>Spring 2017</b></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Member</th>
+                        <td><GreenBlock><b>Computer Technology Club, CSUS</b></GreenBlock></td>
+                        <td><b>Spring 2017</b></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Member</th>
+                        <td><GreenBlock><b>Game Developers Club, CSUS</b></GreenBlock></td>
+                        <td><b>Spring 2017</b></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Volunteer</th>
+                        <td><SlantB><b>Local ICPC, CSUS</b></SlantB></td>
+                        <td><b>Fall 2014</b></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Volunteer</th>
+                        <td><SlantB><b>Local ICPC, CSUS</b></SlantB></td>
+                        <td><b>Spring 2015</b></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Volunteer Lead</th>
+                        <td><SlantB><b>Local ICPC, CSUS</b></td>
+                        <td><b>Fall 2015</b></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Volunteer Lead</th>
+                        <td><SlantB><b>Local ICPC, CSUS</b></td>
+                        <td><b>Fall 2016</b></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Volunteer Lead</th>
+                        <td><SlantB><b>Local ICPC, CSUS</b></td>
+                        <td><b>Spring 2017</b></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Volunteer</th>
+                        <td><SweBlock><b>Women's Shadow Day by SWE at CSUS</b></SweBlock></td>
+                        <td><b>Spring 2015</b></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Volunteer</th>
+                        <td><SweBlock><b>Women's Shadow Day by SWE at CSUS</b></SweBlock></td>
+                        <td><b>Spring 2017</b></td>
+                      </tr>										
+                      <tr>
+                        <th scope="row">Game Developer</th>
+                        <td><SquareOneClubsBlock><b>Square One Clubs' Progressive Game Jam</b></SquareOneClubsBlock></td>
+                        <td><b>Summer 2017</b></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Game Developer</th>
+                        <td><SquareOneClubsBlock><b>Square One Clubs' Progressive Game Jam</b></SquareOneClubsBlock></td>
+                        <td><b>Spring 2018</b></td>
+                      </tr>
+                    </tbody>
+                </table>
+              </div>
+            </div>
+            <span id="footerSpan">
+              <h6>Ryan Bartoli 2019 &nbsp;</h3>
+              <a href="https://jellope.github.io/">https://jellope.github.io/</a>
+              <span id="linkSpan">
+                <a href="mailto:ryanbartoli707@gmail.com">Email</a><p></p> |
+                <a href="/resume/">Resume</a> |
+                <a href="https://www.linkedin.com/in/ryan-bartoli/">LinkedIn</a>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

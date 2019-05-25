@@ -1,127 +1,95 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dark="true">
+  <head>
+	<meta charset="UTF-8">
+    <title>Ryan Bartoli | Index</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  </head>
+  <body>
+    <div id="viewport">
+      <div id="webpage">
+        <div id="shadow">
+          <div id="content">
+            <span id="headerSpan">
+              <h1 id="nameTag">Ryan Bartoli</h1>
+              <h4 id="titleTag"></h4>
+              <span id="linkSpan">
+                <a href="index.html">Index</a> |
+                <a href="projects.html">Projects</a> |
+                <a href="activities.html">Activities</a> |
+                <a href="resume.html">Resume</a>
+              </span>
+            </span>
 
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css" />	
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-		<link rel='icon' href='favicon.ico' type='image/x-icon'/>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!---This enables the tab nav bar to work-->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-		<style>
-			footer.ex1{padding: 15px 20px 20px 20px;}
-			div.card{background-color:transparent;border:transparent;margin:15px;padding:15px;}
-			div.jumbotron{background-color:transparent;}
-			body{background-image: url("mainSite/bgPoly.png"); background-repeat:no-repeat; background-size:cover; background-color:lightpink;}
-			a.nav-link :active{background: white;}
-			ul.nav-tabs .nav-link {background: darkslateblue; border-color:white; border-style:double;color: white;}
-			a{color:whitesmoke;}
-			RedBlock{color:darkred;}
-			#mainBackground {background: linear-gradient(271deg, #dd85a7, #c148a7, #c1bbc0);
-			background-size: 600% 600%;
-
-			-webkit-animation: mainBackground 44s ease infinite;
-			-moz-animation: mainBackground 44s ease infinite;
-			animation: mainBackground 44s ease infinite;}
-
-			@-webkit-keyframes mainBackground {
-				0%{background-position:31% 0%}
-				50%{background-position:70% 100%}
-				100%{background-position:31% 0%}
-			}
-			@-moz-keyframes mainBackground {
-				0%{background-position:31% 0%}
-				50%{background-position:70% 100%}
-				100%{background-position:31% 0%}
-			}
-			@keyframes mainBackground { 
-				0%{background-position:31% 0%}
-				50%{background-position:70% 100%}
-				100%{background-position:31% 0%}
-			}
-		</style>
-	</head>
-	<body id="mainBackground">
-		<br>
-		<div class="jumbotron">
-			<ul class="nav nav-tabs nav-fill" role="tablist"> <!--Toogleable tabs, uses jquery and bootstrap-->
-					<li class="nav-item">
-						<a class="nav-link" href="index.html">Home</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link active" href="projects.html">Projects</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="classes.html">Classes</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="activities.html">Activities</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link"href="contact.html">Contact</a>
-					</li>
-			</ul>
-		<br>
-		<div class="jumbotron" id="front">
-			<h1 class="title">Projects</h1>
-				<div class="card-group"> <!--Row 1-->
-					<div class="card">
-						<img class="card-img-top" src="savisProject/savisProject.png" alt="Random Name"/>
-						<div class="card-body">
-							<b><a href="savis.html">SAVIS Computer Science senior project</a></b>
-							<p>My senior project, Statistics Analysis Visualizations for Introductory Statistics (SAVIS), is a website/standalone program to assist teachers in teaching statistics.</p>
-							<p>My teammates and I worked with CSUS statistics professor Rafael Diaz to create the software and translate it into Spanish so it can be used to teach hypothesis testing strategies to students in Mexico.</p>
-							<p><i>If you would like to try out our <b><a href="https://www.csus.edu/faculty/d/rdiaz/">senior project</a></b>, a link to the project and its downloadable versions can be found on Professor Diaz’ website.</i></p>
-						</div>
-					</div>
-					<div class="card">
-						<img class="card-img-top" src="osProject/spedeOS.png" alt="Random Name"/>
-						<div class="card-body">
-							<b><a href="spede.html">SPEDE OS Project</a></b>
-							<p><b><RedBlock>Documentation in progress</RedBlock></b></p>
-							<p>An OS project developed in an Upper Division Computer Science class for the purposes of learning how to build an Operating System.</p>
-							<p>SPEDE served as a foundation to develop a multiprocess timesharing operating system along aside with interprocess communcation (IPC), mutex locks, child process forking, and page allocation</p>
-						</div>
-					</div>
-					<div class="card">
-						<img class="card-img-top" src="aiProject/aiProject.png" alt="Random Name"/>
-						<div class="card-body">
-							<b><a href="ai.html">Artifical Intelligence</a></b>
-							<p><b><RedBlock>Documentation in progress</RedBlock></b></p>
-							<p>This is a study guide page developed for the purposes of studying my artifical intellegence class.</p>
-							<p>It spans from Fuzzy logic, Adversarial search algorithms, optimizations, Neural Networks, Genetic Algorithms, and Genetic Programming.</p>
-							</div>
-					</div>
-					<div class="card">
-						<img class="card-img-top" src="cooperProject/cooperProject.png" alt="Random Name"/>
-						<div class="card-body">
-							<b><a href="cooper.html">MinMax Adversarial Search (6th Place in AI Competition)</a></b>								
-							<p>A MinMax adversarial search that can play special rule set of chess for a class AI tornument.</p> 
-							<p>Optimizations added include iterative deepening, alpha beta pruning, and a "Conserve Moves" heristic.</p>
-							<p><i>If you would like to play against Cooper, you can download <b><a href="./aiProject/cooper.exe">"Cooper"</a></b> here.
-							<p>It will come in the form of a Windows executable which you may prefer run from a command window since the app closes at the end of the game.
-							</i></p>
-							</div>
-					</div>	
-					<div class="card">
-						<img class="card-img-top" src="killTheKing/killTheKing.png" alt="Random Name"/>
-						<div class="card-body">
-							<b><a href="Kill_the_King.html">Kill the King web game</a></b>
-							<p><b><RedBlock>Documentation in progress</RedBlock></b></p>
-							<p>This is a light hearted game project using the Twine game engine.</p>
-							<p>The goal of the game is to kill the king, though the game's plan was to expand on the idea that there is more to games then just the main quest.</p>
-							</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-		<footer class="ex1">
-			<div class="container-fluid text-center text-md-left">
-			</div>
-		</footer>
-	</body>
-	</html>
-
+            <div id="page-content-wrap">
+              <div id="page-content">
+                <h1 id="hello-world">Projects</h1>
+                <div class="card">
+                    <img class="card-img-top" src="savisProject/savisProject.png" alt="Random Name"/>
+                    <div class="card-body">
+                        <b><a href="savis.html">SAVIS senior project | Spring 2019</a></b>
+                        <p>My senior project, Statistics Analysis Visualizations for Introductory Statistics (SAVIS), is a website/standalone program to assist teachers in teaching statistics.</p>
+                        <p>My teammates and I worked with CSUS statistics professor Rafael Diaz to create the software and translate it into Spanish so it can be used to teach hypothesis testing strategies to students in Mexico.</p>
+                        <p><i>If you would like to try out our <b><a href="https://www.csus.edu/faculty/d/rdiaz/">senior project</a></b>, a link to the project and its downloadable versions can be found on Professor Diaz’ website.</i></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="cooperProject/cooperProject.png" alt="Random Name"/>
+                    <div class="card-body">
+                        <b><a href="cooper.html">MinMax Adversarial Search (6th Place in AI Competition) | Spring 2019</a></b>								
+                        <p>A MinMax adversarial search that can play special rule set of chess for a class AI tornument.</p> 
+                        <p>Optimizations added include iterative deepening, alpha beta pruning, and a "Conserve Moves" heristic.</p>
+                        <p><i>If you would like to play against Cooper, you can download <b><a href="./aiProject/cooper.exe">"Cooper"</a></b> here.
+                        <p>It will come in the form of a Windows executable which you may prefer run from a command window since the app closes at the end of the game.
+                        </i></p>
+                        </div>
+                </div>	
+                <div class="card">
+                    <img class="card-img-top" src="osProject/spedeOS.png" alt="Random Name"/>
+                    <div class="card-body">
+                        <b><a href="spede.html">SPEDE OS Project | Spring 2019</a></b>
+                        <p><b><RedBlock>Documentation in progress</RedBlock></b></p>
+                        <p>An OS project developed in an Upper Division Computer Science class for the purposes of learning how to build an Operating System.</p>
+                        <p>SPEDE served as a foundation to develop a multiprocess timesharing operating system along aside with interprocess communcation (IPC), mutex locks, child process forking, and page allocation</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="aiProject/aiProject.png" alt="Random Name"/>
+                    <div class="card-body">
+                        <b><a href="ai.html">Artifical Intelligence | Spring 2019</a></b>
+                        <p><b><RedBlock>Documentation in progress</RedBlock></b></p>
+                        <p>This is a study guide page developed for the purposes of studying my artifical intellegence class.</p>
+                        <p>It spans from Fuzzy logic, Adversarial search algorithms, optimizations, Neural Networks, Genetic Algorithms, and Genetic Programming.</p>
+                        </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="killTheKing/killTheKing.png" alt="Random Name"/>
+                    <div class="card-body">
+                        <b><a href="Kill_the_King.html">Kill the King web game | Summer 2018</a></b>
+                        <p><b><RedBlock>Documentation in progress</RedBlock></b></p>
+                        <p>This is a light hearted game project using the Twine game engine.</p>
+                        <p>The goal of the game is to kill the king, though the game's plan was to expand on the idea that there is more to games then just the main quest.</p>
+                        </div>
+                </div>
+            </div>
+              </div>
+            </div>
+            <span id="footerSpan">
+              <h6>Ryan Bartoli 2019 &nbsp;</h3>
+              <a href="https://jellope.github.io/">https://jellope.github.io/</a>
+              <span id="linkSpan">
+                <a href="mailto:ryanbartoli707@gmail.com">Email</a><p></p> |
+                <a href="/resume/">Resume</a> |
+                <a href="https://www.linkedin.com/in/ryan-bartoli/">LinkedIn</a>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
