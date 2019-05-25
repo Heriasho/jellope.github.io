@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400");
-html{background-image: url("../assetSource/bgpoly.png");
+html{background-image: url("bgpoly.png");
     background-size: cover;
     overflow-y:scroll;
     margin:0;padding:0}
