@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" class="-webkit-">
+
+	<head>
+		<title>Bright Bots</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css" />	
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!---This enables the tab nav bar to work-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<style>
+        html{background-color:#202020cb;background-size: cover;margin:0;padding:0}
+		h1.title{color:whitesmoke;}
+        b{color:seashell;font-size:larger;}
+        p{padding: 10px;}
+        h2{color:seashell;}
+		tr.ET{vertical-align: top;text-align: left;}
+		input{background: transparent;border:transparent;border-collapse:collapse;width: 35%;color: whitesmoke;}
+        div.jumbotron{margin-left:50px;margin-right:50px;background-color:transparent;position: absolute;}
+        img{width: 800px;height:500px;}
+		comment{color:yellowgreen;}
+		GreenBlock{color:yellowgreen;}
+        RedBlock{color:crimson;}
+        
+	</style>
+	</head>
+
+	<body>
+        <div class="jumbotron" id="parentParagraph">
+            <div id="title" class="text-center">
+                <h1 class="title">Bright Bots Factory</h1>
+                <h2>Cyberpunk - Puzzle solving - Story</h2>
+                <i><a style="color: cyan" href="https://jellope.github.io/index.html">My Website</a></i>
+            </div>
+			<h2>The project</h2>
+			<p id="Top Paragraph"></p>
+                <b>&lt;Initial Brainstorm&gt;</b>
+                <p>As part of the Progressive Game Jam by Square One Clubs in Sacramento, we developed a game pitch for a robot assembly puzzle game.
+                    The idea was for the player to be an unpaid intern working for the Bright Bot Inc. company, developing microprocessors for civil service robots.
+                    They would be presented with an assembly line where they are tasked with designing a plethera of service robots by assembling their "brain" using pieces associated with different colors.
+                    Each piece color associated with an applifier that enhanced that robot's ability to perform a task in a particular cataegory: Red for Strength, Yellow for Personality, and Blue for Intellegence.
+                    Additionally, each piece has a shape to it which provided a challenge for the player to place it on the hexagon shaped head. Putting that all together, we had the idea for a puzzle game played on the concepts of color, shape, and piece management. 
+                </p>
+                <b>&lt;Sprint 1: Initial Design&gt;</b><br>
+                <img class="savisDemo img-fluid"src="brightBotsProject/projectBegin.png" alt="Random board"/>
+                <p><i>When we started all we had was an idea and a photoshoped mockup of what the basic shapes would look like.</i></p>
+                <p><b>Item drop and pickup</b></p>     
+                <p>As the core mechanic of the game, we gave developed simple color and shape themed spirits called pieces for the player to interact with.
+                    Clicking and holding down the left mouse button a player can pickup and move a piece, while the right mouse button rotates the piece 90 degrees.
+                </p>
+                <p><b>rotationShape() {</b></p>
+                <code>
+                    <p>dragging = true; <comment>//Boolean to determine if a draggable piece is moving.</comment></p>
+                    <p>dragDegree = gameobject; <comment>//An abstraction gameobject, allowing us to modify the piece indirectly.</comment></p>
+                    <p>transform.Rotate(0,0,90); <comment>//Uses 90 degrees to allow proper lining up of the grid.</comment></p>
+                </code>    
+                <p><b>}</b></p>
+                <p><b>makeDrag() {</b></p>
+                <code>
+                    <p>dragging = true; <comment>//Boolean to determine if a draggable piece is moving.</comment></p>
+                    <p>dragDegree = gameobject; <comment>//An abstraction gameobject, allowing us to modify the piece indirectly.</comment></p>
+                    <p>dragDegree.GetComponent<SpriteRenderer>().sortingLayerName = "DraggingPiece"; <comment>//Gets the spirit render of the selected piece to allow it to visually move the spirit.</comment></p>
+                    <p>oldPosition = transform.position; <comment>//Whereever the mouse drops the piece on the screen, it will place the piece there.</comment></p>
+                    <p>oldRotation = transform.rotation; <comment>//Whereever rotation the player leaves the piece in, it will leave it that way.</comment></p>    
+                </code>
+                <p><b>}</b></p>
+                <p>To prevent pieces from cluttering the screen, we made it so that if a piece does not fit or is near the hexagon, the piece will reset to its original position known as the conveyor.</p> 
+                <p>It is only when a piece is placed on the hexagon without collision with other pieces that then gets placed.</p>  
+                <p><b>CheckConveyorCollision() {</b>  </p>
+                <code>
+                    <p>ContactFilter2D filter = new ContactFilter2D();</p>
+                    <p>filter.useLayerMask = true;</p>
+                    <p>filter.SetLayerMask(LayerMask.NameToLayer("Piece"));</p>
+                    <p><comment>//Collision handling</comment></p>
+                    <p>Collider2D c = GetComponent&lt;Collider2D&gt;();</p>
+                    <p>Collider2D[] results = new Collider2D[5];</p>
+                    <p>c.OverlapCollider(filter, results);</p>
+                    <p>foreach(Collider2D collider in results){</p>
+                    <p>if(collider == null) continue;</p>
+                    <p>if(collider.tag == "Tray") return true; <comment>If there is no collision with other pieces.</comment></p>
+                    <p>}</p>
+                    <p>return false; <comment>If there is collision with other pieces.</comment></p>
+                </code>
+                <p><b>}</b></p>
+                <p><b></b></p>
+                <p>By the end of this phase we were able to allow players to pick up, rotate pieces, and place them onto a hexagon board to demonstrate a proof of concept before futher developing the game.</p>
+                <p><b>Sprint 2: Piece spawning and score counting</b></p>  
+                <p>A common problem we found with the initial playtests of the levels was managing a wide range of pieces on a limited screen space.</p>
+                <p>Additionally, we needed to devise a way to generating various board requirements so that we did not need to hardcode each level.</p>
+                <p>If each piece took up a proportion of the screen, then generally there wouldn't be much room for user interface options and made the amount of puzzles that could be setup limited.</p>
+                <p>In this phase part of our team were able to design a conveyor belt mechanic which allowed us to display for larger quantities of pieces for the levels.</p>
+                <p>When a player begins a level they are presented with a conveyhor belt holding three pieces with adjacent buttons to move the conveyor along, showing more pieces.</p>
+                <p>Each piece is generated upon the start of the game but is hidden from sight if it is not at the front of the conveyor belt.</p>
+                <p>Additionally, we were able to associate pieces with scores based on their shape and color to vary up the combinations needed to complete a level.</p>
+                <img class="savisDemo img-fluid" src="brightBotsProject/milestone.png" alt="Random board"/>
+                <p><i>Our first milestone.</i></p>
+
+        </div>
+        <script>
+            var pDiv = document.getElementById('parentParagraph');
+            var cParagraph = pDiv.children;
+            for(var i=0; i<cParagraph.length;i++){
+                if(cParagraph[i].tagName == "P"){
+                    cParagraph[i].style.color = "white";
+                }
+            }
+        </script>
+			<footer >
+					<div class="container-fluid text-center text-md-left">
+					</div>
+				  </footer>
+        </body>
+</html>            

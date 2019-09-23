@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400");
+html{
+    background-size: cover;
+    overflow-y:scroll;
+    margin:0;padding:0}
+
+body{margin:0; padding:2em 0 0;}
+#viewport{margin:0;padding:0}
+html,body,#viewport{font-family:"Roboto", sans-serif;font-size:12pt;font-weight:400}
+#viewport{z-index:-99}
+#page-content h1,#page-content h2,#page-content h3,#page-content h4,#page-content h5,#page-content h6{transition:color 1s;color:#4a86e8}
+#webpage h1,#webpage h2,#webpage h3,#webpage h4,#webpage h5,#webpage h6{margin-bottom:0}
+#webpage h1{font-size:2.027rem;font-weight:800}
+#webpage h2{font-size:1.802rem;font-weight:500}
+#webpage h3{font-size:1.602rem;font-weight:500}
+#webpage h4{font-size:1.424rem;font-weight:500;margin-top:0}
+#webpage h5{font-size:1.266rem;font-weight:300;margin-top:0}
+#webpage h6{font-size:1.125rem;font-weight:300;margin-top:0}
+#webpage h1+p,#webpage h2+p,#webpage h3+p,#webpage h4+p,#webpage h5+p,#webpage h6+p,#webpage h1+ul,#webpage h2+ul,#webpage h3+ul,#webpage h4+ul,#webpage h5+ul,
+#webpage h6+ul{margin-top:0}
+#webpage span{font-size:1rem}
+#webpage table{padding: 1rem;text-align: left;align-content: center;}
+#webpage thead{color: #b1d2f3}
+#webpage th,tr,td{padding: .2rem}
+#webpage RedBlock{color:crimson}
+#content{width:100%;position:relative;box-sizing:content-box}
+#page-content-wrap{overflow-y:hidden}
+#page-content{margin-top:0;transition:margin-top 1s ease}
+html[fold] 
+#page-content{margin-top:-200%;transition:margin-top 1s ease}
+#page-content img{width: 100%;}
+
+#linkSpan{width:100%;align-self:flex-end;display:inline-block;display:flex;justify-content:center}
+#linkSpan a{display:inline-block;vertical-align:bottom;font-size:1rem;padding:0 .5em}pre{overflow-x:auto}
