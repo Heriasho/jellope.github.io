@@ -44,7 +44,7 @@ html[dark]
 #page-content{margin-top:0;transition:margin-top 1s ease}
 html[fold] 
 #page-content{margin-top:-200%;transition:margin-top 1s ease}
-#page-content img{width: 100%;}
+
 #spreadsheet{display: block; width:100%; height:100%; border:none; min-height: -webkit-fill-available;}
 .row{display:flex;}
 .col{flex:33.33%;padding:5px;}
