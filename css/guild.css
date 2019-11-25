@@ -25,8 +25,8 @@ html[dark] #page-content h1,html[dark] #page-content h2,html[dark] #page-content
 #webpage th,tr,td{padding: .2rem}
 #webpage RedBlock{color:crimson}
 
-#webpage{background-color:saddlebrown}
-#webpage{background-color:saddlebrown}
+#webpage{background-color:rgba(255,255,255,0.9)}
+#webpage{background-color:rgba(16,16,16,0.8)}
 
 hr{border:none;height:3px;
     background-color:#4e5b74}
@@ -48,7 +48,7 @@ html[fold]
 
 #headerSpan,#footerSpan{width:100%;position:relative;display:flex;
     flex-wrap:wrap;align-items:baseline;justify-content:center;
-    background-color:green;color:#fff;
+    background-color:saddlebrown;color:#fff;
     box-shadow:inset 0 1px 1px rgba(255,255,255,0.1),inset 1px 0 1px rgba(255,255,255,0.1),inset 0 -1px 1px rgba(0,0,0,0.1),inset -1px 0 1px rgba(0,0,0,0.1)}
 
 #linkSpan{width:100%;align-self:flex-end;display:inline-block;display:flex;justify-content:center}
