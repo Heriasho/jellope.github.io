@@ -25,8 +25,8 @@ html[dark] #page-content h1,html[dark] #page-content h2,html[dark] #page-content
 #webpage th,tr,td{padding: .2rem}
 #webpage RedBlock{color:crimson}
 
-#webpage{background-color:rgba(255,255,255,0.9)}
-#webpage{background-color:rgba(16,16,16,0.8)}
+#webpage{background-color:saddlebrown}
+#webpage{background-color:saddlebrown}
 
 hr{border:none;height:3px;
     background-color:#4e5b74}
