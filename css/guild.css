@@ -30,7 +30,7 @@ html[dark] #page-content h1,html[dark] #page-content h2,html[dark] #page-content
 
 hr{border:none;height:3px;
     background-color:#4e5b74}
-html:not([dir]) pre{background-color: forestgreen;color: white;}
+html:not([dir]) pre{background-color: forestgreen;color: white}
 
 a,a:visited{color:#222;font-style:normal}
 a,a:visited{color:#eee}a:hover{font-style:italic}
