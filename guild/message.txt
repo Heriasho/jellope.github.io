@@ -1,25 +1,14 @@
-This is the agenda
+<h1>This is the agenda</h1>
 
 
-Agenda item 1
-Agenda item 1Agenda item 1Agenda item 1Agenda item 1Agenda item 1Agenda item 1
-Agenda item 1Agenda item 1Agenda item 1Agenda item 1
-Agenda item 1Agenda item 1Agenda item 1Agenda item 1Agenda item 1Agenda item 1
+<b>Agenda item 1</b>
+Who are we? Are we a casual guild? A money bank? A minor raiding/pvp group?
 
-Agenda item 1Agenda item 1Agenda item 1Agenda item 1Agenda item 1
-Agenda item 1
-Agenda item 1Agenda item 1Agenda item 1Agenda item 1
+<b>Agenda item 2</b>
+Are my friends down to be officers for this guild?
 
-Agenda item 1Agenda item 1Agenda item 1Agenda item 1
+<b>Agenda item 3</b>
+Are my friends down to follow my idea of organizating the guild?
 
-Agenda item 1Agenda item 1Agenda item 1Agenda item 1Agenda item 1Agenda item 1
-
-
-Agenda item 1Agenda item 1
-Agenda item 1Agenda item 1Agenda item 1
-Agenda item 1Agenda item 1
-Agenda item 1
-Agenda item 1
-Agenda item 1Agenda item 1Agenda item 1
-
-Agenda item 1
+<b>Agenda item 4</b>
+Feedback
