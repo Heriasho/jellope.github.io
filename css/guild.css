@@ -30,7 +30,7 @@ html[dark] #page-content h1,html[dark] #page-content h2,html[dark] #page-content
 
 hr{border:none;height:3px;
     background-color:#4e5b74}
-pre{border:none;height:3px;
+object{border:none;height:3px;
     background-color:#4e5b74}
 
 a,a:visited{color:#222;font-style:normal}
