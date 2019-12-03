@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400");
+html{background-image: url("guildBG.png");
+    background-size: cover;
+    overflow-y:scroll;
+    margin:0;padding:0}
+
+    #thumbnail{width: 50px;height: 50px;vertical-align: -webkit-baseline-middle;padding: .5rem;}
+
+#select-abilities{
+    display: none;
+}
+.one-ability{
+    margin-bottom: 12px;
+}
+.bar-background{
+    width: 300px;
+    height: 20px;
+    border-radius: 10px;
+    background: #eee;
+    box-shadow: inset 0 0 8px 2px rgba(0, 0, 0, 0.06);
+    margin: 10px;
+}
+.bar{
+    height: 100%;
+    border-radius: 10px;
+    transition: 300ms linear;
+    text-align: center;
+}
+.xp-bar{
+    background-color: #CAF;
+    width: 100%; 
+}
+.str-bar{
+    background-color: #C66;
+    width: 80%;
+}
+.dex-bar{
+    background-color: #CC6;
+    width: 60%;
+}
+.con-bar{
+    background-color: #6c6;
+    width: 20%;
+}
+.iq-bar{
+    background-color: #6CC;
+    width: 20%;
+}
+.wis-bar{
+    background-color: #66C;
+    width: 60%;
+}
+.cha-bar{
+    background-color: #C6C;
+    width: 60%;
+}
+
+.skill-bar[value]{
+    background-color: black;
+    width: value;
+}

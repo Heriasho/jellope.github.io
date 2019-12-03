@@ -44,7 +44,8 @@ html[dark]
 #page-content{margin-top:0;transition:margin-top 1s ease}
 html[fold] 
 #page-content{margin-top:-200%;transition:margin-top 1s ease}
-#page-content img{width: 100%;}
+#page-content img.icon{width:50px; height:auto;}
+#page-content img.banner{width:100%}
 
 #headerSpan,#footerSpan{width:100%;position:relative;display:flex;
     flex-wrap:wrap;align-items:baseline;justify-content:center;
@@ -53,3 +54,13 @@ html[fold]
 
 #linkSpan{width:100%;align-self:flex-end;display:inline-block;display:flex;justify-content:center}
 #linkSpan a{display:inline-block;vertical-align:bottom;font-size:1rem;padding:0 .5em}pre{overflow-x:auto}
+.column{
+    float:left;
+    width:25%;
+    padding:10px;
+}
+.row:after{
+    content:"";
+    display:table;
+    clear:both;
+}
