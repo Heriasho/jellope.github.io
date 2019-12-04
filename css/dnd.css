@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400");
-html{background-image: url("guildBG.png");
+html{background-image: "";
     background-size: cover;
     overflow-y:scroll;
     margin:0;padding:0}
