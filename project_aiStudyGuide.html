@@ -1,613 +1,705 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dark="true">
+  <head>
+	<meta charset="UTF-8">
+    <title>Ryan Bartoli | Projects</title>
+    <link rel="stylesheet" href="css/aiStudyGuide.css">
+    <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  </head>
+  <body>
+    <div id="viewport">
+      <div id="webpage">
+        <div id="shadow">
+          <div id="content">
+            <span id="headerSpan">
+              <h1 id="nameTag">Ryan Bartoli</h1>
+              <h4 id="titleTag"></h4>
+              <span id="linkSpan">
+                <a href="index.html">Index</a> |
+                <a href="projects.html">Projects</a> |
+                <a href="activities.html">Activities</a> |
+                <a href="resume.html">Resume</a>
+              </span>
+            </span>
 
-	<head>
-		<title>AI</title>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		
-		<link rel="stylesheet" type="text/css" href="css/style.min.css" />
-		<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css" />	
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!---This enables the tab nav bar to work-->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-		<script defer type="application/javascript" src="js/canvas/aiMatrix.js"></script>
-		<style>
-		h1.title{color:whitesmoke;}
-		h2.concepts{text-align: left;}
-		b{color:seashell;font-size:larger;}
-		table{color:royalblue;border-style:dotted;border-collapse: collapse;border:1px royalblue;}
-		tr{border-style:dotted;}
-		th{border-style:dotted;}
-		td{border-style:dotted;}
-		div.jumbotron{margin-left:50px;margin-right:50px;background-color:transparent;position: absolute;}
-		comment{color:yellowgreen;}
-		GreenBlock{color:yellowgreen;}
-		RedBlock{color:crimson;}
-		</style>
-	</head>
+            <div id="page-content-wrap">
+              <div id="page-content">
+                <h1 id="hello-world">Artificial Intelligence Study Guide from college</h1>
+                <div class="card">
+						<h2 id="hello-world">What is AI?</h1>
+						<div class="card-body">
+								<b>&lt;Turing Test&gt;</b>
+								<p>• Human in one room, hooked to an “agent” in another room via computer chat session (keyboard)</p>
+								<p>• Human tries to determine if “agent” is a human or a computer    </p>
+								<p>• Human is free to discuss anything, can ask challenging questions (human knows this is a “test”) </p>
+								<p>• Passing presumably requires knowledge base, natural language processing, context understanding </p>
+								<b>&lt;Eliza&gt;</b>
+								<p>• Computer program written in 1966 (Weizenbaum)</p>
+								<p>• Trivial program (~200 lines of code), simply bounces back human input with minor modifications</p>
+								<p>• Many people thought it was a human</p>
+								<p>• Challenges significance of Turing Test</p>
+								<b>&lt;Knowledge Engineering&gt;</b>
+								<p><i>The bridge between the domain expert and the programmer, utilizing an <b>Expert System</b></i></p>
+								<p><b>Rules or "Knowledge Base"</b> - things that are always true; usually IF-THEN or Horn clauses.</p>
+								<p><b>Facts or “Data base”</b> - things that are true for a given scenario.</p>
+								<p><b>Inference engine or "Shell"</b> - performs logical deductions, usually forward/backward chaining.</p>
+								<p>Extracting rules from a human expert can be difficult:</p>
+								<p>• Experts might not be available</p>
+								<p>• Experts might not be willing</p>
+								<p>• Experts often don’t agree</p>
+								<p>• Experts often don’t know or can’t express what they know or do</p>
+								<p>• IF-THEN style rules may conflict. Difficulty to prioritize.</p>
+								<p>• Some expert systems can fire rules with “askable” items in the preconditions.</p>
+						</div>
+					  </div>        
+					  <div class="card">
+							<h2 id="hello-world">Fuzzy Logic in Expert System Shell</h1>
+							<div class="card-body">
+									<p><b>Run Commands:</b></p>
+									<p><code>(clear) <comment>Removes all facts and rules.</comment></code></p>
+									<p><code><comment>;Use Semicolon for comments.</comment></code></p>
+									<p><code>(run) <comment>Runs the rules.</comment></code></p>
+									<p><b>Facts:</b></p>
+									<p><code>(assert (duck) (owl)) <comment>creates 2 facts. Can't assert a fact twice.</comment> </code></p>
+									<p><code>(assert (duck nil)) <comment>asserts a fact with an empty field</comment></code></p>
+									<p><code>(facts) <comment>lists the active facts, and their numbers.</comment></code></p>
+									<p><code>(retract 2) <comment>removes fact number 2</comment></code></p>
+									<p><code>(watch facts) <comment>shows the fact list at every operation</comment></code></p>
+									<p><code>		also (unwatch all) <comment>&DoubleLongRightArrow; means added, &DoubleLongLeftArrow; means removed</comment></code></p>
+									<p><code>(reset) <comment>asserts "initial fact" removes other facts and rules, then asserts all of the deffacts (to prepare for a run).</comment></code></p>
+									<p><b>Rules:</b></p>
+									<p><code>(defrule duck "comments can go here"</code></p>
+									<p><code>	(animal-is duck)</code></p>
+									<p><code>	&DoubleLongRightArrow;</code></p>
+									<p><code> (printout t "quack quack" crlf))</code></p>
+									<p><code>(rules) <comment>Shows rules</comment></code></p>
+									<p><code>(run) <comment>Runs the rules.</comment></code></p>
+									<p><b>Variables and Binding</b></p>
+									<p><code>(defrule grandfather-gender</code></p>
+									<p><code>  	(is-a-grandfather ?name)</code></p>
+									<p><code>  	&DoubleLongRightArrow;</code></p>
+									<p><code>	 	(assert (is-a-man ?name) (is-a-father ?name))</code></p>
+									<p><comment>Can also retract facts:</comment></p>
+									<p><code>(defrule older-ducks</code></p>
+									<p><code>		?x &DoubleLeftArrow; (duck-age ?age)</code></p>
+									<p><code>		&DoubleLongRightArrow;</code></p>
+									<p><code>		(retract ?x)</code></p>
+									<p><code>		(assert (new-duck-age (+ ?age 1))))</code></p>
+									<p><comment>Simple rule set for a tree-like structure</comment></p>
+									<p><comment>Check 1</comment></p>
+									<p><code>(defrule p1</code></p>
+									<p><code>  	?p &DoubleLeftArrow; (start)</code></p>
+									<p><code>		&DoubleLongRightArrow;</code></p>
+									<p><code>  	(printout t "engine turns?")</code></p>
+									<p><code>	 	(assert (turns (read)))</code></p>
+									<p><code>	 	(retract ?p))</code></p>
+									<p><comment>Check 2</comment></p>
+									<p><code>(defrule p2</code></p>
+									<p><code>  	(turns no)</code></p>
+									<p><code>		&DoubleLongRightArrow;</code></p>
+									<p><code>  	(printout t "lights work?")</code></p>
+									<p><code>	 	(assert (lights (read)))</code></p>
+									<p><comment>Sample rule based on checks 1 and 2</comment></p>
+									<p><code>(defrule p3</code></p>
+									<p><code>  	(turns no)</code></p>
+									<p><code>  	(lights no)</code></p>
+									<p><code>		&DoubleLongRightArrow;</code></p>
+									<p><code>  	(printout t "problem is battery" crlf)</code></p>
+									<p><comment>startup</comment></p>
+									<p><code>(deffacts startup</code></p>
+									<p><code>			(start))</code></p>
+							</div>
+						  </div>    
+						  <div class="card">
+								<h2 id="hello-world">Fuzzy Logic Process</h1>
+								<div class="card-body">
+										<p>&mu;  is the “degree of membership” of the variable “height” in the fuzzy set “TALL”</p>
+										<p><i>&mu; in math terms is the mean of a graph.</i></p>
+										<p>“Crisp” values for “height” are measured (e.g.: 5’6”). The corresponding &mu; is its fuzzy membership.</p>
+										<p><b>Fuzzy logic operations</b></p>
+										<p><code>		NOT(x) = 1 - &mu;(x)</code></p>
+										<p><code>		x AND y = min(x,y)</code></p>
+										<p><code>		x OR y = max(x,y)</code></p>
+										<p><b>Fuzzification</b></p>
+										<p>Determine the degree of membership for each input in the antecedent fuzzy sets.</p>
+										<p><b>Fuzzy sets</b> are the conversion of graph inputs into Fuzzy numbers our Fuzzy Shell can use.</p>
+										<p><comment>Input example:</comment></p>
+										<p><code>negative=(-2/1,0/0), zero=(-2/0,0/1,2/0), positive=(0/0,2/1)</code></p>
+										<p><code>negative=(-5/1,0/0), zero=(-5/0,0/1,5/0), positive=(0/0,5/1)</code></p>
+										<p><comment>Output example:</comment></p>
+										<p><code>bigneg=(-16/1,-8/0), neg=(-16/0,-8/1,0/0), zero=(0/0,8/1,16/0), pos=(0/0,8/1,16/0), bigpos=(8/0,16/0). </code></p>
+										<p><comment>These rules can then be expressed as a Fuzzy Associative Matrix (FAM)</comment></p>
+										<table>
+											<tr><th>θ | dθ/dt</th><th>POS</th><th>ZERO</th><th>NEG</th>	</tr>
+											<tr><td>POS</td><td>BP</td><td>P</td><td>Z</td></tr>
+											<tr><td>ZERO</td><td>P</td><td>Z</td><td>N</td></tr>
+											<tr><td>NEG</td><td>Z</td><td>N</td><td>BN</td></tr>
+										</table>
+										<p><comment>This FAM contains 9 rules.</comment></p>
+										<p>Plug in values for θ and dθ along the graph to get values of &mu;pos(θ),&mu;zero(θ),&mu;neg(θ),&mu;pos(dθ),&mu;zero(dθ),and &mu;neg(dθ)</p>
+										<p></p>
+										<p><b>Rule Evaluation</b></p>
+										<p>Combine antecedents using fuzzy logic operations (AND, OR, NOT)</p>
+										<p>Given our previous evaluation we then plug in the values into the rules.</p>
+										<table>
+												<tr><td>If θ = pos AND dθ = pos<br>action = BP</td><td>If θ = pos AND dθ = zero<br>action = P</td><td>If θ = pos AND dθ = neg<br>action = Z</td></tr>
+												<tr><td>If θ = zero AND dθ = pos<br>action = P</td><td>If θ = zero AND dθ = zero<br>action = Z</td><td>If θ = zero AND dθ = neg<br>action = N</td></tr>
+												<tr><td>If θ = neg AND dθ = pos<br>action = Z</td><td>If θ = neg AND dθ = zero<br>action = N</td><td>If θ = neg AND dθ = neg<br>action = BN</td></tr>
+											</table>
+										<p>After tested, all non-zero output memebership rules fire.</p>
+										<p><b>Aggregation</b></p>
+										<p>Express consequents as a single (aggregate) fuzzy set</p>
+										<p><b>Defuzzification</b></p>
+										<p>Determine weighted sum, usually using “centroid” method.</p>
+										<p><code>&int;&mu;(x)&DiacriticalDot;x&#x2215;&int;&mu;(x)	<comment>Reimann sum</comment></code></p>
+										<p>We are then given a crisp results that can be used to perform an action, such as apply a force for the cart problem.</p>
+								</div>
+							  </div>    
+							  <div class="card">
+									<h2 id="hello-world">Fuzzy Sets</h1>
+									<div class="card-body">
+											<p><b></b></p>
+											<p>We can use deftemplate to define the fuzzy sets and linguistic values.</p>
+											<p><code>(deftemplate Angle</code></p>
+											<p><code> -4 4 degrees</code></p>
+											<p><code>	((Neg (-2 1) (0 0))</code>	<comment>“negative” Angle = (-2/1, 0/0)</comment></p>
+											<p><code>		(Zer (-2 0) (0 1) (2 0))</code>	<comment>“zero” Angle = (-2/0, 0/1, 2/0)</comment></p>
+											<p><code>   (Pos (0 0) (2 1))))</code>	<comment>“positive” Angle = (0/0, 2/1)</comment></p>
+											<p><b>Fuzzify the inputs</b></p>
+											<p><code>(assert (Angle (3.2 0) (3.2 1) (3.2 0)</code>
+											<p><b>Fuzzy Rules via FAMs</b></p>
+											<p><code>(defrule PositiveZero</code></p>
+											<p>  <code>(Angle Pos)</code></p>
+											<p>  <code>(DAngle ZERO)</code></p>
+											<p>	 <code>&DoubleLongRightArrow;</code></p>
+											<p>	 <code>(assert (action Forward)</code></p>
+											<p><b>Defuzzify the aggregation</b></p>
+											<p><code>(defrule defuzzify1</code></p>
+											<p>	 <code>(declare (salience -1)	<comment>Decreases priority of your function so it gets called last.</comment></code></p>
+											<p>	 <code>?f &DoubleLeftArrow; (action ?)</code></p>
+											<p>	 <code>&DoubleLongRightArrow;</code></p>
+											<p>	 <code>(bind ?t (moment-defuzzify ?f))</code>	<comment>Black box helper method that does the Defuzzification.</comment></p>
+											<p>	 <code>(assert (crispAction ?t))</code></p>
+									</div>
+								  </div>    							  						  
+								  <div class="card">
+										<h2 id="hello-world">Search Algorithms</h1>
+										<div class="card-body">
+												<p><b>Types of Search</b></p>
+												<p>• exhaustive</p>
+												<p>• selective</p>
+												<p>• full-width vs. narrow</p>
+												<p>• BF vs DF</p>
+												<p>• Guided by heuristic</p>
+												<p>• Random</p>
+												<p>• Depth-limited</p>
+												<p><b>Criteria for success</b></p>
+												<p>Finding the optimal solution.</p>
+												<p>Finding an adequate solution.</p>
+												<p>Finding all solutions, or as many as possible.</p>
+												<p><b>State space</b> is the amount of states a problem can be in.</p>
+												<p><b>8 Queens problem</b></p>
+												<p>• Each queen can go on any square: state space is 64!/56! = 3x1014 states.</p>
+												<p>• One queen per column: state space is 88 ≈ 2x107 states.</p>
+												<p><b>Branching factor</b> is the number of children at each node</p>
+												<p>When a problem becomes massive, the cost of evaluation is expensive, typically because of the branching factor.</p>
+												<p><b>Heuristics or "Rule of thumb" estimation metrics</b> can be used for estimating an evaluation.</p>
+												<p>An admissable heuristic is one that always underestimates.</p>
+												<h2>Tree Search Algorithm</h2>
+												<table>
+													<th>
+														<p><code>fringe = generate children</code></p>
+														<p><code>do</code></p>
+														<p><code>{	if fringe empty, fail</code></p>
+														<p><code> 	take one from fringe.</code></p>
+														<p><code> 	if node = solution, return node.</code></p>
+														<p><code> 	generate children of node and add them to fringe.</code></p>
+														<p><code>}</code></p>
+													</th>
+												</table>
+												<h2>Breadth-First Search (BFS)</h2>
+												<p>It starts at the tree root, and explores all of the neighbor nodes at the present depth prior to moving on to the nodes at the next depth level.</p>
+												<p><GreenBlock>When you find a solution, you know it's the shallowest.</GreenBlock></p>
+												<p><RedBlock>If solution is deep, significant memory requirements.</RedBlock></p>
+												<p><b>Depth-First Search (DFS)</b></p>
+												<p>The algorithm starts at the root node and explores as far as possible along each branch before backtracking.</p>
+												<p><GreenBlock>Low memory requirement.</GreenBlock></p>
+												<p><RedBlock>If solution is shallow, time wasted wandering elsewhere.</RedBlock></p>
+												<h2>Iterative Deepening Search (DLS)</h2>
+												<table>
+														<th>
+															<p><code>for depth = 0 to infinity</code></p>
+															<p><code>{	DLS(depth)</code></p>
+															<p><code> 	if found, return result.</code></p>
+															<p><code>}</code></p>
+														</th>
+												</table>>
+												<p><GreenBlock>Overhead is minimal compared to DLS.</GreenBlock></p>
+												<p><GreenBlock>Because of branching factor, number of nodes at final depth dominate.</GreenBlock></p>
+												<p><GreenBlock>Combines the advantages of BFS with low memory requirements of DFS.</GreenBlock></p>
+												
+										</div>
+									  </div>    
+									  <div class="card">
+											<h2 id="hello-world">A* Search</h2>
+											<div class="card-body">											
+													<p>The algorithm is formulated in terms of weighted graphs: starting from a specific starting node of a graph, it aims to find a path to the given goal node having the smallest cost (least distance travelled, shortest time, etc.).</p>
+													<p>It does this by maintaining a tree of paths originating at the start node and extending those paths one edge at a time until its termination criterion is satisfied.</p>
+													<p>At each iteration of its main loop, A* needs to determine which of its paths to extend. </p>
+													<p>It does so based on the cost of the path and an estimate of the cost required to extend the path all the way to the goal.</p>
+													<p>Specifically, A* selects the path that minimizes the following equation:</p>
+													<p><code>f(n)=g(n)+h(n)</code></p>
+													<p><commment><comment>n is the next node on the path<br>g(n) is the cost of the path from the start node<br>h(n) is a heuristic function that estimates the cost of the cheapest path from n to the goal.</commment></p>
+													<p>A* terminates when the path it chooses to extend is a path from start to goal or if there are not paths eligible to be extended.</p>
+													<p>The heuristic function is problem-specific. </p>
+													<p>If the heuristic function is admissible, meaning that it never overestimates the actual cost to get to the goal, A* is guaranteed to return a least-cost path from start to goal.</p>
+													<p>Common trend is for the algorithm to bounce back and forth between assessments of paths, going from one path to another based on newly determined shortest path.</p>
+													<table>
+															<tr><th>g(n)</th><th>h(n)</th></tr>
+															<tr><td>Place A-B: 118</td><td>Place A: 0</td></tr>
+															<tr><td>Place A-C: 111</td><td>Place B: 150</td></tr>
+															<tr><td>Place C-D: 120</td><td>Place C: 80</td></tr>
+															<tr><td>Place B-E: 140</td><td>Place D: 70</td></tr>
+															<tr><td>Place D-F: 75</td><td>Place E: 75</td></tr>
+															<tr><td>Place E-G: 80</td><td>Place F: 160</td></tr>
+															<tr><td>Place F-H: 12</td><td>Place G: 0</td></tr>
+															<tr><td>Place H-G: 146</td><td>Place H: 140</td></tr>
+													</table>
+													<p><comment>Using A* to find the next shortest path toward Place G (Goal).</comment></p>
+													<table>
+															<th>
+															<p class="text-center">Place A</p>
+															</th>
+															<td>	
+															<p>Place B: 118+150 = 268</p>
+															<p>Place C: 111+80 = 191</p>
+														  </td>
+													</table>
+													<p><comment>Place C is chosen because it is the shortest path.</comment></p>
+													<table>
+															<th>
+															<p class="text-center">Place A</p>
+															</th>
+															<td>	
+															<p>Place B: 118+150 = 268</p>
+															<p>Place C: 111+80 = 191 &DoubleLongRightArrow; Place D: (111 + 70) + 120 = 301</p>
+														  </td>
+													</table>
+													<p><comment>Place B is chosen because it is the shortest path.</comment></p>
+													<table>
+															<th>
+															<p class="text-center">Place A</p>
+															</th>
+															<td>	
+															<p>Place B: 118+150 = 268 &DoubleLongRightArrow; Place E: (118 + 140) + 75 = 333</p>
+															<p>Place C: 111+80 = 191 &DoubleLongRightArrow; Place D: (111 + 70) + 120 = 301</p>
+														  </td>
+													</table>
+													<p><comment>Place D is chosen because it is the shortest path.</comment></p>
+													<table>
+															<th>
+															<p class="text-center">Place A</p>
+															</th>
+															<td>	
+															<p>Place B: 118+150 = 268 &DoubleLongRightArrow; Place E: (118 + 140) + 75 = 333</p>
+															<p>Place C: 111+80 = 191 &DoubleLongRightArrow; Place D: (111 + 70) + 120 = 301 &DoubleLongRightArrow; Place F: (111 + 70 + 75) + 160 = 416</p>
+														  </td>
+													</table>
+													<p><comment>Place E is chosen because it is the shortest path.</comment></p>
+													<table>
+															<th>
+															<p class="text-center">Place A</p>
+															</th>
+															<td>	
+															<p>Place B: 118+150 = 268 &DoubleLongRightArrow; Place E: (118 + 140) + 75 = 333 &DoubleLongRightArrow; Place G: (111 + 140 + 80) + 0 = 338 &dotsquare; <comment>Destination</comment></p>
+															<p>Place C: 111+80 = 191 &DoubleLongRightArrow; Place D: (111 + 70) + 120 = 301 &DoubleLongRightArrow; Place F: (111 + 70 + 75) + 160 = 416</p>
+														  </td>
+													</table>
+													<p><comment>Place G is chosen because it is the shortest path.</comment></p>
+													<p><comment>A* terminates because we have reached our destination.</comment></p>
+													<p><comment>The path is A-B-E-G</comment></p>
+													
+											</div>
+										  </div> 									  
+									  <div class="card">
+											<h2 id="hello-world">Adversarial Search</h2>
+											<div class="card-body">
+													<p>Implementing this will allow for a computer to read a state and then make decisions based on that.</p>
+													<p><RedBlock>Huge Search space. Large branching factors will require the viewing of alot of nodes.</RedBlock></p>
+													<p><RedBlock>Cannot search entire tree. Thus it must use shorter depth, or narrow width.</RedBlock></p>
+													<p><RedBlock>Needs a heuristic to evaluate who is winning, but sometimes this heuristic can be wrong.</RedBlock></p>
+													<p><code>eval(P) = pieceCount(computer) - pieceCount(human)</code>	<comment>Example of a very simple heuristic. Usually there are multiple factors that play into the evaluation.</comment></p>
+													<p><RedBlock>Complex heuristics are slower, further reducing the number of nodes that can be searched.</RedBlock></p>
+											</div>
+										  </div> 
+									  <div class="card">
+											<h2 id="hello-world">MINI-MAX</h2>
+											<div class="card-body">
+													<p>A decision rule used in artificial intelligence, decision theory, game theory, statistics and philosophy for minimizing the possible loss for a worst case (maximum loss) scenario. </p>
+													<p>When dealing with gains, it is referred to as "maximin"—to maximize the minimum gain. </p>
+													<p>Our implementation used full-width with fixed depth.</p>
+													<p>Later on we can implement <b>Iterative deepening</b> to allow for variable depth.</p>
+													<p>Each level of the tree is known as PLY</p>
+													<p><b>Fastest win, slowest loss</b></p>
+													<p>The computer should pick the fastest win and pick the slowest loss.</p>
+													<p>This can be done through apply the PLY to the heuristic.</p>
+													<table>
+															<th>
+																<p><code>int pieceCount(bool humanPlayer){</code></p>
+																<p><code>int count = 0;</code></p>
+																<p><code>int score = 300;</code></p>
+																<p><code>if(humanPlayer) score -= ply;</code></p>
+																<p><code>if(!humanPlayer) score += ply;</code></p>
+																<p><code>for(int i=0;i&ltBOARD_COL_SIZE; i++)</code></p>
+																<p><code>for(int j=0;i&ltBOARD_ROW_SIZE; j++)</code></p>
+																<p><code>if(board[i][j] == politican) count++</code></p>
+																<p><code>return count*score;</code></p>
+																<p><code>}</code></p>
+															</th>
+													</table>																							
+											</div>
+										  </div>  
+										  <div class="card">
+												<h2 id="hello-world">Minmax Pseudocode</h2>
+												<div class="card-body">
+														<table>
+																<th>
+																	<p><code>minimax(Board)</code></p>
+																	<p><code>{ best.move = ""</code></p>
+																	<p><code> best.score = -9999</code></p>
+																	<p><code> For each legal move m</code></p>
+																	<p><code> { make move m.move on Board</code></p>
+																	<p><code>   m.score = <GreenBlock>MIN</GreenBlock></code></p>
+																	<p><code>   if(m.score > best.score) then best = m</code></p>
+																	<p><code>   retract move m.move on Board</code></p>
+																	<p><code>	}</code></p>
+																	<p><code><GreenBlock>Make move best.move</GreenBlock></code></p>
+																	<p><code>}</code></p>
+																</th>
+														</table>
+												</div>
+											  </div> 
+											  <div class="card">
+													<h2 id="hello-world">MAX Pseudocode</h2>
+													<div class="card-body">
+															<table>
+																	<th>
+																		<p><code>min()</code></p>
+																		<p><code>{ if (game over) return EVAL-WINNING-MOVE;</code></p>
+																		<p><code> if(depth is maxDepth) return <GreenBlock>EVAL</GreenBlock></code></p>
+																		<p><code> else</code></p>
+																		<p><code> { best.score = -9999</code></p>
+																		<p><code>   For each legal move m</code></p>
+																		<p><code> { make move m.move on Board</code></p>
+																		<p><code>   m.score = <GreenBlock>MIN</GreenBlock></code></p>
+																		<p><code>   if(m.score &gt best.score) then best = m</code></p>
+																		<p><code>   retract move m.move on Board</code></p>
+																		<p><code>	}</code></p>
+																		<p><code><GreenBlock>return best.score</GreenBlock></code></p>
+																		<p><code>}</code></p>
+																	</th>
+															</table>
+													</div>
+												  </div> 	
+												  <div class="card">
+														<h2 id="hello-world">MIN Pseudocode</h2>
+														<div class="card-body">
+																<table>
+																		<th>
+																			<p><code>min()</code></p>
+																			<p><code>{ if (game over) return EVAL-WINNING-MOVE;</code></p>
+																			<p><code> if(depth is maxDepth) return <GreenBlock>EVAL</GreenBlock></code></p>
+																			<p><code> else</code></p>
+																			<p><code> { best.score = -9999</code></p>
+																			<p><code>   For each legal move m</code></p>
+																			<p><code> { make move m.move on Board</code></p>
+																			<p><code>   m.score = <GreenBlock>MAX</GreenBlock></code></p>
+																			<p><code>   if(m.score &lt best.score) then best = m</code></p>
+																			<p><code>   retract move m.move on Board</code></p>
+																			<p><code>	}</code></p>
+																			<p><code><GreenBlock>return best.score</GreenBlock></code></p>
+																			<p><code>}</code></p>
+																		</th>
+																</table>
+																<p><comment><GreenBlock>EVAL</GreenBlock> applies heuristics to evaluate position B, from computer’s perspective (more+ = computer winning, more- = human winning).</comment></p>
+																<p><comment>EVAL-ENDING = +999(computer won), -999(human won), 0 if drawn.</comment></p>
+																<p><comment>Board (game state) is global. All other variables are local.</comment></p>
+																<p>Variables “best” and “m” represent legal moves, where:</p>
+																<p>• “.mv” represents the move itself</p>
+																<p>• “.score” represents the evaluation for the move</p>
+														</div>
+													  </div> 													  										  										  	
+										  <div class="card">
+												<h2 id="hello-world">Iterative Deepening Algorithm</h2>
+												<div class="card-body">
+														<p><GreenBlock>Enables MINMAX to continue to search deeper PLYS while time permits.</GreenBlock></p>
+														<p><GreenBlock>When combined with <b>history tables</b>, can be faster than DFS.</GreenBlock></p>
+														<table>
+																<th>
+																	<p><code>for searchDepth = 1 to maxDepth</code></p>
+																	<p><code>{ minimax(searchDepth)</code></p>
+																	<p><code>if out of time, exit</code></p>
+																	<p><code>}</code></p>
+																</th>
+														</table>
+												</div>
+											  </div>  
+											  <div class="card">
+													<h2 id="hello-world">Alpha-Beta pruning</h2>
+													<div class="card-body">
+															<p><b></b></p>
+															<p><i>αβ-pruning: “once you have proven that a move is bad, it isn’t necessary to show how truly awful it is.”</i></p>
+															<p><GreenBlock>The benefit of alpha–beta pruning lies in the fact that branches of the search tree can be eliminated. 
+																This way, the search time can be limited to the 'more promising' subtree, and a deeper search can be performed in the same time. 
+																The optimization reduces the effective depth to slightly more than half that of simple minimax if the nodes 
+																are evaluated in an optimal or near optimal order (best choice for side on move ordered first at each node).</GreenBlock></p>
+															<p><b>Killer Move heuristic</b></p>
+															<p><GreenBlock>Variable holds the move that generated the most recent αβ prune.</GreenBlock></p>
+															<p><GreenBlock>If the Killer move is one of the children, considers it first. Great if you know what are good moves in a game.</GreenBlock></p>
+															<p><b>History table heuristic</b></p>
+															<p><GreenBlock>Hash table indexed by all possible (single) moves.</GreenBlock></p>
+															<p><GreenBlock>Content of hash table is a count of the number of times that move generated an αβ-prune.</GreenBlock></p>
+															<p><GreenBlock>Sorts child nodes by the corresponding count in the history table. This means there is quick lookup.</GreenBlock></p>
+													</div>
+												  </div>  		
+												  <div class="card">
+														<h2 id="hello-world">Neural Network basics</h2>
+														<div class="card-body">
+																<p>A class of machine learning algorithms that use multiple layers to progressively extract higher level features from raw input.</p>
+																<p>In its most base form, a <b>Perceptron</b>, is akin to a biological neuron. It either fires <RedBlock>&#x3DF;</RedBlock> or doesn't fire.</p>
+																<p><b>Perceptron</b></p>
+																<p>When a neuron fires, electrochemical pressure isexerted on the connected neighboring neurons.</p>
+																<p>If incoming electrochemical pressure exceeds a certain “threshold”, a neuron fires.</p>
+																<p><comment>Weight (W) is a scalar for each input.</comment></p>
+																<table>
+																		<tr><th><p>Input 1</p></th><th><p>Input 2</p></th><th><p>Input 3</p></th></tr>
+																</table>
+																<table>
+																	<tr>
+																		<th>
+																		<p>Input 1: W1 &rArr;</p>	
+																		<p>Input 2: W2 &rArr; &dotsquare; &rArr; Output</p>
+																		<p>Input 3: W3 &rArr;</p></th></tr>
+																</table>
+																<p><code>SUM = W1 x Input 1 + W2 x Input 2 + W3 x Input 3</code></p>
+																<p><code>if(SUM >= Threshold) Output = 1</code></p>
+																<p><code>else Output = 0</code></p>
+																<p><b>Example of Perception that performs functions</b></p>
+																<table>
+																		<tr><th><p>Input 1</p></th><th><p>Input 2</p></th><th><p>&sum;</p></th><th><p>AND</p></th></tr>
+																		<tr><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+																		<tr><td>0</td><td>1</td><td>0.66</td><td>0</td></tr>
+																		<tr><td>1</td><td>0</td><td>0.66</td><td>0</td></tr>
+																		<tr><td>1</td><td>1</td><td>1.3</td><td>1</td></tr>
+																</table>
+																<table>
+																	<tr>
+																		<th>
+																		<p>Input 1 x (0.66) &rArr;</p>	
+																		<p>-------------------&dotsquare; &rArr; Output</p>
+																		<p>Input 2 x (0.66) &rArr;</p>
+																</table>
+																<p><comment>(0.66)Input 1 + (0.66) Input 2 >= 1</comment></p>
+																<p>The above graph demonstrates a perception can learn to perform a function.</p>
+																<p><b>Perceptron Learning via Supervised Learning</b></p>
+																<p>Supervised learning allows the perception to see a <b>training set</b> of inputs with known correct outputs to train it.</p>
+																<p>A <b>training pair</b> in this set is one input to one output.</p>
+																<p>After training, a <b>testing set</b> is used, showing a variety of inputs with known correct outputs used for testing.</p>
+																<p>Training sets test the Perceptions accuracy when fed the expected data, while testing sets test its ability to generalize.</p>
+														</div>
+													  </div>  
+													  <div class="card">
+															<h2 id="hello-world">Delta Rule</h1>
+																<div class="card-body">
+																		<p>The delta rule multiplies the error for this case by each input value, and a learning rate coefficient, to adjust each corresponding weight.</p>
+																		<p>If no error, no adjustment. Adjusting thresholds is generally unecessary.</p>
+																		<p>In theory, for small &alpha;, this learning algorithm is proven to learn the training set, but only if the network is capable of representing the solution</p>
+																		<p><code>ERROR = Target - Actual</code></p>
+																		<p><code>&Delta;Weight i = &alpha; x ERROR x Input i</code></p>
+																		<p><comment>&alpha; is the learning rate of the Perceptron.</comment></p>
+																		<p><comment>i is the number of iterations.</comment></p>
+															</div>
+														  </div>  	
+														  <div class="card">
+																<h2 id="hello-world">Linear Separability</h2>
+																<div class="card-body">
+																		<p><RedBlock>The perceptron cannot represent non-linear solution spaces.</RedBlock></p>
+																		<p><RedBlock>To represent XOR, since it is not linearly separable, requires more than one layer of neurons, however it can't train with it because it has no target ouput.</RedBlock></p>
+																		<p><RedBlock>This was a problem that stumpped reserachers until the 1980s.</RedBlock></p>
+																</div>
+															  </div>  	
+															  <div class="card">
+																	<h2 id="hello-world">Backpropagation</h2>
+																	<div class="card-body">
+																			<p>An extension of perceptron learning that can perform multilayer nets.</p>
+																			<p>Changes made:</p>
+																			<p>• Threshold replaced by logistic (or hyperbolic tangent), which has a similar shape to threshold.</p>
+																			<p>• Replacement function is continuous with a derivative.</p>
+																			<p><code>SUM = W1 x Input 1 + W2 x Input 2 + W3 x Input 3</code></p>
+																			<p><code>Output = 1&frasl;1+power(e,-SUM)</code></p>
+																			<p><code>&sigma;Output = Output x (1- Output)</code></p>
+																			<p>The training steps:</p>
+																			<p>1. Select a training pair from the training set.</p>
+																			<p>2. Apply the inputs to the neural network.</p>
+																			<p>3. Calculate the output(s) <comment>A concept called <b>Forward Passing</b></comment></p>
+																			<p>4. Calculate the error (target - actual) for each output.</p>
+																			<p>5. Adjust the weights <comment>A concept called <b>Backward Passing</b></comment></p>
+																			<p>6. If still too much aggregate error, repeat.</p>
+																	</div>
+																  </div>  
+																  <div class="card">
+																		<h2 id="hello-world">Modified Delta Rule</h2>
+																		<div class="card-body">
+																				<p><code>ERROR(output i) = Target(output i) - output(output i)</code></p>
+																				<p><code>&sigma; = output(1-output) x ERROR</code></p>
+																				<p><code>&Delta;Weight pq,k = &sigma; q,k x output p,j x &alpha;</code></p>
+																				<p><comment>p and q are neurons.</comment></p>
+																				<p><comment>j and k are layers.</comment></p>
+																				<p>To perform hidden layer weight adjustments use same formula, but estimate the delta term based on previous data.</p>
+																				<p><code>&sigma; p,j = [output p,j x (1 - output p,j)] x &sum; q (&sigma; q,k x W pq,k)</code></p>
+																		</div>
+																	  </div>
+																	  <div class="card">
+																			<h2 id="hello-world">Modified Delta Rule</h2>
+																			<div class="card-body">
+																					<p><b>Bias Nodes</b></p>
+																					<p>Extra nodes added to each layer that will always output a "1".</p>
+																					<p>It has outgoing weights that are trained along with the other weights.</p>
+																					<p><GreenBlock>It provides a mechanism for the neurons in the next layer to adjust their thresholds.</GreenBlock></p>
+																			</div>
+																		  </div>  		
+																		  <div class="card">
+																				<h2 id="hello-world">Generalization</h2>
+																				<div class="card-body">
+																						<p>• Tested after training is complete.</p>
+																						<p>• Trained network behavior is checked on the testing cases.</p>
+																						<p>• If network performs well on the untrained test cases, the network is said to "generalize"</p>
+																				</div>
+																			  </div>  		
+																			  <div class="card">
+																					<h2 id="hello-world">Overfitting</h2>
+																					<div class="card-body">
+																							<p><RedBlock>Sometimes, training to an overly-tight criteria can lead to poor generalization.</RedBlock></p>
+																							<p>Usually happens if the training data is noisy, because close criteria causes network to learn the noise.</p>
+																					</div>
+																				  </div>  
+																				  <div class="card">
+																						<h2 id="hello-world">Momentum</h2>
+																						<div class="card-body">
+																								<p><code>&delta;w(t) = &sigma; x output x &alpha; + &mu; x &delta;w(target - 1)</code></p>
+																								<p><code>&mu; &isin; [0,1] if &mu; = 0, normal weight training.</code></p>
+																								<p><code> If &mu;>0, a portion of previous weight change is added in.</code></p>
+																								<p><code> If &mu;>1, weight changes diverge and training fails.</code></p>
+																								<p><GreenBox>Including some momentum can often speed up training.</GreenBox></p>
+																						</div>
+																					  </div>  	
+																					  <div class="card">
+																							<h2 id="hello-world">Deep Learning</h2>
+																							<div class="card-body">
+																									<p>A “catch-all” phrase that refers to recent advances in neural networks, such as convolutional neural networks (CNN), that:</p>
+																									<p>• Utilize large number of neurons and/or large number of layers</p>
+																									<p>• Employ sophisticated or specialized organization of layers</p>
+																									<p>• Utilize GPUs for backpropagation computation, and thus have trained effectively with backpropagation on very large data sets.</p>
+																									<p>Some specific breakthroughs in Neural Networks that have contributed to Deep Learning include:</p>
+																									<p>• New activation functions to replace the logistic function, such as ReLU and Leaky-ReLU</p>
+																									<p>• New organizations of neurons in layers, such as Convolutional and Dropout layers.</p>
+																							</div>
+																						  </div>  																						  																				  																					  																		  																    																	  																  														  													  
+													  <div class="card">
+															<h2 id="hello-world">ReLU (Rectified Linear Unit)</h1>
+															<div class="card-body">		
+																	<p>As seen previously, standard neural networks require a non-linear activation function between layers</p>
+																	<p>Thus far, we have used “squashing” logistic or tanh functions, both of which have the following drawbacks:</p>
+																	<p><RedBlock>Slow learning when input has large magnitude, because gradient approaches 0.</RedBlock></p>
+																	<p><RedBlock>Inability to output values with magnitude greater than 1.</RedBlock></p>
+																	<p><GreenBlock>A popular replacement is <b>ReLU</b> which is defined as follows:</GreenBlock></p>
+																	<p><code>f(x) = max(0,x)</code></p>
+																	<p><GreenBlock>A popular varient is <b>Leaky ReLU</b> which is defined as follows:</GreenBlock></p>
+																	<p><code>f(x)=x when x &gt= 0 and ax when x &lt 0 where 0&lt a &gt 1</code></p>
+																	<p>Researchers have often observed faster learning when using ReLU or Leaky ReLU, instead of logistic or tanh.</p>
+																	<p>To facilitate implementing neural networks with many layers, potentially with different activation functions between layers, the choice of activation function is usually separated into it’s own separate layer:</p>
+																	<table>
+																			<tr>
+																				<th>
+																				<p>Input 1: W1 &rArr;</p>	
+																				<p>Input 2: W2 &rArr; &dotsquare; fully-connected &sum; layer &rArr; &dotsquare; activation (ReLU) layer &rArr; Output</p>
+																				<p>Input 3: W3 &rArr;</p></th></tr>
+																		</table>
+															</div>
+														  </div>  		
+														  <div class="card">
+																<h2 id="hello-world">Convolutional Layer</h2>
+																<div class="card-body">
+																		<p>Typically used for input data that is organized into square 2D grids (such as for image recognition).</p>
+																		<p>A convolutional layer has a set of some number of <b>filters</b>. Each filter performs a series of dot products:</p>
+																		<p>Example of a Dot Product</p>
+																		<p><code> Matrix A x Matrix B</code></p>
+																		<table>
+																				<tr><th>Matrix A</th><th>Matrix B</th><th>Output</th></tr>
+																				<tr><td>2</td><td>3</td><td>6</td></tr>
+																				<tr><td>1</td><td>12</td><td>12</td></tr>
+																				<tr><td>6</td><td>6</td><td>36</td></tr>
+																		</table>
+																		<p><b>Filters</b> are a small array of trainable floating point values.</p>
+																		<p>An output grid is produced by repeated applications of a single filter, to all locations in the input grid</p>
+																		<p>Each cell in the output grid is computed by taking the dot product of the filter, and a section of the input grid.</p>
+																		<p>We apply the filter to every location in the input grid. </p>
+																		<p>The output grid is often smaller than the input grid.</p>
+																		<p>The total number of cells in the output grid depends on the size of the <b>stride</b>.</p>
+																		<p>Grayscale images would have a 2D input grid (NxNx2), and we would use a 2D filter (KxKx2).</p>
+																		<p>Color images would have a 3D input grid (NxNx3), thus we would correspondingly use 3D filters (KxKx3).</p>
+																		<p>One filter always produces a single 2D output grid, regardless of whether the image is color or grayscale.</p>
+																		<p>Example of a 3x3x1 Matrix for grayscale</p>
+																		<table>
+																				<tr><td>0</td><td>9</td><td>0</td></tr>
+																				<tr><td>0</td><td>9</td><td>1</td></tr>
+																				<tr><td>0</td><td>8</td><td>0</td></tr>
+																		</table>
+																		<p>Scaling up the number of filters will scale up the number of tables used.</p>
+																		<p>The role of the filters in a convolutional layer is to identify small features in the image, wherever they occur.</p>
+																		<p>For this reason, the output grids are often called <b>activation maps</b>.</p>
+																		<p>It is usually useful to have multiple convolutional layers. This allows the network to learn higher-level features based on previously-identified lower-level features.</p>
+																		<p><RedBlock>To interchange inbetween filter sizes for future convolutional layers, we will need a non-linear activation layer (such as ReLU or tanh) between the layers.</RedBlock></p>
+																		<table>
+																				<tr>
+																					<th>
+																					<p></p>	
+																					<p>NxNx3 &rArr; 5 KxKx3 filters &rArr; MxMx5 &rArr; activation (ReLU) layer &rArr; MxMx5 &rArr; 4 LuLx5 filters &rArr; PxPx4</p>
+																					<p class="text-center">Same as: Convolutional layer &rArr; Activation layer &rArr; Convolutional layer</p>
+																					<p></p>
+																				</th></tr>
+																			</table>
+																			<p>Ah each layer the depth of the output set of the activation maps is equal to the number of filters that produced it.</p>
+																			<p>Because of this, we could compute M based on N, K, and the stride.</p>
 
-
-	<body id="body">
-    
-		<div class="text-center">
-				<h1 class="title">Artifical Intellegence</h1>
-				<p><i><a href="https://jellope.github.io/index.html">My Website</a></i></p>
-		</div>
-		<div class="jumbotron" id="parentParagraph">
-			<h2 class="concepts">Concepts</h2>
-			<p id="Top Paragraph"></p>
-				<b>&lt;Turing Test&gt;</b>
-				<p>• Human in one room, hooked to an “agent” in another room via computer chat session (keyboard)</p>
-				<p>• Human tries to determine if “agent” is a human or a computer    </p>
-				<p>• Human is free to discuss anything, can ask challenging questions (human knows this is a “test”) </p>
-				<p>• Passing presumably requires knowledge base, natural language processing, context understanding </p>
-				<b>&lt;Eliza&gt;</b>
-				<p>• Computer program written in 1966 (Weizenbaum)</p>
-				<p>• Trivial program (~200 lines of code), simply bounces back human input with minor modifications</p>
-				<p>• Many people thought it was a human</p>
-				<p>• Challenges significance of Turing Test</p>
-				<b>&lt;Knowledge Engineering&gt;</b>
-				<p><i>The bridge between the domain expert and the programmer, utilizing an <b>Expert System</b></i></p>
-				<p><b>Rules or "Knowledge Base"</b> - things that are always true; usually IF-THEN or Horn clauses.</p>
-				<p><b>Facts or “Data base”</b> - things that are true for a given scenario.</p>
-				<p><b>Inference engine or "Shell"</b> - performs logical deductions, usually forward/backward chaining.</p>
-				<p>Extracting rules from a human expert can be difficult:</p>
-				<p>• Experts might not be available</p>
-				<p>• Experts might not be willing</p>
-				<p>• Experts often don’t agree</p>
-				<p>• Experts often don’t know or can’t express what they know or do</p>
-				<p>• IF-THEN style rules may conflict. Difficulty to prioritize.</p>
-				<p>• Some expert systems can fire rules with “askable” items in the preconditions.</p>
-				<b>&lt;Inference Engine & First Order logic is used over Boolean logic&gt;</b>
-				<p>• Propositional or Boolean logic usually not sufficiently expressive for expert systems</p>
-				<p>• <b>First-Order logic</b> adds non-Boolean variables, making it possible to write rules that generalize</p>
-				<p>• Forward-Chaining (e.g. CLIPS) fires each satisfied rule – generates all conclusions.</p>
-				<p>• Backward-Chaining (e.g. Prolog) starts with query (goal), only fires rules needed to answer query.</p>
-				<b>&lt;Fuzzy Logic in Expert System Shell&gt;</b>
-				<p><b>Run Commands:</b></p>
-				<p><code>(clear) <comment>Removes all facts and rules.</comment></code></p>
-				<p><code><comment>;Use Semicolon for comments.</comment></code></p>
-				<p><code>(run) <comment>Runs the rules.</comment></code></p>
-				<p><b>Facts:</b></p>
-				<p><code>(assert (duck) (owl)) <comment>creates 2 facts. Can't assert a fact twice.</comment> </code></p>
-				<p><code>(assert (duck nil)) <comment>asserts a fact with an empty field</comment></code></p>
-				<p><code>(facts) <comment>lists the active facts, and their numbers.</comment></code></p>
-				<p><code>(retract 2) <comment>removes fact number 2</comment></code></p>
-				<p><code>(watch facts) <comment>shows the fact list at every operation</comment></code></p>
-				<p><code>		also (unwatch all) <comment>&DoubleLongRightArrow; means added, &DoubleLongLeftArrow; means removed</comment></code></p>
-				<p><code>(reset) <comment>asserts "initial fact" removes other facts and rules, then asserts all of the deffacts (to prepare for a run).</comment></code></p>
-				<p><b>Rules:</b></p>
-				<p><code>(defrule duck "comments can go here"</code></p>
-				<p><code>	(animal-is duck)</code></p>
-				<p><code>	&DoubleLongRightArrow;</code></p>
-				<p><code> (printout t "quack quack" crlf))</code></p>
-				<p><code>(rules) <comment>Shows rules</comment></code></p>
-				<p><code>(run) <comment>Runs the rules.</comment></code></p>
-				<p><b>Variables and Binding</b></p>
-				<p><code>(defrule grandfather-gender</code></p>
-				<p><code>  	(is-a-grandfather ?name)</code></p>
-				<p><code>  	&DoubleLongRightArrow;</code></p>
-				<p><code>	 	(assert (is-a-man ?name) (is-a-father ?name))</code></p>
-				<p><comment>Can also retract facts:</comment></p>
-				<p><code>(defrule older-ducks</code></p>
-				<p><code>		?x &DoubleLeftArrow; (duck-age ?age)</code></p>
-				<p><code>		&DoubleLongRightArrow;</code></p>
-				<p><code>		(retract ?x)</code></p>
-				<p><code>		(assert (new-duck-age (+ ?age 1))))</code></p>
-				<p><comment>Simple rule set for a tree-like structure</comment></p>
-				<p><comment>Check 1</comment></p>
-				<p><code>(defrule p1</code></p>
-				<p><code>  	?p &DoubleLeftArrow; (start)</code></p>
-				<p><code>		&DoubleLongRightArrow;</code></p>
-				<p><code>  	(printout t "engine turns?")</code></p>
-				<p><code>	 	(assert (turns (read)))</code></p>
-				<p><code>	 	(retract ?p))</code></p>
-				<p><comment>Check 2</comment></p>
-				<p><code>(defrule p2</code></p>
-				<p><code>  	(turns no)</code></p>
-				<p><code>		&DoubleLongRightArrow;</code></p>
-				<p><code>  	(printout t "lights work?")</code></p>
-				<p><code>	 	(assert (lights (read)))</code></p>
-				<p><comment>Sample rule based on checks 1 and 2</comment></p>
-				<p><code>(defrule p3</code></p>
-				<p><code>  	(turns no)</code></p>
-				<p><code>  	(lights no)</code></p>
-				<p><code>		&DoubleLongRightArrow;</code></p>
-				<p><code>  	(printout t "problem is battery" crlf)</code></p>
-				<p><comment>startup</comment></p>
-				<p><code>(deffacts startup</code></p>
-				<p><code>			(start))</code></p>
-				<b>&lt;Fuzzy Expert System Shell Process&gt;</b>
-				<p><b>Fuzzy Logic Basics</b></p>
-				<p>&mu;  is the “degree of membership” of the variable “height” in the fuzzy set “TALL”</p>
-				<p><i>&mu; in math terms is the mean of a graph.</i></p>
-				<p>“Crisp” values for “height” are measured (e.g.: 5’6”). The corresponding &mu; is its fuzzy membership.</p>
-				<p><b>Fuzzy logic operations</b></p>
-				<p><code>		NOT(x) = 1 - &mu;(x)</code></p>
-				<p><code>		x AND y = min(x,y)</code></p>
-				<p><code>		x OR y = max(x,y)</code></p>
-				<p><b>Fuzzification</b></p>
-				<p>Determine the degree of membership for each input in the antecedent fuzzy sets.</p>
-				<p><b>Fuzzy sets</b> are the conversion of graph inputs into Fuzzy numbers our Fuzzy Shell can use.</p>
-				<p><comment>Input example:</comment></p>
-				<p><code>negative=(-2/1,0/0), zero=(-2/0,0/1,2/0), positive=(0/0,2/1)</code></p>
-				<p><code>negative=(-5/1,0/0), zero=(-5/0,0/1,5/0), positive=(0/0,5/1)</code></p>
-				<p><comment>Output example:</comment></p>
-				<p><code>bigneg=(-16/1,-8/0), neg=(-16/0,-8/1,0/0), zero=(0/0,8/1,16/0), pos=(0/0,8/1,16/0), bigpos=(8/0,16/0). </code></p>
-				<p><comment>These rules can then be expressed as a Fuzzy Associative Matrix (FAM)</comment></p>
-				<table>
-					<tr><th>θ | dθ/dt</th><th>POS</th><th>ZERO</th><th>NEG</th>	</tr>
-					<tr><td>POS</td><td>BP</td><td>P</td><td>Z</td></tr>
-					<tr><td>ZERO</td><td>P</td><td>Z</td><td>N</td></tr>
-					<tr><td>NEG</td><td>Z</td><td>N</td><td>BN</td></tr>
-				</table>
-				<p><comment>This FAM contains 9 rules.</comment></p>
-				<p>Plug in values for θ and dθ along the graph to get values of &mu;pos(θ),&mu;zero(θ),&mu;neg(θ),&mu;pos(dθ),&mu;zero(dθ),and &mu;neg(dθ)</p>
-				<p></p>
-				<p><b>Rule Evaluation</b></p>
-				<p>Combine antecedents using fuzzy logic operations (AND, OR, NOT)</p>
-				<p>Given our previous evaluation we then plug in the values into the rules.</p>
-				<table>
-						<tr><td>If θ = pos AND dθ = pos<br>action = BP</td><td>If θ = pos AND dθ = zero<br>action = P</td><td>If θ = pos AND dθ = neg<br>action = Z</td></tr>
-						<tr><td>If θ = zero AND dθ = pos<br>action = P</td><td>If θ = zero AND dθ = zero<br>action = Z</td><td>If θ = zero AND dθ = neg<br>action = N</td></tr>
-						<tr><td>If θ = neg AND dθ = pos<br>action = Z</td><td>If θ = neg AND dθ = zero<br>action = N</td><td>If θ = neg AND dθ = neg<br>action = BN</td></tr>
-					</table>
-				<p>After tested, all non-zero output memebership rules fire.</p>
-				<p><b>Aggregation</b></p>
-				<p>Express consequents as a single (aggregate) fuzzy set</p>
-				<p><b>Defuzzification</b></p>
-				<p>Determine weighted sum, usually using “centroid” method.</p>
-				<p><code>&int;&mu;(x)&DiacriticalDot;x&#x2215;&int;&mu;(x)	<comment>Reimann sum</comment></code></p>
-				<p>We are then given a crisp results that can be used to perform an action, such as apply a force for the cart problem.</p>
-				<b>&lt;Fuzzy Clips&gt;</b>
-				<p><b>Fuzzy sets</b></p>
-				<p>We can use deftemplate to define the fuzzy sets and linguistic values.</p>
-				<p><code>(deftemplate Angle</code></p>
-				<p><code> -4 4 degrees</code></p>
-				<p><code>	((Neg (-2 1) (0 0))</code>	<comment>“negative” Angle = (-2/1, 0/0)</comment></p>
-				<p><code>		(Zer (-2 0) (0 1) (2 0))</code>	<comment>“zero” Angle = (-2/0, 0/1, 2/0)</comment></p>
-				<p><code>   (Pos (0 0) (2 1))))</code>	<comment>“positive” Angle = (0/0, 2/1)</comment></p>
-				<p><b>Fuzzify the inputs</b></p>
-				<p><code>(assert (Angle (3.2 0) (3.2 1) (3.2 0)</code>
-				<p><b>Fuzzy Rules via FAMs</b></p>
-				<p><code>(defrule PositiveZero</code></p>
-				<p>  <code>(Angle Pos)</code></p>
-				<p>  <code>(DAngle ZERO)</code></p>
-				<p>	 <code>&DoubleLongRightArrow;</code></p>
-				<p>	 <code>(assert (action Forward)</code></p>
-				<p><b>Defuzzify the aggregation</b></p>
-				<p><code>(defrule defuzzify1</code></p>
-				<p>	 <code>(declare (salience -1)	<comment>Decreases priority of your function so it gets called last.</comment></code></p>
-				<p>	 <code>?f &DoubleLeftArrow; (action ?)</code></p>
-				<p>	 <code>&DoubleLongRightArrow;</code></p>
-				<p>	 <code>(bind ?t (moment-defuzzify ?f))</code>	<comment>Black box helper method that does the Defuzzification.</comment></p>
-				<p>	 <code>(assert (crispAction ?t))</code></p>
-				<b>&lt;Search Algorithms&gt;</b>
-				<p><b>Types of Search</b></p>
-				<p>• exhaustive</p>
-				<p>• selective</p>
-				<p>• full-width vs. narrow</p>
-				<p>• BF vs DF</p>
-				<p>• Guided by heuristic</p>
-				<p>• Random</p>
-				<p>• Depth-limited</p>
-				<p><b>Criteria for success</b></p>
-				<p>Finding the optimal solution.</p>
-				<p>Finding an adequate solution.</p>
-				<p>Finding all solutions, or as many as possible.</p>
-				<p><b>State space</b> is the amount of states a problem can be in.</p>
-				<p><b>8 Queens problem</b></p>
-				<p>• Each queen can go on any square: state space is 64!/56! = 3x1014 states.</p>
-				<p>• One queen per column: state space is 88 ≈ 2x107 states.</p>
-				<p><b>Branching factor</b> is the number of children at each node</p>
-				<p>When a problem becomes massive, the cost of evaluation is expensive, typically because of the branching factor.</p>
-				<p><b>Heuristics or "Rule of thumb" estimation metrics</b> can be used for estimating an evaluation.</p>
-				<p>An admissable heuristic is one that always underestimates.</p>
-				<p><b>Tree Search Algorithm</b></p>
-				<table>
-					<th>
-						<p><code>fringe = generate children</code></p>
-						<p><code>do</code></p>
-						<p><code>{	if fringe empty, fail</code></p>
-						<p><code> 	take one from fringe.</code></p>
-						<p><code> 	if node = solution, return node.</code></p>
-						<p><code> 	generate children of node and add them to fringe.</code></p>
-						<p><code>}</code></p>
-					</th>
-				</table>>
-				<p><b>Breadth-First Search (BFS)</b></p>
-				<p>It starts at the tree root, and explores all of the neighbor nodes at the present depth prior to moving on to the nodes at the next depth level.</p>
-				<p><GreenBlock>When you find a solution, you know it's the shallowest.</GreenBlock></p>
-				<p><RedBlock>If solution is deep, significant memory requirements.</RedBlock></p>
-				<p><b>Depth-First Search (DFS)</b></p>
-				<p>The algorithm starts at the root node and explores as far as possible along each branch before backtracking.</p>
-				<p><GreenBlock>Low memory requirement.</GreenBlock></p>
-				<p><RedBlock>If solution is shallow, time wasted wandering elsewhere.</RedBlock></p>
-				<p><b>Iterative Deepening Search (DLS)</b></p>
-				<table>
-						<th>
-							<p><code>for depth = 0 to infinity</code></p>
-							<p><code>{	DLS(depth)</code></p>
-							<p><code> 	if found, return result.</code></p>
-							<p><code>}</code></p>
-						</th>
-				</table>>
-				<p><GreenBlock>Overhead is minimal compared to DLS.</GreenBlock></p>
-				<p><GreenBlock>Because of branching factor, number of nodes at final depth dominate.</GreenBlock></p>
-				<p><GreenBlock>Combines the advantages of BFS with low memory requirements of DFS.</GreenBlock></p>
-				<p><b>A* Search</b></p>
-				<p>The algorithm is formulated in terms of weighted graphs: starting from a specific starting node of a graph, it aims to find a path to the given goal node having the smallest cost (least distance travelled, shortest time, etc.).</p>
-				<p>It does this by maintaining a tree of paths originating at the start node and extending those paths one edge at a time until its termination criterion is satisfied.</p>
-				<p>At each iteration of its main loop, A* needs to determine which of its paths to extend. </p>
-				<p>It does so based on the cost of the path and an estimate of the cost required to extend the path all the way to the goal.</p>
-				<p>Specifically, A* selects the path that minimizes the following equation:</p>
-				<p><code>f(n)=g(n)+h(n)</code></p>
-				<p><commment><comment>n is the next node on the path<br>g(n) is the cost of the path from the start node<br>h(n) is a heuristic function that estimates the cost of the cheapest path from n to the goal.</commment></p>
-				<p>A* terminates when the path it chooses to extend is a path from start to goal or if there are not paths eligible to be extended.</p>
-				<p>The heuristic function is problem-specific. </p>
-				<p>If the heuristic function is admissible, meaning that it never overestimates the actual cost to get to the goal, A* is guaranteed to return a least-cost path from start to goal.</p>
-				<p>Common trend is for the algorithm to bounce back and forth between assessments of paths, going from one path to another based on newly determined shortest path.</p>
-				<table>
-						<tr><th>g(n)</th><th>h(n)</th></tr>
-						<tr><td>Place A-B: 118</td><td>Place A: 0</td></tr>
-						<tr><td>Place A-C: 111</td><td>Place B: 150</td></tr>
-						<tr><td>Place C-D: 120</td><td>Place C: 80</td></tr>
-						<tr><td>Place B-E: 140</td><td>Place D: 70</td></tr>
-						<tr><td>Place D-F: 75</td><td>Place E: 75</td></tr>
-						<tr><td>Place E-G: 80</td><td>Place F: 160</td></tr>
-						<tr><td>Place F-H: 12</td><td>Place G: 0</td></tr>
-						<tr><td>Place H-G: 146</td><td>Place H: 140</td></tr>
-				</table>
-				<p><comment>Using A* to find the next shortest path toward Place G (Goal).</comment></p>
-				<table>
-						<th>
-						<p class="text-center">Place A</p>
-						</th>
-						<td>	
-						<p>Place B: 118+150 = 268</p>
-						<p>Place C: 111+80 = 191</p>
-					  </td>
-				</table>
-				<p><comment>Place C is chosen because it is the shortest path.</comment></p>
-				<table>
-						<th>
-						<p class="text-center">Place A</p>
-						</th>
-						<td>	
-						<p>Place B: 118+150 = 268</p>
-						<p>Place C: 111+80 = 191 &DoubleLongRightArrow; Place D: (111 + 70) + 120 = 301</p>
-					  </td>
-				</table>
-				<p><comment>Place B is chosen because it is the shortest path.</comment></p>
-				<table>
-						<th>
-						<p class="text-center">Place A</p>
-						</th>
-						<td>	
-						<p>Place B: 118+150 = 268 &DoubleLongRightArrow; Place E: (118 + 140) + 75 = 333</p>
-						<p>Place C: 111+80 = 191 &DoubleLongRightArrow; Place D: (111 + 70) + 120 = 301</p>
-					  </td>
-				</table>
-				<p><comment>Place D is chosen because it is the shortest path.</comment></p>
-				<table>
-						<th>
-						<p class="text-center">Place A</p>
-						</th>
-						<td>	
-						<p>Place B: 118+150 = 268 &DoubleLongRightArrow; Place E: (118 + 140) + 75 = 333</p>
-						<p>Place C: 111+80 = 191 &DoubleLongRightArrow; Place D: (111 + 70) + 120 = 301 &DoubleLongRightArrow; Place F: (111 + 70 + 75) + 160 = 416</p>
-					  </td>
-				</table>
-				<p><comment>Place E is chosen because it is the shortest path.</comment></p>
-				<table>
-						<th>
-						<p class="text-center">Place A</p>
-						</th>
-						<td>	
-						<p>Place B: 118+150 = 268 &DoubleLongRightArrow; Place E: (118 + 140) + 75 = 333 &DoubleLongRightArrow; Place G: (111 + 140 + 80) + 0 = 338 &dotsquare; <comment>Destination</comment></p>
-						<p>Place C: 111+80 = 191 &DoubleLongRightArrow; Place D: (111 + 70) + 120 = 301 &DoubleLongRightArrow; Place F: (111 + 70 + 75) + 160 = 416</p>
-					  </td>
-				</table>
-				<p><comment>Place G is chosen because it is the shortest path.</comment></p>
-				<p><comment>A* terminates because we have reached our destination.</comment></p>
-				<p><comment>The path is A-B-E-G</comment></p>
-				<b>&lt;Adversarial Search&gt;</b>
-				<p>Implementing this will allow for a computer to read a state and then make decisions based on that.</p>
-				<p><RedBlock>Huge Search space. Large branching factors will require the viewing of alot of nodes.</RedBlock></p>
-				<p><RedBlock>Cannot search entire tree. Thus it must use shorter depth, or narrow width.</RedBlock></p>
-				<p><RedBlock>Needs a heuristic to evaluate who is winning, but sometimes this heuristic can be wrong.</RedBlock></p>
-				<p><code>eval(P) = pieceCount(computer) - pieceCount(human)</code>	<comment>Example of a very simple heuristic. Usually there are multiple factors that play into the evaluation.</comment></p>
-				<p><RedBlock>Complex heuristics are slower, further reducing the number of nodes that can be searched.</RedBlock></p>
-				<p><b>MINIMAX</b></p>
-				<p>A decision rule used in artificial intelligence, decision theory, game theory, statistics and philosophy for minimizing the possible loss for a worst case (maximum loss) scenario. </p>
-				<p>When dealing with gains, it is referred to as "maximin"—to maximize the minimum gain. </p>
-				<p>Our implementation used full-width with fixed depth.</p>
-				<p>Later on we can implement <b>Iterative deepening</b> to allow for variable depth.</p>
-				<p>Each level of the tree is known as PLY</p>
-				<p><b>Fastest win, slowest loss</b></p>
-				<p>The computer should pick the fastest win and pick the slowest loss.</p>
-				<p>This can be done through apply the PLY to the heuristic.</p>
-				<table>
-						<th>
-							<p><code>int pieceCount(bool humanPlayer){</code></p>
-							<p><code>int count = 0;</code></p>
-							<p><code>int score = 300;</code></p>
-							<p><code>if(humanPlayer) score -= ply;</code></p>
-							<p><code>if(!humanPlayer) score += ply;</code></p>
-							<p><code>for(int i=0;i&ltBOARD_COL_SIZE; i++)</code></p>
-							<p><code>for(int j=0;i&ltBOARD_ROW_SIZE; j++)</code></p>
-							<p><code>if(board[i][j] == politican) count++</code></p>
-							<p><code>return count*score;</code></p>
-							<p><code>}</code></p>
-						</th>
-				</table>
-				<p><b>Minmax Pseudocode</b></p>
-				<table>
-						<th>
-							<p><code>minimax(Board)</code></p>
-							<p><code>{ best.move = ""</code></p>
-							<p><code> best.score = -9999</code></p>
-							<p><code> For each legal move m</code></p>
-							<p><code> { make move m.move on Board</code></p>
-							<p><code>   m.score = MIN</code></p>
-							<p><code>   if(m.score > best.score) then best = m</code></p>
-							<p><code>   retract move m.move on Board</code></p>
-							<p><code>	}</code></p>
-							<p><code>Make move best.move</code></p>
-							<p><code>}</code></p>
-						</th>
-				</table>
-				<p><b>MIN Pseudocode</b></p>
-				<table>
-						<th>
-							<p><code>min()</code></p>
-							<p><code>{ if (game over) return EVAL-WINNING-MOVE;</code></p>
-							<p><code> if(depth is maxDepth) return EVAL</code></p>
-							<p><code> else</code></p>
-							<p><code> { best.score = -9999</code></p>
-							<p><code>   For each legal move m</code></p>
-							<p><code> { make move m.move on Board</code></p>
-							<p><code>   m.score = MAX</code></p>
-							<p><code>   if(m.score &lt best.score) then best = m</code></p>
-							<p><code>   retract move m.move on Board</code></p>
-							<p><code>	}</code></p>
-							<p><code>return best.score</code></p>
-							<p><code>}</code></p>
-						</th>
-				</table>
-				<p><b>MAX Pseudocode</b></p>
-				<table>
-						<th>
-							<p><code>min()</code></p>
-							<p><code>{ if (game over) return EVAL-WINNING-MOVE;</code></p>
-							<p><code> if(depth is maxDepth) return EVAL</code></p>
-							<p><code> else</code></p>
-							<p><code> { best.score = -9999</code></p>
-							<p><code>   For each legal move m</code></p>
-							<p><code> { make move m.move on Board</code></p>
-							<p><code>   m.score = MIN</code></p>
-							<p><code>   if(m.score &gt best.score) then best = m</code></p>
-							<p><code>   retract move m.move on Board</code></p>
-							<p><code>	}</code></p>
-							<p><code>return best.score</code></p>
-							<p><code>}</code></p>
-						</th>
-				</table>
-				<p><comment>EVAL applies heuristics to evaluate position B, from computer’s perspective (more+ = computer winning, more- = human winning).</comment></p>
-				<p><comment>EVAL-ENDING = +999(computer won), -999(human won), 0 if drawn.</comment></p>
-				<p><comment>Board (game state) is global. All other variables are local.</comment></p>
-				<p>Variables “best” and “m” represent legal moves, where:</p>
-				<p>• “.mv” represents the move itself</p>
-				<p>• “.score” represents the evaluation for the move</p>
-				<p><b>Iterative Deepening Algorithm</b></p>
-				<p><GreenBlock>Enables MINMAX to continue to search deeper PLYS while time permits.</GreenBlock></p>
-				<p><GreenBlock>When combined with <b>history tables</b>, can be faster than DFS.</GreenBlock></p>
-				<table>
-						<th>
-							<p><code>for searchDepth = 1 to maxDepth</code></p>
-							<p><code>{ minimax(searchDepth)</code></p>
-							<p><code>if out of time, exit</code></p>
-							<p><code>}</code></p>
-						</th>
-				</table>
-				<p><b>Alpha-Beta pruning</b></p>
-				<p><i>αβ-pruning: “once you have proven that a move is bad, it isn’t necessary to show how truly awful it is.”</i></p>
-				<p><GreenBlock>The benefit of alpha–beta pruning lies in the fact that branches of the search tree can be eliminated. 
-					This way, the search time can be limited to the 'more promising' subtree, and a deeper search can be performed in the same time. 
-					The optimization reduces the effective depth to slightly more than half that of simple minimax if the nodes 
-					are evaluated in an optimal or near optimal order (best choice for side on move ordered first at each node).</GreenBlock></p>
-				<p><b>Killer Move heuristic</b></p>
-				<p><GreenBlock>Variable holds the move that generated the most recent αβ prune.</GreenBlock></p>
-				<p><GreenBlock>If the Killer move is one of the children, considers it first. Great if you know what are good moves in a game.</GreenBlock></p>
-				<p><b>History table heuristic</b></p>
-				<p><GreenBlock>Hash table indexed by all possible (single) moves.</GreenBlock></p>
-				<p><GreenBlock>Content of hash table is a count of the number of times that move generated an αβ-prune.</GreenBlock></p>
-				<p><GreenBlock>Sorts child nodes by the corresponding count in the history table. This means there is quick lookup.</GreenBlock></p>
-				<b>&lt;Neural Network basics&gt;</b>
-				<p>A class of machine learning algorithms that use multiple layers to progressively extract higher level features from raw input.</p>
-				<p>In its most base form, a <b>Perceptron</b>, is akin to a biological neuron. It either fires <RedBlock>&#x3DF;</RedBlock> or doesn't fire.</p>
-				<p><b>Perceptron</b></p>
-				<p>When a neuron fires, electrochemical pressure isexerted on the connected neighboring neurons.</p>
-				<p>If incoming electrochemical pressure exceeds a certain “threshold”, a neuron fires.</p>
-				<p><comment>Weight (W) is a scalar for each input.</comment></p>
-				<table>
-						<tr><th><p>Input 1</p></th><th><p>Input 2</p></th><th><p>Input 3</p></th></tr>
-				</table>
-				<table>
-					<tr>
-						<th>
-						<p>Input 1: W1 &rArr;</p>	
-						<p>Input 2: W2 &rArr; &dotsquare; &rArr; Output</p>
-						<p>Input 3: W3 &rArr;</p></th></tr>
-				</table>
-				<p><code>SUM = W1 x Input 1 + W2 x Input 2 + W3 x Input 3</code></p>
-				<p><code>if(SUM >= Threshold) Output = 1</code></p>
-				<p><code>else Output = 0</code></p>
-				<p><b>Example of Perception that performs functions</b></p>
-				<table>
-						<tr><th><p>Input 1</p></th><th><p>Input 2</p></th><th><p>&sum;</p></th><th><p>AND</p></th></tr>
-						<tr><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-						<tr><td>0</td><td>1</td><td>0.66</td><td>0</td></tr>
-						<tr><td>1</td><td>0</td><td>0.66</td><td>0</td></tr>
-						<tr><td>1</td><td>1</td><td>1.3</td><td>1</td></tr>
-				</table>
-				<table>
-					<tr>
-						<th>
-						<p>Input 1 x (0.66) &rArr;</p>	
-						<p>-------------------&dotsquare; &rArr; Output</p>
-						<p>Input 2 x (0.66) &rArr;</p>
-				</table>
-				<p><comment>(0.66)Input 1 + (0.66) Input 2 >= 1</comment></p>
-				<p>The above graph demonstrates a perception can learn to perform a function.</p>
-				<p><b>Perceptron Learning via Supervised Learning</b></p>
-				<p>Supervised learning allows the perception to see a <b>training set</b> of inputs with known correct outputs to train it.</p>
-				<p>A <b>training pair</b> in this set is one input to one output.</p>
-				<p>After training, a <b>testing set</b> is used, showing a variety of inputs with known correct outputs used for testing.</p>
-				<p>Training sets test the Perceptions accuracy when fed the expected data, while testing sets test its ability to generalize.</p>
-				<p><b>Delta Rule</b></p>
-				<p>The delta rule multiplies the error for this case by each input value, and a learning rate coefficient, to adjust each corresponding weight.</p>
-				<p>If no error, no adjustment. Adjusting thresholds is generally unecessary.</p>
-				<p>In theory, for small &alpha;, this learning algorithm is proven to learn the training set, but only if the network is capable of representing the solution</p>
-				<p><code>ERROR = Target - Actual</code></p>
-				<p><code>&Delta;Weight i = &alpha; x ERROR x Input i</code></p>
-				<p><comment>&alpha; is the learning rate of the Perceptron.</comment></p>
-				<p><comment>i is the number of iterations.</comment></p>
-				<p><b>Linear Separability</b></p>
-				<p><RedBlock>The perceptron cannot represent non-linear solution spaces.</RedBlock></p>
-				<p><RedBlock>To represent XOR, since it is not linearly separable, requires more than one layer of neurons, however it can't train with it because it has no target ouput.</RedBlock></p>
-				<p><RedBlock>This was a problem that stumpped reserachers until the 1980s.</RedBlock></p>
-				<p><b>Backpropagation</b></p>
-				<p>An extension of perceptron learning that can perform multilayer nets.</p>
-				<p>Changes made:</p>
-				<p>• Threshold replaced by logistic (or hyperbolic tangent), which has a similar shape to threshold.</p>
-				<p>• Replacement function is continuous with a derivative.</p>
-				<p><code>SUM = W1 x Input 1 + W2 x Input 2 + W3 x Input 3</code></p>
-				<p><code>Output = 1&frasl;1+power(e,-SUM)</code></p>
-				<p><code>&sigma;Output = Output x (1- Output)</code></p>
-				<p>The training steps:</p>
-				<p>1. Select a training pair from the training set.</p>
-				<p>2. Apply the inputs to the neural network.</p>
-				<p>3. Calculate the output(s) <comment>A concept called <b>Forward Passing</b></comment></p>
-				<p>4. Calculate the error (target - actual) for each output.</p>
-				<p>5. Adjust the weights <comment>A concept called <b>Backward Passing</b></comment></p>
-				<p>6. If still too much aggregate error, repeat.</p>
-				<p><b>Modified Delta Rule</b></p>
-				<p><code>ERROR(output i) = Target(output i) - output(output i)</code></p>
-				<p><code>&sigma; = output(1-output) x ERROR</code></p>
-				<p><code>&Delta;Weight pq,k = &sigma; q,k x output p,j x &alpha;</code></p>
-				<p><comment>p and q are neurons.</comment></p>
-				<p><comment>j and k are layers.</comment></p>
-				<p>To perform hidden layer weight adjustments use same formula, but estimate the delta term based on previous data.</p>
-				<p><code>&sigma; p,j = [output p,j x (1 - output p,j)] x &sum; q (&sigma; q,k x W pq,k)</code></p>
-				<p><b>Bias Nodes</b></p>
-				<p>Extra nodes added to each layer that will always output a "1".</p>
-				<p>It has outgoing weights that are trained along with the other weights.</p>
-				<p><GreenBlock>It provides a mechanism for the neurons in the next layer to adjust their thresholds.</GreenBlock></p>
-				<p><b>Generalization</b></p>
-				<p>• Tested after training is complete.</p>
-				<p>• Trained network behavior is checked on the testing cases.</p>
-				<p>• If network performs well on the untrained test cases, the network is said to "generalize"</p>
-				<p><b>Overfitting</b></p>
-				<p><RedBlock>Sometimes, training to an overly-tight criteria can lead to poor generalization.</RedBlock></p>
-				<p>Usually happens if the training data is noisy, because close criteria causes network to learn the noise.</p>
-				<p><b>Momentum</b></p>
-				<p><code>&delta;w(t) = &sigma; x output x &alpha; + &mu; x &delta;w(target - 1)</code></p>
-				<p><code>&mu; &isin; [0,1] if &mu; = 0, normal weight training.</code></p>
-				<p><code> If &mu;>0, a portion of previous weight change is added in.</code></p>
-				<p><code> If &mu;>1, weight changes diverge and training fails.</code></p>
-				<p><GreenBox>Including some momentum can often speed up training.</GreenBox></p>
-				<b>&lt;Deep Learning&gt;</b>
-				<p>A “catch-all” phrase that refers to recent advances in neural networks, such as convolutional neural networks (CNN), that:</p>
-				<p>• Utilize large number of neurons and/or large number of layers</p>
-				<p>• Employ sophisticated or specialized organization of layers</p>
-				<p>• Utilize GPUs for backpropagation computation, and thus have trained effectively with backpropagation on very large data sets.</p>
-				<p>Some specific breakthroughs in Neural Networks that have contributed to Deep Learning include:</p>
-				<p>• New activation functions to replace the logistic function, such as ReLU and Leaky-ReLU</p>
-				<p>• New organizations of neurons in layers, such as Convolutional and Dropout layers.</p>
-				<p><b>ReLU (Rectified Linear Unit)</b></p>
-				<p>As seen previously, standard neural networks require a non-linear activation function between layers</p>
-				<p>Thus far, we have used “squashing” logistic or tanh functions, both of which have the following drawbacks:</p>
-				<p><RedBlock>Slow learning when input has large magnitude, because gradient approaches 0.</RedBlock></p>
-				<p><RedBlock>Inability to output values with magnitude greater than 1.</RedBlock></p>
-				<p><GreenBlock>A popular replacement is <b>ReLU</b> which is defined as follows:</GreenBlock></p>
-				<p><code>f(x) = max(0,x)</code></p>
-				<p><GreenBlock>A popular varient is <b>Leaky ReLU</b> which is defined as follows:</GreenBlock></p>
-				<p><code>f(x)=x when x &gt= 0 and ax when x &lt 0 where 0&lt a &gt 1</code></p>
-				<p>Researchers have often observed faster learning when using ReLU or Leaky ReLU, instead of logistic or tanh.</p>
-				<p>To facilitate implementing neural networks with many layers, potentially with different activation functions between layers, the choice of activation function is usually separated into it’s own separate layer:</p>
-				<table>
-						<tr>
-							<th>
-							<p>Input 1: W1 &rArr;</p>	
-							<p>Input 2: W2 &rArr; &dotsquare; fully-connected &sum; layer &rArr; &dotsquare; activation (ReLU) layer &rArr; Output</p>
-							<p>Input 3: W3 &rArr;</p></th></tr>
-					</table>
-				<p><b>Convolutional Layer</b></p>
-				<p>Typically used for input data that is organized into square 2D grids (such as for image recognition).</p>
-				<p>A convolutional layer has a set of some number of <b>filters</b>. Each filter performs a series of dot products:</p>
-				<p>Example of a Dot Product</p>
-				<p><code> Matrix A x Matrix B</code></p>
-				<table>
-						<tr><th>Matrix A</th><th>Matrix B</th><th>Output</th></tr>
-						<tr><td>2</td><td>3</td><td>6</td></tr>
-						<tr><td>1</td><td>12</td><td>12</td></tr>
-						<tr><td>6</td><td>6</td><td>36</td></tr>
-				</table>
-				<p><b>Filters</b> are a small array of trainable floating point values.</p>
-				<p>An output grid is produced by repeated applications of a single filter, to all locations in the input grid</p>
-				<p>Each cell in the output grid is computed by taking the dot product of the filter, and a section of the input grid.</p>
-				<p>We apply the filter to every location in the input grid. </p>
-				<p>The output grid is often smaller than the input grid.</p>
-				<p>The total number of cells in the output grid depends on the size of the <b>stride</b>.</p>
-				<p>Grayscale images would have a 2D input grid (NxNx2), and we would use a 2D filter (KxKx2).</p>
-				<p>Color images would have a 3D input grid (NxNx3), thus we would correspondingly use 3D filters (KxKx3).</p>
-				<p>One filter always produces a single 2D output grid, regardless of whether the image is color or grayscale.</p>
-				<p>Example of a 3x3x1 Matrix for grayscale</p>
-				<table>
-						<tr><td>0</td><td>9</td><td>0</td></tr>
-						<tr><td>0</td><td>9</td><td>1</td></tr>
-						<tr><td>0</td><td>8</td><td>0</td></tr>
-				</table>
-				<p>Scaling up the number of filters will scale up the number of tables used.</p>
-				<p>The role of the filters in a convolutional layer is to identify small features in the image, wherever they occur.</p>
-				<p>For this reason, the output grids are often called <b>activation maps</b>.</p>
-				<p>It is usually useful to have multiple convolutional layers. This allows the network to learn higher-level features based on previously-identified lower-level features.</p>
-				<p><RedBlock>To interchange inbetween filter sizes for future convolutional layers, we will need a non-linear activation layer (such as ReLU or tanh) between the layers.</RedBlock></p>
-				<table>
-						<tr>
-							<th>
-							<p></p>	
-							<p>NxNx3 &rArr; 5 KxKx3 filters &rArr; MxMx5 &rArr; activation (ReLU) layer &rArr; MxMx5 &rArr; 4 LuLx5 filters &rArr; PxPx4</p>
-							<p class="text-center">Same as: Convolutional layer &rArr; Activation layer &rArr; Convolutional layer</p>
-							<p></p>
-						</th></tr>
-					</table>
-					<p>Ah each layer the depth of the output set of the activation maps is equal to the number of filters that produced it.</p>
-					<p>Because of this, we could compute M based on N, K, and the stride.</p>
-					<p><b>Pooling layer</b></p>
-					<p>A very useful follow-up operation – especially in image recognition – is down-sampling, or pooling</p>
-					<p>In a pooling layer, there is a single filter that scans across the entire input grid, combining groups of values into a single value.</p>
-					<p>The most common approach is to simply choose the largest value, and is called <b>max-pooling</b>.</p>
-			</p>	
-		</div>
-		<div class="background" id="canvasContainer"></div>
-		<script>
-				var pDiv = document.getElementById('parentParagraph');
-				var cParagraph = pDiv.children;
-				for(var i=0; i<cParagraph.length;i++){
-					if(cParagraph[i].tagName == "P"){
-						cParagraph[i].style.color = "white";
-					}
-				}
-			</script>
-
-
-			<footer class="ex1">
-					<div class="container-fluid text-center text-md-left">
-					</div>
-			</footer>
+																</div>
+															  </div>  
+															  <div class="card">
+																	<h2 id="hello-world">Pooling layer</h2>
+																	<div class="card-body">
+																			<p>A very useful follow-up operation – especially in image recognition – is down-sampling, or pooling</p>
+																			<p>In a pooling layer, there is a single filter that scans across the entire input grid, combining groups of values into a single value.</p>
+																			<p>The most common approach is to simply choose the largest value, and is called <b>max-pooling</b>.</p>
+																	</div>
+																  </div>  																  														  													  														  									  										  								  							  
+            </div>
+              </div>
+            </div>
+            <span id="footerSpan">
+              <h6>Ryan Bartoli 2019 &nbsp;</h3>
+              <a href="https://jellope.github.io/">https://jellope.github.io/</a>
+              <span id="linkSpan">
+                <a href="mailto:ryanbartoli707@gmail.com">Email</a><p></p> |
+                <a href="/resume/">Resume</a> |
+                <a href="https://www.linkedin.com/in/ryan-bartoli/">LinkedIn</a>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
