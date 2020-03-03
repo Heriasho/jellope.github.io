@@ -29,16 +29,16 @@
               <div id="page-content">
                 <h1 id="hello-world">Cooper MinMax program</h1>
                 <div class="card">
-                  <h2 id="hello-world">Adversaral search</h1>
+                  <h2 id="hello-world">Adversaral search</h2>
                   <div class="card-body">
                         <p>A <b>C++</b> MinMax AI that can play special rule set of chess for a class AI tornument. 
                             My program utilized the Min Max algorithm in addition to iterative deepening, alpha beta pruning, and a "Conserve Moves" heristic.</p>
                         <p><i>If you would like to play against Cooper, you can download <a href="./aiProject/cooper.exe">"Cooper"</a> here.
-                            It will come in the form of a Windows executable which you may prefer run from a command window since the app closes at the end of the game.
+                            It will come in the form of a Windows executable which you may prefer run from a command window since the app closes at the end of the game.</i></p>
                   </div>
                 </div>  
                 <div class="card">
-                        <h2 id="hello-world">The setup</h1>
+                        <h2 id="hello-world">The setup</h2>
                         <div class="card-body">
                                 <p>During the time of taking our college's artificial intelligence class; the second class project gave us a month to develop an adversarial search AI to play a specific game and then compete with classmates in an AI competition after the submission date. 
                                     The results of this competition did not affect our grades and mostly was for point of pride and showcase of mastery of the subject. 
@@ -53,7 +53,7 @@
                         </div>
                       </div>         
                       <div class="card">
-                            <h2 id="hello-world">Language Selection</h1>
+                            <h2 id="hello-world">Language Selection</h2>
                             <div class="card-body">
                                     <p>Since our school primarily taught Java and some aspects of Python, most of the class decided to go down those paths to develop the project. 
                                         Given knowledge on the subject, however  it appeared to me that to more effectively utilize the Min Max algorithm you needed to minimize the overhead the chosen language had over the program, otherwise it would get bogged down. 
@@ -64,10 +64,14 @@
                             </div>
                           </div>   
                           <div class="card">
-                                <h2 id="hello-world">Optimizations</h1>
+                                <h2 id="hello-world">Optimizations</h2>
                                 <div class="card-body">
                                         <p>The contributing factors to the program's success was the optimizations I implemented to to improve its performance in pruning depth branches, and the development of a competitive heuristic for the game.</p>
-                                        <p><b>Iterative deepening</b></p>
+                                </div>
+                              </div>                             
+                          <div class="card">
+                                <h3 id="hello-world">Iterative deepening</h3>
+                                <div class="card-body">                                      
                                         <p>During class sessions we discussed the concept of <b>iterative deepening</b> which enabled the MinMax program to utilize a global best score as a comparison tool to determine the program should go to a deeper depth for a better score. 
                                             Implementing iterative deepening to Cooper enabled it to use the global best score to reach deeper plys because it overall minimized the amount of nodes on the branches it had to check.
                                         </p>
@@ -80,7 +84,7 @@
                                 </div>
                               </div>    
                               <div class="card">
-                                    <h2 id="hello-world">Alpha beta pruning</h1>
+                                    <h3 id="hello-world">Alpha beta pruning</h3>
                                     <div class="card-body">
                                             <p>Another method of pruning we learned about was <b>alpha beta pruning</b>, meant to work alongside the Min Max algorithm, it provides the adversarial search with the ability to ignore branches (which would be up to millions of nodes) that provide a worst score than previously evaluated nodes on that branch. 
                                                 For Cooper, this meant it would be able utilize a local best score as a comparison tool for detecting and avoiding dead end paths, further minimizing the amount of nodes it had to check.
@@ -88,7 +92,7 @@
                                     </div>
                                   </div>  
                                   <div class="card">
-                                        <h2 id="hello-world">Heuristics</h1>
+                                        <h3 id="hello-world">Heuristics</h3>
                                         <div class="card-body">
                                                 <p><b>Reading the meta</b></p>
                                                 <p>The final contributing factor to Cooper's success was its heuristic during the competition. 
@@ -101,13 +105,14 @@
                                                 <p><i>Above is a demonstration of how many moves horses and bishops in this game could make in the first two turns of play.</i></p>
                                                 <p>Another thing I noticed when competing against other classmates was an aggressive design in their adversarial searches, looking to close out the games quickly by rushing to capture the kings or put them in deadlock positions. 
                                                     To counter this, I decided to add score to moves that conserved my pieces in general as well as conserved moves. 
-                                                    These were both lesser values than the ones I put for the politicians so their protection was a greater concern to me. 
+                                                    These were both lesser values than the ones I put for the politicians so their protection was a greater concern to me. </p>
+                                                <p>
                                                     As an unintended consequence, Cooper played a conservative long game with its opponents, revealing bugs in my opponent's adversarial searches, bugs that I previously found out and eliminated from the ironing out process. For the games that were not automatically won by opponent disqualification, Cooper set the board up so that it would eliminate the opponent's politicians, block its pawns, and trap their kings. 
                                                     This tactic allowed me to beat AI that had greater depth ply algorithms because while I wasn't searching deeper I was making better moves, and protected my board from being rushed down. 
                                                     Often this would result in my AI forcing the opponent, who had not planned for a control game, to make moves to protect its units that ate at their remaining moves and ability to counter attack.
                                                 </p>
                                                 <img  src="aiProject/aiHorseTriangleMove.png" alt="Random board" />
-                                                <p><i>Above is a demonstration of a move I called the "Triangle Horse Move", which enabled a player to control the movement of the opponent's kings with three horses if not properly countered.
+                                                <p><i>Above is a demonstration of a move I called the <b>"Triangle Horse Move"</b>, which enabled a player to control the movement of the opponent's kings with three horses if not properly countered.
                                                     Even though I did not implement additional optimizations like Killer Moves, which presaves game winning moves ahead of time, I added this to the heristic, giving the computer a small score bonus if they find a move that can perform this move.
                                                     A full explanation of the move can be see down below.
                                                 </i></p>
@@ -122,15 +127,7 @@
                                                     <img  src="aiProject/aiProjectScores.png" alt="Random board"/>
                                                     <p>You can find these results on Dr. Gordon's <a href="http://athena.ecs.csus.edu/~gordonvs/180/Tournaments/19Stres.html">tournament results</a> webpage.</p> 
                                             </div>
-                                          </div>  
-                                          <div class="card">
-                                                <h2 id="hello-world">Alpha beta pruning</h1>
-                                                <div class="card-body">
-                                                        <p>Another method of pruning we learned about was <b>alpha beta pruning</b>, meant to work alongside the Min Max algorithm, it provides the adversarial search with the ability to ignore branches (which would be up to millions of nodes) that provide a worst score than previously evaluated nodes on that branch. 
-                                                            For Cooper, this meant it would be able utilize a local best score as a comparison tool for detecting and avoiding dead end paths, further minimizing the amount of nodes it had to check.
-                                                        </p>         
-                                                </div>
-                                              </div>        
+                                          </div>       
                                               <div class="card">
                                                     <h2 id="hello-world">How the game plays</h1>
                                                     <div class="card-body">
@@ -159,13 +156,13 @@
                                                         <div class="card-body">
                                                                 <p>When the player decides to go first they are provided a list of valid moves they can make and are prompted to make a move.
                                                                     Once a move is made, the game determines if that move either won the game. 
-                                                                    If not, it passes control over to the next player, in this case Cooper, and checks to see if Cooper is out of moves. 
-                                                                    If its doesn't, its their turn.
-                                                                    On Cooper's turn, it will be provided a list of legal moves, evaluate the boardstate and make its move.
-                                                                    This process will repeat until either a player makes a winning move (capturing both of the opponent's kings) or a player runs out of legal moves they can make.
-                                                                    Should the player decide Cooper goes first, Cooper will make its move as before, the player is prompted to make a move, and the cycle continues as before.
-                                                                </p>
-                                                                <p>Cooper has been tuned to be a decent competetor to other adversaral AI, but is definitely beatable by human opponents who observe its patterns.</p>
+                                                                <p><code>If the game is not won by the move, it passes control over to the next player, in this case Cooper, and checks to see if Cooper is out of moves. </code></p>
+                                                                <p><code>If the player isn't out of moves, its their turn.</code></p>
+                                                                <p><comment>On Cooper's turn, it will be provided a list of legal moves, evaluate the boardstate and make its move.</comment></p>
+                                                                <p><comment>This process will repeat until either a player makes a winning move (capturing both of the opponent's kings) or a player runs out of legal moves they can make.</comment></p>
+                                                                <p>Should the player decide to let Cooper go first, Cooper AI will calculate its first move based on the board state and move. The player is then prompted to make a move, and the cycle continues as before.</p>
+                                                                
+                                                                <p>Cooper has been tuned to be a decent competetor to aggressive adversaral AI, but is definitely beatable by human opponents who observe its patterns.</p>
                                                                 <p><i>If you would like to play against Cooper, you can download <a style="color: cyan" href="./aiProject/cooper.exe">"Cooper"</a> here.
                                                                     It will come in the form of a Windows executable which you may prefer run from a command window since the app closes at the end of the game.
                                                                 </i></p>
@@ -176,12 +173,34 @@
                                                         </div>
                                                       </div>    
                                                       <div class="card">
-                                                            <h2 id="hello-world">Full Explanation of the Triangle Horse Move</h1>
+                                                            <h2 id="hello-world">Cooper's signature move: The Triangle Horse Move</h2>
                                                             <div class="card-body">
                                                                     <img  src="aiProject/aiHorseTriangleMove.png" alt="Random board" />
-                                                                    <p>The move begins with moving horses into C4 and C5, blocking the moves of a left king until a third horse, previously a bishop, moves to D4.
-                                                                    As the keypin of the plan, the D4 horse is able to eliminate the last safe haven for the left king, while also enabling the blockage of E6 for the right king.
-                                                                    Finally, When the left king is dealt with, the C4 horse can move to E5, become a bishop, and potientially eliminate the right king if the opponent hasn't moved their bishops yet.
+                                                                    <p>The move begins with moving the moving of two horses across the field toward C4 and C5.</p>
+                                                                    <p><b>First horse</b></p>
+                                                                    <p><code>C1 to B3</code></p>
+                                                                    <p><code>B3 to C5</code></p>
+                                                                    <p><b>Second horse</b></p>
+                                                                    <p><code>B1 to A3</code></p>
+                                                                    <p><code>A3 to C4</code></p>
+                                                                    <p><comment>Alterative routes exist as they behave like regular chess horses. These moves will be carried out throughout the course of the game and is not the first thing Copper attempts.</comment></p>
+                                                                    <p>The idea is that the first two horses will lock down A6 through D7 for the left enemy king </p>
+                                                                    <p><code>C4 threatens B6 and D6</code></p>
+                                                                    <p><code>C5 threatens A6 and E6</code></p>
+                                                                    <p>Since left side kings need to keep moving left, most adversarial AI will spend a move protecting their king within gap inbetween the two horses at C6 but then will be unable to move them again.</p>
+                                                                    <p>Meanwhile, depending on the board state, the right enemy king is likely still at the default location of E6 or have moved to F6.</p>
+                                                                    <p><comment>The meta I noticed in the competition was that most adversarial AI neglect their bishops, thus giving the right side king little room to manuver.</comment></p>
+                                                                    <p>To exploit this, I put a high score value on both a bishop making aggresive advances, thus encouraging the pawn to move out of the way.</p>
+                                                                    <p>Because of the special ruleset of the game, if a horse crosses into the opposite side of the board from its origin, it turns into a bishop.</p>
+                                                                    <p>Once able to move, the bishop at G1 is to move toward D4 where it will become the third horse.</p>
+                                                                    <p><code>G1 to D4 (becomes a horse)</code></p>
+                                                                    <p><code>D4 threatens C6 (the gap) and E6</code></p>
+                                                                    <p><comment>At this point the third horse is able to make a killer move: killing the left enemy king in the gap.</comment></p>
+                                                                    <p><comment>Additionally, given the horse at C4 now has the oppertunity to move to E5, becoming a bishop, and can now threaten the right enemy king if they are at F6.</comment></p>
+                                                                    <p><code>C4 to E5 (becomes a bishop)</code></p>
+                                                                    <p><code>E5 threatens D6 and F6</code></p>
+                                                        
+                                                                    <p>Overall, the plan is for the <code><b>D4 horse</b></code> to eliminate the stranded <RedBlock><b>enemy left king</b></RedBlock>, while the <code><b>C4 horse</b></code> is able to react, become a bishop at E5, and eliminate the stranded <RedBlock><b>enemy right king</b></RedBlock>.</p>
                                                             </div>
                                                           </div>                                                                                                                                                                                                                                    
                                       
